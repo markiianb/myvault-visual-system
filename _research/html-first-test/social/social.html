@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MyVault — Hero stat social card (HTML/CSS test)</title>
+<link rel="stylesheet" href="../_shared/tokens.css">
+<link rel="stylesheet" href="../_shared/fonts.css">
+<link rel="stylesheet" href="../_shared/primitives.css">
+<style>
+  html, body { background: var(--color-core-teal); }
+  /* 1080×1080 (Instagram square) — Vault Teal hero, ~80/20 black/teal split applied
+     to stat-card vs hero panel context. The card itself is teal-on-teal hero. */
+  .social.hero-stat-card {
+    background: var(--color-core-teal);
+    color: var(--color-core-white);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 80px;
+  }
+  .social__lockup img { width: 240px; height: auto; }
+  .social__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+  .social__numeral {
+    font-family: "PT Serif", serif;
+    font-size: 360pt;
+    line-height: 0.95;
+    color: var(--color-core-white);
+    margin: 0;
+  }
+  .social__caption {
+    font-family: "PT Serif", serif;
+    font-size: 44pt;
+    line-height: 1.2;
+    color: var(--color-core-off-white);
+    margin: 0;
+    max-width: 800px;
+  }
+  .social__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .social__source {
+    font-family: "Lato", sans-serif;
+    font-size: 18pt;
+    color: var(--color-core-gray-01);
+    margin: 0;
+  }
+  .social__url {
+    font-family: "Lato", sans-serif;
+    font-size: 18pt;
+    color: var(--color-core-off-white);
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<section class="social hero-stat-card">
+  <div class="social__lockup">
+    <img src="../../../assets/logo/lockup-light.svg" alt="MyVault">
+  </div>
+
+  <div class="social__body">
+    <p class="social__numeral">82%</p>
+    <p class="social__caption">of consumers walked away from a brand last year over how their data was used.</p>
+  </div>
+
+  <div class="social__footer">
+    <p class="social__source">Capgemini Research Institute, 2025</p>
+    <p class="social__url">myvaultai.com</p>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "id": "vertical-bar",
+  "type": "vertical-bar",
+  "description_for_agent": "MyVault Vertical Bar Chart (no axes) — fixture (Figma reference 70:8617). Card 640 wide, gradient.warm surface, 5 columns 80px wide, track 320px, value above + category below.",
+  "card": {
+    "width": 640,
+    "padding": [40, 40, 40, 40],
+    "surface": "warm",
+    "headerGap": 20,
+    "footerGap": 20
+  },
+  "header": {
+    "title": "Chart Title Goes Here",
+    "description": "A concise line describing what the chart shows and why it matters.",
+    "innerGap": 8
+  },
+  "footer": {
+    "show": true,
+    "source": "Source / caption — MyVault, 2026"
+  },
+  "plot": {
+    "data": {
+      "values": [
+        {"category": "Category 01", "value": 92},
+        {"category": "Category 02", "value": 78},
+        {"category": "Category 03", "value": 63},
+        {"category": "Category 04", "value": 45},
+        {"category": "Category 05", "value": 31}
+      ]
+    },
+    "scale": {"max": 100}
+  }
+}

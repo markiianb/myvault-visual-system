@@ -1,0 +1,528 @@
+/*
+ * @theme myvault-presentation
+ *
+ * MyVault presentation theme — implements chunks/presentation.md v1.2.
+ *
+ * HARD rules enforced:
+ *   R-PRES-001 — 1920×1080 canvas, padding 20/40/20/40, vertical flow
+ *   R-PRES-002 — no decorative top header bar; text-only header labels (SPACE_BETWEEN);
+ *                canonical footer shape (icon + page number SPACE_BETWEEN); both conditional
+ *   R-PRES-003 — 18pt text floor; no caption-tier (12pt) typography
+ *
+ * BASE rules implemented:
+ *   - Typography ladder 144 / 72 / 64 / 56 / 48 / 40 / 32 / 28 / 18 across PT Serif + Lato Regular
+ *   - Surface palette: white default; off-white rare; teal/black/muted-dark dramatic; gradient editorial
+ *   - Vault Teal discipline (sparingly via per-class layouts, no decoration teal)
+ *   - 70/20/7/3 + max-2-colours by composition discipline (theme doesn't enforce)
+ *   - 1/2/3-column grid (CSS Grid templates per layout)
+ *   - Card padding 40/40/40/40 + item-spacing 22 via CSS gap
+ *   - Header-label + footer Icon-variant pairing per surface (per-class CSS)
+ *
+ * Per-slide layouts via class directive: <!-- _class: cover/statement/problem/three-shifts/architecture/stat-hero/comparison/thesis/action/closing -->
+ *
+ * Foundation overrides:
+ *   - R-TYPE-005 raised to 18pt floor (here)
+ *   - R-COLOR-009 chart-card scoped exception (declared in chunk; theme implements via .chart-card descendants)
+ */
+
+/* Tokens are concatenated at build time by build-tokens.sh — see theme.css output. */
+/* Do NOT use @import — Marp's CSS processor strips it. Build pipeline produces theme.css that has tokens prepended. */
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/PTSerif-Regular.ttf') format('truetype');
+}
+
+/* === GLOBAL DEFAULTS === */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body / Lato Regular default. R-TYPE-001 (Regular only) — no font-weight overrides anywhere. */
+section {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 28px;             /* BASE body 28pt */
+  line-height: 1.4;            /* 140% */
+  color: var(--color-core-black);
+  letter-spacing: 0;
+}
+
+/* Display + heading content uses PT Serif Regular */
+section h1, section h2, section h3, section h4, section h5, section h6,
+section .display-xl, section .display-l, section .display-m, section .display-s,
+section .heading-l, section .serif-body {
+  font-family: 'PT Serif', serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* === SLIDE CANVAS — R-PRES-001 === */
+section {
+  width: 1920px;
+  height: 1080px;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;     /* header / content / footer */
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  background: var(--color-core-white);   /* default surface */
+  overflow: hidden;
+}
+
+/* No top header bar — only text-only header labels via .chrome-top class */
+section header { display: none !important; }   /* defeat Marp's default header element */
+section footer { display: none !important; }   /* defeat Marp's default footer element */
+
+/* === HEADER LABELS (text-only, conditional, SPACE_BETWEEN) — R-PRES-002 part 2 === */
+section .chrome-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;                        /* R-PRES-003 floor */
+  color: var(--color-core-gray-02);
+  height: 22px;
+}
+
+/* === FOOTER (icon + page number, conditional, SPACE_BETWEEN) — R-PRES-002 part 3 === */
+section .chrome-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;                        /* R-PRES-003 floor */
+  color: var(--color-core-gray-02);
+  height: 24px;
+}
+
+section .chrome-bottom .brand-mark {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: var(--color-core-teal);
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+/* === CONTENT REGION (the middle row of the grid) === */
+section .body {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+}
+
+/* === TYPOGRAPHY LADDER === */
+.display-xl  { font-size: 144px; line-height: 1.10; }    /* hero divider word, Cover hero, Ask amount, Team initials */
+.display-l   { font-size: 96px;  line-height: 1.10; }    /* large display in covers / closing */
+.display-m   { font-size: 72px;  line-height: 1.15; }    /* big slide title */
+.display-s   { font-size: 56px;  line-height: 1.15; }    /* statement / column head / phase head / mid-stat */
+.display-xs  { font-size: 48px;  line-height: 1.15; }    /* mid-stat tile value */
+.display-mid { font-size: 64px;  line-height: 1.15; }    /* mid-display heading (e.g., SAM hero) */
+.heading-l   { font-size: 40px;  line-height: 1.25; }    /* card head, callout name, section sub-title */
+.heading-m   { font-size: 32px;  line-height: 1.25; }    /* chart card title */
+.serif-body  { font-size: 28px;  line-height: 1.30; font-family: 'PT Serif', serif; font-weight: 400; }
+.body        { font-size: 28px;  line-height: 1.40; }
+.label       { font-size: 18px;  line-height: 1.4; color: var(--color-core-gray-02); }
+
+/* Default markdown headings map to ladder */
+section h1 { font-size: 72px; line-height: 1.15; color: var(--color-core-black); }     /* big slide title */
+section h2 { font-size: 56px; line-height: 1.15; color: var(--color-core-black); }     /* statement-style */
+section h3 { font-size: 40px; line-height: 1.25; color: var(--color-core-black); }     /* card head */
+section h4 { font-size: 32px; line-height: 1.25; color: var(--color-core-black); }     /* chart-card title */
+section h5 { font-size: 28px; line-height: 1.30; color: var(--color-core-black); font-family: 'PT Serif', serif; }  /* serif body / mid heading */
+
+section p { font-size: 28px; line-height: 1.40; }     /* body */
+section small, section .small { font-size: 18px; color: var(--color-core-gray-02); }
+
+/* === SURFACE PALETTE (per-class) ===
+ * Default = white (already set on `section`).
+ * Per-layout classes override the surface + chrome colors.
+ */
+
+/* dark = teal full-bleed (Problem) */
+section.problem {
+  background: var(--color-core-teal);
+  color: var(--color-core-white);
+}
+section.problem h1, section.problem h2, section.problem h3, section.problem h4, section.problem h5,
+section.problem p, section.problem .body, section.problem .serif-body,
+section.problem .display-xl, section.problem .display-l, section.problem .display-m,
+section.problem .display-s, section.problem .display-xs, section.problem .display-mid,
+section.problem .heading-l, section.problem .heading-m {
+  color: var(--color-core-white);
+}
+section.problem .chrome-top, section.problem .chrome-bottom { color: var(--color-core-white); }
+section.problem .chrome-bottom .brand-mark { background: var(--color-core-white); }
+
+/* dark = black (editorial-dark / Architecture) */
+section.architecture {
+  background: var(--color-core-black);
+  color: var(--color-core-white);
+}
+section.architecture h1, section.architecture h2, section.architecture h3, section.architecture h4, section.architecture h5,
+section.architecture p, section.architecture .body, section.architecture .serif-body,
+section.architecture .display-xl, section.architecture .display-l, section.architecture .display-m,
+section.architecture .display-s, section.architecture .display-xs, section.architecture .display-mid,
+section.architecture .heading-l, section.architecture .heading-m {
+  color: var(--color-core-white);
+}
+section.architecture .chrome-top, section.architecture .chrome-bottom { color: var(--color-core-white); }
+section.architecture .chrome-bottom .brand-mark { background: var(--color-core-white); }
+
+/* off-white (rare alternate, Comparison) */
+section.comparison {
+  background: var(--color-core-off-white);
+}
+
+/* gradient surfaces (Cover, Closing) */
+section.cover {
+  background: var(--gradient-warm);
+}
+section.closing {
+  background: var(--gradient-cool);
+}
+
+/* === LAYOUT: COVER === */
+section.cover {
+  grid-template-rows: auto 1fr auto;        /* anchor / cluster / speaker */
+}
+section.cover .anchor {
+  width: 32px;
+  height: 32px;
+  background: var(--color-core-teal);
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+section.cover .body {
+  justify-content: center;
+}
+section.cover h1 {
+  font-size: 96px;
+  line-height: 1.10;
+  color: var(--color-core-black);
+}
+section.cover h2 {
+  font-size: 40px;
+  line-height: 1.30;
+  color: var(--color-core-black);
+  margin-top: 24px;
+}
+section.cover .speaker {
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-black);
+}
+
+/* === LAYOUT: STATEMENT === */
+section.statement .body { justify-content: center; }
+section.statement h1 {
+  font-size: 96px;
+  line-height: 1.15;
+  color: var(--color-core-black);
+}
+
+/* === LAYOUT: PROBLEM (Vault Teal full-bleed, 3-row dramatic register) === */
+section.problem .body { gap: 32px; }
+section.problem .problem-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 24px;
+}
+section.problem .problem-row {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+section.problem .problem-row .label-col {
+  font-family: 'PT Serif', serif;
+  font-size: 40px;
+  line-height: 1.25;
+  color: var(--color-core-white);
+}
+section.problem .problem-row .body-col {
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-white);
+}
+section.problem .closing-line {
+  margin-top: auto;
+  font-family: 'PT Serif', serif;
+  font-size: 32px;
+  line-height: 1.30;
+  color: var(--color-core-white);
+}
+
+/* === LAYOUT: THREE-SHIFTS (3-card grid on white) === */
+section.three-shifts .body { gap: 32px; }
+section.three-shifts .shifts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+section.three-shifts .card {
+  background: var(--color-core-off-white);
+  border-radius: 8px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+section.three-shifts .card .heading {
+  font-family: 'PT Serif', serif;
+  font-size: 40px;
+  line-height: 1.25;
+  color: var(--color-core-black);
+}
+section.three-shifts .card .body-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-black);
+}
+section.three-shifts .closing-line {
+  margin-top: auto;
+  font-family: 'PT Serif', serif;
+  font-size: 28px;
+  line-height: 1.30;
+  color: var(--color-core-gray-02);
+}
+
+/* === LAYOUT: ARCHITECTURE (black, 4-layer stack with hairline dividers) === */
+section.architecture .body { gap: 24px; }
+section.architecture .arch-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+section.architecture .layer {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-core-white);
+}
+section.architecture .layer:first-child { border-top: 1px solid var(--color-core-white); }
+section.architecture .layer .label-col {
+  font-family: 'PT Serif', serif;
+  font-size: 40px;
+  line-height: 1.25;
+  color: var(--color-core-white);
+}
+section.architecture .layer .body-col {
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-white);
+}
+section.architecture .closing-line {
+  margin-top: auto;
+  font-family: 'PT Serif', serif;
+  font-size: 32px;
+  line-height: 1.30;
+  color: var(--color-core-white);
+}
+
+/* === LAYOUT: STAT-HERO (single hero stat, white surface) === */
+section.stat-hero .body {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+section.stat-hero .hero-number {
+  font-family: 'PT Serif', serif;
+  font-size: 240px;
+  line-height: 1.10;
+  color: var(--color-core-teal);
+}
+section.stat-hero .headline {
+  font-family: 'PT Serif', serif;
+  font-size: 56px;
+  line-height: 1.15;
+  color: var(--color-core-black);
+}
+section.stat-hero .supporting {
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-black);
+  max-width: 1100px;
+}
+section.stat-hero .source {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: var(--color-core-gray-02);
+  margin-top: auto;
+  text-align: center;
+}
+
+/* === LAYOUT: COMPARISON (off-white, Harvey Ball table) === */
+section.comparison .body { gap: 32px; }
+section.comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  margin-top: 24px;
+}
+section.comparison thead th {
+  font-weight: 400;       /* R-TYPE-001 */
+  color: var(--color-core-black);
+  text-align: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-core-gray-01);
+}
+section.comparison thead th:first-child { text-align: left; }
+section.comparison thead th.myvault {
+  font-family: 'PT Serif', serif;
+  color: var(--color-core-teal);
+}
+section.comparison tbody td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-core-gray-01);
+  color: var(--color-core-black);
+  text-align: center;
+}
+section.comparison tbody td:first-child { text-align: left; }
+
+/* Harvey Ball glyphs — shape primitives via CSS, not unicode (per chunk Pattern Reference note) */
+section.comparison .ball {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+section.comparison .ball.full     { background: var(--color-core-black); }
+section.comparison .ball.partial  { background: var(--color-core-black); opacity: 0.45; }
+section.comparison .ball.none     { background: transparent; border: 2px solid var(--color-core-black); }
+section.comparison td.myvault .ball.full     { background: var(--color-core-teal); }
+section.comparison td.myvault .ball.partial  { background: var(--color-core-teal); opacity: 0.45; }
+section.comparison td.myvault .ball.none     { background: transparent; border: 2px solid var(--color-core-teal); }
+
+section.comparison .legend {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  color: var(--color-core-gray-02);
+}
+section.comparison .legend .ball { width: 16px; height: 16px; }
+
+/* === LAYOUT: THESIS (small headline + 3+2 staircase pastel cards) === */
+section.thesis .body { gap: 24px; }
+section.thesis h1 { font-size: 40px; line-height: 1.25; color: var(--color-core-black); }   /* small headline per Slide 09 Thesis-pattern note */
+section.thesis .lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 16px;
+}
+section.thesis .row {
+  display: flex;
+  gap: 40px;
+}
+section.thesis .row.center { justify-content: center; }
+section.thesis .lesson {
+  width: 587px;
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+section.thesis .lesson:nth-child(5n+1) { background: var(--gradient-warm); }
+section.thesis .lesson:nth-child(5n+2) { background: var(--gradient-cool); }
+section.thesis .lesson:nth-child(5n+3) { background: var(--gradient-mist); }
+section.thesis .lesson:nth-child(5n+4) { background: var(--gradient-greydient); }
+section.thesis .lesson:nth-child(5n+5) { background: var(--gradient-primary); }
+section.thesis .lesson .num {
+  font-size: 18px;
+  color: var(--color-core-gray-02);
+}
+section.thesis .lesson .text {
+  font-family: 'PT Serif', serif;
+  font-size: 28px;
+  line-height: 1.30;
+  color: var(--color-core-black);
+}
+
+/* === LAYOUT: ACTION (3 use-of-funds blocks with signal-go top hairline) === */
+section.action .body { gap: 24px; }
+section.action h1 { font-size: 56px; line-height: 1.15; }
+section.action .actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 16px;
+}
+section.action .action-block {
+  border-top: 2px solid var(--color-signal-go);
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+section.action .action-block .heading {
+  font-family: 'PT Serif', serif;
+  font-size: 40px;
+  line-height: 1.25;
+  color: var(--color-core-black);
+}
+section.action .action-block .body-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-black);
+}
+section.action .closing-line {
+  margin-top: auto;
+  font-family: 'PT Serif', serif;
+  font-size: 32px;
+  line-height: 1.30;
+  color: var(--color-core-black);
+  text-align: center;
+}
+
+/* === LAYOUT: CLOSING (gradient/cool, hero text + speaker + signal-go period) === */
+section.closing .body {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 64px;
+}
+section.closing h1 {
+  font-family: 'PT Serif', serif;
+  font-size: 120px;
+  line-height: 1.15;
+  color: var(--color-core-black);
+}
+section.closing .speaker {
+  font-size: 28px;
+  line-height: 1.40;
+  color: var(--color-core-black);
+}
+section.closing .period {
+  width: 12px;
+  height: 12px;
+  background: var(--color-signal-go);
+  border-radius: 50%;
+  margin: 0 auto;
+}

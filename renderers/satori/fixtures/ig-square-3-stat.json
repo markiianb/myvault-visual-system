@@ -1,0 +1,16 @@
+{
+  "id": "ig-square-3-stat",
+  "frame": "instagram-square",
+  "_note": "Cycle 1 validation fixture. Mirrors _research/html-css-test/social/instagram-square.html so the rendered PNG can be diffed against that reference.",
+  "surface": "teal",
+  "footerLine": "myvaultai.com — Private by design",
+  "content": {
+    "pattern": "stat-panel",
+    "headline": "Adoption is universal. Trust is not.",
+    "stats": [
+      { "value": "99%", "label": "used AI last week.",      "source": "Gallup, 2024." },
+      { "value": "5%",  "label": "trust AI “a lot.”",        "source": "YouGov, 2025." },
+      { "value": "82%", "label": "left a brand over data.", "source": "Capgemini, 2025." }
+    ]
+  }
+}

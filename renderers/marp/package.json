@@ -1,0 +1,12 @@
+{
+  "name": "myvault-marp-renderer",
+  "private": true,
+  "description": "MyVault Marp renderer — token bridge + theme + deck-spec compiler. Implements chunks/presentation.md.",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "node compile-deck.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

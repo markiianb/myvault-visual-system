@@ -1,0 +1,1357 @@
+{
+  "$schema": "https://design-tokens.org/schemas/v1.0.json",
+  "$description": "MyVault brand design tokens, extracted from Figma 'MyVault — Brand Design System'. See tokens/README.md for context. Format: W3C Design Tokens Community Group v1.0.",
+  "$extensions": {
+    "com.myvault.figma": {
+      "collectionId": "VariableCollectionId:1:4",
+      "collectionKey": "4595c30dd293788225cf5d2cc2949d52e0b0e2a8",
+      "collectionName": "MyVault Tokens",
+      "extractedAt": "2026-04-29T12:26:40.310Z",
+      "extractedBy": "figma_execute via figma-console MCP",
+      "fileKey": "Pm31BDHj34WjJ7NjBK4Ady",
+      "fileName": "MyVault — Brand Design System",
+      "modes": [
+        {
+          "id": "1:0",
+          "name": "Mode 1",
+          "isDefault": true
+        }
+      ]
+    }
+  },
+  "color": {
+    "core": {
+      "teal": {
+        "$value": "#094545",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:28",
+            "key": "cf910111683fd81e50c6dda0db5f836a5cb8ae1c",
+            "rgba": {
+              "a": 1,
+              "b": 0.2706,
+              "g": 0.2706,
+              "r": 0.0353
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "white": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:29",
+            "key": "68ccfe048b24c8e23c12d87e917d48f6824a77d8",
+            "rgba": {
+              "a": 1,
+              "b": 1,
+              "g": 1,
+              "r": 1
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "off-white": {
+        "$value": "#FBFAF5",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:30",
+            "key": "3e671ae3503eea6c5f1811a7b62e991705ebb293",
+            "rgba": {
+              "a": 1,
+              "b": 0.9608,
+              "g": 0.9804,
+              "r": 0.9843
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "gray-01": {
+        "$value": "#DDDCD6",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:31",
+            "key": "ba5b5a1dd8abe9647f24878d5ef6519b8ef8ed5b",
+            "rgba": {
+              "a": 1,
+              "b": 0.8392,
+              "g": 0.8627,
+              "r": 0.8667
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "gray-02": {
+        "$value": "#696969",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:32",
+            "key": "815e546727814846b498c0c64f2477704666521c",
+            "rgba": {
+              "a": 1,
+              "b": 0.4118,
+              "g": 0.4118,
+              "r": 0.4118
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "black": {
+        "$value": "#000000",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:33",
+            "key": "e1b6815c1264c4cf93c2daf79f8cfa220f7b56af",
+            "rgba": {
+              "a": 1,
+              "b": 0,
+              "g": 0,
+              "r": 0
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      }
+    },
+    "secondary": {
+      "premium-purple": {
+        "$value": "#781C42",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:34",
+            "key": "44954bf2da9da6be84fe874515d5aacf780f7edc",
+            "rgba": {
+              "a": 1,
+              "b": 0.2588,
+              "g": 0.1098,
+              "r": 0.4706
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "dark-earth": {
+        "$value": "#502C0E",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:35",
+            "key": "65e12170821d09ae68c2c1f8ecf40775559b3ce4",
+            "rgba": {
+              "a": 1,
+              "b": 0.0549,
+              "g": 0.1725,
+              "r": 0.3137
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "rich-blue": {
+        "$value": "#1C4778",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:36",
+            "key": "2e574acac88ea26cc81c8bea20c2a8e44bd32b7c",
+            "rgba": {
+              "a": 1,
+              "b": 0.4706,
+              "g": 0.2784,
+              "r": 0.1098
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      }
+    },
+    "signal": {
+      "go": {
+        "$value": "#69DE49",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:37",
+            "key": "cb240884642e5b4403aa1056dd61ba0ee1084132",
+            "rgba": {
+              "a": 1,
+              "b": 0.2863,
+              "g": 0.8706,
+              "r": 0.4118
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "stop": {
+        "$value": "#E75247",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:38",
+            "key": "f4701806e3b8b7d428b310643c06ec799860e505",
+            "rgba": {
+              "a": 1,
+              "b": 0.2784,
+              "g": 0.3216,
+              "r": 0.9059
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "sky": {
+        "$value": "#4D80E6",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:39",
+            "key": "6e643a500743d5440114878c8a922d6264a9aa15",
+            "rgba": {
+              "a": 1,
+              "b": 0.902,
+              "g": 0.502,
+              "r": 0.302
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "earth": {
+        "$value": "#928178",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "id": "VariableID:1:40",
+            "key": "197b05af3e59ae616ff0efd69275ffe219d33381",
+            "rgba": {
+              "a": 1,
+              "b": 0.4706,
+              "g": 0.5059,
+              "r": 0.5725
+            },
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      }
+    },
+    "icon": {
+      "default": {
+        "$value": "{color.core.black}",
+        "$type": "color",
+        "$extensions": {
+          "com.myvault.figma": {
+            "aliasOf": "VariableID:1:33",
+            "aliasOfName": "color/core/black",
+            "id": "VariableID:10:120",
+            "key": "c446ff9311c44f99b01d42a4f484058d5cc7d5cc",
+            "resolvedFinal": "#000000",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "space": {
+    "0": {
+      "$value": "0px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:5",
+          "key": "5887dc91752dceb6ba606cb8cba6c7dd60d3d5de",
+          "raw": 0,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "1": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:6",
+          "key": "bd76fde21cfc7a239d1c1a49f87d12c9eaa3cb2c",
+          "raw": 4,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "2": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:7",
+          "key": "b338de68c8c7e4cc952a6b64fc931b800127f572",
+          "raw": 8,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "3": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:8",
+          "key": "5532fcb56534d10cc2ddb04f3630b7dbad778c20",
+          "raw": 12,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "4": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:9",
+          "key": "7e91ef95629bc1ffa7bdcc66f83cdaaf14a53f0e",
+          "raw": 16,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "5": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:10",
+          "key": "63343baf61cc1925d7d40f037e788620a4fe3dea",
+          "raw": 20,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "6": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:11",
+          "key": "8189290fc0cb6cd12875074af75be28899255ba7",
+          "raw": 24,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "8": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:12",
+          "key": "5508939efdaa9796d566c1502119533212e608ba",
+          "raw": 32,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "10": {
+      "$value": "40px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:13",
+          "key": "c8cb7da352535d91656a74fcbd52930467d29cb4",
+          "raw": 40,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "12": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:14",
+          "key": "0db75a1a8ac51a1883fdd99ebda62abe91f6cfe5",
+          "raw": 48,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "16": {
+      "$value": "64px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:15",
+          "key": "92c3398201088340b2ac40b05130acb72d146674",
+          "raw": 64,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "20": {
+      "$value": "80px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:16",
+          "key": "349d58ba9a4c9ca357e0795fd8a0731ade186f17",
+          "raw": 80,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "24": {
+      "$value": "96px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:17",
+          "key": "f9ad88a316d5b601233617166683c59959533bb8",
+          "raw": 96,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    },
+    "32": {
+      "$value": "128px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:18",
+          "key": "fc4eae55ca13c5b3837e302edcbfac0dc98ff94b",
+          "raw": 128,
+          "scopes": [
+            "WIDTH_HEIGHT",
+            "GAP"
+          ]
+        }
+      }
+    }
+  },
+  "radius": {
+    "none": {
+      "$value": "0px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:19",
+          "key": "94e276e02f142ac6d54c182f0295331b4995c6bc",
+          "raw": 0,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "xs": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:20",
+          "key": "547e2ada31da8469413ac045862ac099d395462c",
+          "raw": 2,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "sm": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:21",
+          "key": "fe49517269b27bfe9ddcaf0ed738ad4d88c2abdd",
+          "raw": 4,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "md": {
+      "$value": "6px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:22",
+          "key": "c7838f182f9f1f1f48ff4f7ac970559adb9eb93a",
+          "raw": 6,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "lg": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:23",
+          "key": "7c2920102c8ebf1e520b4407503407c28fb41ed8",
+          "raw": 8,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "xl": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:24",
+          "key": "9a780321cf498671b1140f251c6aed5961b09b43",
+          "raw": 12,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "2xl": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:25",
+          "key": "334e8c117bea64a3e4e3c4d36f669e1b2d853ca5",
+          "raw": 16,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "3xl": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:26",
+          "key": "34ac7ef0e23de6dfa57a11e621cad90be50f4a84",
+          "raw": 24,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    },
+    "full": {
+      "$value": "999px",
+      "$type": "dimension",
+      "$extensions": {
+        "com.myvault.figma": {
+          "id": "VariableID:1:27",
+          "key": "6c5ce9a67ba2de57d6ba24c170ab68e77b2264f8",
+          "raw": 999,
+          "scopes": [
+            "CORNER_RADIUS"
+          ]
+        }
+      }
+    }
+  },
+  "typography": {
+    "display": {
+      "xxl": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "160px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.05
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 104.99999523162842
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "2535d8b2960c163c768d6a48762e2bcd37a69586",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "xl": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "120px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.1
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 110.00000238418579
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "a324eed3f80e7c20183dc14f06627dccefed197f",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "l": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "96px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.1
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 110.00000238418579
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "cf7b0178f686b0e39566e5afe8ab08925f7e3a42",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "m": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "72px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.15
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 114.99999761581421
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "5f14fa85ee921f343a0377623736d5f9116c5a5b",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "s": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "56px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.15
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 114.99999761581421
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "6166ee2524610e535cfd58e22795e738d48b12c0",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      }
+    },
+    "heading": {
+      "l": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "40px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.25
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 125
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "97f5bef7826d975e3df89aca28f882a5cf44f380",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "m": {
+        "$value": {
+          "fontFamily": "PT Serif",
+          "fontSize": "28px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.3
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 129.99999523162842
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "6ed9ccefca0cefb76dc6559901d7182c673c3a7c",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      }
+    },
+    "body": {
+      "xl": {
+        "$value": {
+          "fontFamily": "Lato",
+          "fontSize": "20px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.4
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 139.9999976158142
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "692fabeed34de81bba2ef61938d36df4a8704aff",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "l": {
+        "$value": {
+          "fontFamily": "Lato",
+          "fontSize": "18px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.55
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 154.99999523162842
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "bf399b1d2d365e96d254fdbb1cb1ffc41e48bc0b",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "default": {
+        "$value": {
+          "fontFamily": "Lato",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.5
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 150
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "b03f8c4fdf86606ba0f2a927eb8ae59627bbecab",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      },
+      "s": {
+        "$value": {
+          "fontFamily": "Lato",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "letterSpacing": "0%",
+          "lineHeight": 1.5
+        },
+        "$type": "typography",
+        "$extensions": {
+          "com.myvault.figma": {
+            "fontStyleLiteral": "Regular",
+            "letterSpacingSource": {
+              "unit": "PERCENT",
+              "value": 0
+            },
+            "lineHeightSource": {
+              "unit": "PERCENT",
+              "value": 150
+            },
+            "paragraphSpacing": 0,
+            "styleKey": "66225fe388fd22eeb3d168d0ab3dbdc70ff25a7c",
+            "textCase": "ORIGINAL",
+            "textDecoration": "NONE"
+          }
+        }
+      }
+    },
+    "caption": {
+      "$value": {
+        "fontFamily": "Lato",
+        "fontSize": "12px",
+        "fontWeight": 400,
+        "letterSpacing": "0%",
+        "lineHeight": 1.5
+      },
+      "$type": "typography",
+      "$extensions": {
+        "com.myvault.figma": {
+          "fontStyleLiteral": "Regular",
+          "letterSpacingSource": {
+            "unit": "PERCENT",
+            "value": 0
+          },
+          "lineHeightSource": {
+            "unit": "PERCENT",
+            "value": 150
+          },
+          "paragraphSpacing": 0,
+          "styleKey": "4bc352b166a745fcef80966ad81e1d4ef0061638",
+          "textCase": "ORIGINAL",
+          "textDecoration": "NONE"
+        }
+      }
+    }
+  },
+  "gradient": {
+    "primary": {
+      "$value": [
+        {
+          "color": "#EFEBF5",
+          "position": 0
+        },
+        {
+          "color": "#E0E8E6",
+          "position": 0.65
+        }
+      ],
+      "$type": "gradient",
+      "$extensions": {
+        "com.myvault.figma": {
+          "rawStops": [
+            {
+              "rgba": {
+                "r": 0.9373,
+                "g": 0.9216,
+                "b": 0.9608,
+                "a": 1
+              },
+              "position": 0
+            },
+            {
+              "rgba": {
+                "r": 0.8784,
+                "g": 0.9098,
+                "b": 0.902,
+                "a": 1
+              },
+              "position": 0.65
+            }
+          ],
+          "styleKey": "e7756d9f670a9bc3325f9900128757866267dd96",
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0.942112
+            ]
+          ],
+          "type": "GRADIENT_LINEAR"
+        }
+      }
+    },
+    "cool": {
+      "$value": [
+        {
+          "color": "#FAFAFA",
+          "position": 0
+        },
+        {
+          "color": "#EFF0F4",
+          "position": 0.65
+        },
+        {
+          "color": "#D0D3DF",
+          "position": 1
+        }
+      ],
+      "$type": "gradient",
+      "$extensions": {
+        "com.myvault.figma": {
+          "rawStops": [
+            {
+              "rgba": {
+                "r": 0.9804,
+                "g": 0.9804,
+                "b": 0.9804,
+                "a": 1
+              },
+              "position": 0
+            },
+            {
+              "rgba": {
+                "r": 0.9373,
+                "g": 0.9412,
+                "b": 0.9569,
+                "a": 1
+              },
+              "position": 0.65
+            },
+            {
+              "rgba": {
+                "r": 0.8157,
+                "g": 0.8275,
+                "b": 0.8745,
+                "a": 1
+              },
+              "position": 1
+            }
+          ],
+          "styleKey": "ad50b8288fd69ddb3160812fd85dac4d67615316",
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0.942112
+            ]
+          ],
+          "type": "GRADIENT_LINEAR"
+        }
+      }
+    },
+    "warm": {
+      "$value": [
+        {
+          "color": "#FBF5F5",
+          "position": 0
+        },
+        {
+          "color": "#F2F2F0",
+          "position": 0.52
+        },
+        {
+          "color": "#E6DDDD",
+          "position": 0.78
+        },
+        {
+          "color": "#E7DCD4",
+          "position": 1
+        }
+      ],
+      "$type": "gradient",
+      "$extensions": {
+        "com.myvault.figma": {
+          "rawStops": [
+            {
+              "rgba": {
+                "r": 0.9843,
+                "g": 0.9608,
+                "b": 0.9608,
+                "a": 1
+              },
+              "position": 0
+            },
+            {
+              "rgba": {
+                "r": 0.949,
+                "g": 0.949,
+                "b": 0.9412,
+                "a": 1
+              },
+              "position": 0.52
+            },
+            {
+              "rgba": {
+                "r": 0.902,
+                "g": 0.8667,
+                "b": 0.8667,
+                "a": 1
+              },
+              "position": 0.78
+            },
+            {
+              "rgba": {
+                "r": 0.9059,
+                "g": 0.8627,
+                "b": 0.8314,
+                "a": 1
+              },
+              "position": 1
+            }
+          ],
+          "styleKey": "91401b4040a4075bbcbee145a91b729bbcba12e7",
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0.942112
+            ]
+          ],
+          "type": "GRADIENT_LINEAR"
+        }
+      }
+    },
+    "mist": {
+      "$value": [
+        {
+          "color": "#FBF5F5",
+          "position": 0
+        },
+        {
+          "color": "#F2F0F0",
+          "position": 0.5
+        },
+        {
+          "color": "#E6DDDD",
+          "position": 0.75
+        },
+        {
+          "color": "#DAD2DF",
+          "position": 1
+        }
+      ],
+      "$type": "gradient",
+      "$extensions": {
+        "com.myvault.figma": {
+          "rawStops": [
+            {
+              "rgba": {
+                "r": 0.9843,
+                "g": 0.9608,
+                "b": 0.9608,
+                "a": 1
+              },
+              "position": 0
+            },
+            {
+              "rgba": {
+                "r": 0.949,
+                "g": 0.9412,
+                "b": 0.9412,
+                "a": 1
+              },
+              "position": 0.5
+            },
+            {
+              "rgba": {
+                "r": 0.902,
+                "g": 0.8667,
+                "b": 0.8667,
+                "a": 1
+              },
+              "position": 0.75
+            },
+            {
+              "rgba": {
+                "r": 0.8549,
+                "g": 0.8235,
+                "b": 0.8745,
+                "a": 1
+              },
+              "position": 1
+            }
+          ],
+          "styleKey": "8bdbaa70504d8eff84d7865a950aaab63b090119",
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0.942112
+            ]
+          ],
+          "type": "GRADIENT_LINEAR"
+        }
+      }
+    },
+    "greydient": {
+      "$value": [
+        {
+          "color": "#FBF7F5",
+          "position": 0
+        },
+        {
+          "color": "#FAF6F5",
+          "position": 0.45
+        },
+        {
+          "color": "#E0D2CE",
+          "position": 0.75
+        },
+        {
+          "color": "#9FBCBC",
+          "position": 1
+        }
+      ],
+      "$type": "gradient",
+      "$extensions": {
+        "com.myvault.figma": {
+          "rawStops": [
+            {
+              "rgba": {
+                "r": 0.9843,
+                "g": 0.9686,
+                "b": 0.9608,
+                "a": 1
+              },
+              "position": 0
+            },
+            {
+              "rgba": {
+                "r": 0.9804,
+                "g": 0.9647,
+                "b": 0.9608,
+                "a": 1
+              },
+              "position": 0.45
+            },
+            {
+              "rgba": {
+                "r": 0.8784,
+                "g": 0.8235,
+                "b": 0.8078,
+                "a": 1
+              },
+              "position": 0.75
+            },
+            {
+              "rgba": {
+                "r": 0.6235,
+                "g": 0.7373,
+                "b": 0.7373,
+                "a": 1
+              },
+              "position": 1
+            }
+          ],
+          "styleKey": "7171b8ece2b4bb593f1b5093c1c05e167a12058f",
+          "transform": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0.942112
+            ]
+          ],
+          "type": "GRADIENT_LINEAR"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "setup-completion",
+  "type": "radial-light",
+  "card": {
+    "width": 960,
+    "padding": [40, 40, 40, 40],
+    "surface": "greydient",
+    "headerGap": 20,
+    "footerGap": 20
+  },
+  "header": {
+    "title": "Setup completion by guidance level",
+    "description": "Percentage of new users who finished the full onboarding checklist.",
+    "innerGap": 8
+  },
+  "footer": {
+    "show": true,
+    "source": "Source: MyVault onboarding cohort, Q1 2026"
+  },
+  "plot": {
+    "data": {
+      "values": [
+        {"label": "Without MyVault", "percentage": 47},
+        {"label": "With assistance",  "percentage": 52},
+        {"label": "Fully set up",     "percentage": 98}
+      ]
+    }
+  }
+}

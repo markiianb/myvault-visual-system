@@ -1,0 +1,202 @@
+{
+  "$description": "Run history for the logo asset bundle. Each entry records a single extraction run with timestamp, totals, and a per-asset added/removed/changed log against the previous run. The first run lists all 15 variants under 'added' and leaves 'removed'/'changed' empty. Future runs compute deltas against the prior assets-manifest.json. See README.md for the re-extraction procedure.",
+  "current": {
+    "runIndex": 1,
+    "timestamp": "2026-04-29T12:36:48.407Z",
+    "totalAssets": 15
+  },
+  "runs": [
+    {
+      "runIndex": 1,
+      "timestamp": "2026-04-29T12:36:48.407Z",
+      "fileKey": "Pm31BDHj34WjJ7NjBK4Ady",
+      "fileName": "MyVault \u2014 Brand Design System",
+      "componentSetId": "1:572",
+      "componentSetName": "Logo",
+      "totalAssets": 15,
+      "summary": {
+        "icon": 5,
+        "wordmark": 5,
+        "lockup": 5,
+        "byColor": {
+          "primary": 3,
+          "teal": 3,
+          "light": 3,
+          "white": 3,
+          "gray": 3
+        }
+      },
+      "added": [
+        {
+          "path": "logos.icon-primary",
+          "filename": "icon-primary.svg",
+          "type": "icon",
+          "color": "primary",
+          "dimensions": "219\u00d7220",
+          "tokenBound": "color.core.black",
+          "bytes": 3261,
+          "source": "componentSet",
+          "figmaId": "1:573"
+        },
+        {
+          "path": "logos.icon-teal",
+          "filename": "icon-teal.svg",
+          "type": "icon",
+          "color": "teal",
+          "dimensions": "219\u00d7220",
+          "tokenBound": "color.core.teal",
+          "bytes": 3274,
+          "source": "componentSet",
+          "figmaId": "1:581"
+        },
+        {
+          "path": "logos.icon-light",
+          "filename": "icon-light.svg",
+          "type": "icon",
+          "color": "light",
+          "dimensions": "219\u00d7220",
+          "tokenBound": "color.core.off-white",
+          "bytes": 3274,
+          "source": "componentSet",
+          "figmaId": "1:589"
+        },
+        {
+          "path": "logos.icon-white",
+          "filename": "icon-white.svg",
+          "type": "icon",
+          "color": "white",
+          "dimensions": "219\u00d7220",
+          "tokenBound": "color.core.white",
+          "bytes": 3262,
+          "source": "componentSet",
+          "figmaId": "1:597"
+        },
+        {
+          "path": "logos.icon-gray",
+          "filename": "icon-gray.svg",
+          "type": "icon",
+          "color": "gray",
+          "dimensions": "219\u00d7220",
+          "tokenBound": "color.core.gray-02",
+          "bytes": 3274,
+          "source": "componentSet",
+          "figmaId": "1:605"
+        },
+        {
+          "path": "logos.wordmark-primary",
+          "filename": "wordmark-primary.svg",
+          "type": "wordmark",
+          "color": "primary",
+          "dimensions": "563\u00d7167",
+          "tokenBound": "color.core.black",
+          "bytes": 4993,
+          "source": "componentSet",
+          "figmaId": "1:613"
+        },
+        {
+          "path": "logos.wordmark-teal",
+          "filename": "wordmark-teal.svg",
+          "type": "wordmark",
+          "color": "teal",
+          "dimensions": "563\u00d7167",
+          "tokenBound": "color.core.teal",
+          "bytes": 5007,
+          "source": "componentSet",
+          "figmaId": "1:622"
+        },
+        {
+          "path": "logos.wordmark-light",
+          "filename": "wordmark-light.svg",
+          "type": "wordmark",
+          "color": "light",
+          "dimensions": "563\u00d7167",
+          "tokenBound": "color.core.off-white",
+          "bytes": 5007,
+          "source": "componentSet",
+          "figmaId": "1:631"
+        },
+        {
+          "path": "logos.wordmark-white",
+          "filename": "wordmark-white.svg",
+          "type": "wordmark",
+          "color": "white",
+          "dimensions": "563\u00d7167",
+          "tokenBound": "color.core.white",
+          "bytes": 4993,
+          "source": "componentSet",
+          "figmaId": "1:640"
+        },
+        {
+          "path": "logos.wordmark-gray",
+          "filename": "wordmark-gray.svg",
+          "type": "wordmark",
+          "color": "gray",
+          "dimensions": "563\u00d7167",
+          "tokenBound": "color.core.gray-02",
+          "bytes": 5009,
+          "source": "componentSet",
+          "figmaId": "1:649"
+        },
+        {
+          "path": "logos.lockup-primary",
+          "filename": "lockup-primary.svg",
+          "type": "lockup",
+          "color": "primary",
+          "dimensions": "814\u00d7220",
+          "tokenBound": "color.core.black",
+          "bytes": 8113,
+          "source": "componentSet",
+          "figmaId": "1:658"
+        },
+        {
+          "path": "logos.lockup-teal",
+          "filename": "lockup-teal.svg",
+          "type": "lockup",
+          "color": "teal",
+          "dimensions": "814\u00d7220",
+          "tokenBound": "color.core.teal",
+          "bytes": 8140,
+          "source": "componentSet",
+          "figmaId": "1:676"
+        },
+        {
+          "path": "logos.lockup-light",
+          "filename": "lockup-light.svg",
+          "type": "lockup",
+          "color": "light",
+          "dimensions": "814\u00d7220",
+          "tokenBound": "color.core.off-white",
+          "bytes": 8141,
+          "source": "componentSet",
+          "figmaId": "1:694"
+        },
+        {
+          "path": "logos.lockup-white",
+          "filename": "lockup-white.svg",
+          "type": "lockup",
+          "color": "white",
+          "dimensions": "814\u00d7220",
+          "tokenBound": "color.core.white",
+          "bytes": 8112,
+          "source": "componentSet",
+          "figmaId": "1:712"
+        },
+        {
+          "path": "logos.lockup-gray",
+          "filename": "lockup-gray.svg",
+          "type": "lockup",
+          "color": "gray",
+          "dimensions": "814\u00d7220",
+          "tokenBound": "color.core.gray-02",
+          "bytes": 8138,
+          "source": "componentSet",
+          "figmaId": "1:730"
+        }
+      ],
+      "removed": [],
+      "changed": [],
+      "diff": null,
+      "notes": "First extraction. No prior manifest to diff \u2014 every variant listed under 'added'. Supersedes the three master files at 10-Brand/Logo/{SVG,PNG}/ (lockup, logomark, logotype) \u2014 those are pre-system and can be archived. Existing 'logomark/logotype' filename vocabulary deprecated in favor of Figma-canonical 'icon/wordmark/lockup'."
+    }
+  ]
+}

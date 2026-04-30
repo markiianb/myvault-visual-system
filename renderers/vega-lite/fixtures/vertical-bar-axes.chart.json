@@ -1,0 +1,31 @@
+{
+  "id": "vertical-bar-axes",
+  "type": "vertical-bar-axes",
+  "description_for_agent": "MyVault Vertical Bar Chart with Axes — fixture (Figma reference 70:8705). Card 960 wide, flat off-white surface, 7 ticks (-3 -2 0 2 4 6 8), negative bars in gray-02 + 1px gray-01 stroke, dashed gridlines except solid zero line.",
+  "card": {
+    "width": 960,
+    "padding": [40, 48, 40, 48],
+    "surface": "off-white",
+    "headerGap": 28,
+    "footerGap": 28
+  },
+  "header": {
+    "title": "Chart Title Goes Here",
+    "description": "A concise line describing what the chart shows and why it matters.",
+    "innerGap": 8
+  },
+  "footer": {
+    "show": true,
+    "source": "Source / caption — MyVault, 2026"
+  },
+  "plot": {
+    "data": {
+      "values": [
+        {"category": "Category 01", "value": -2.7},
+        {"category": "Category 02", "value": 6},
+        {"category": "Category 03", "value": 8}
+      ]
+    },
+    "scale": {"ticks": [-3, -2, 0, 2, 4, 6, 8]}
+  }
+}

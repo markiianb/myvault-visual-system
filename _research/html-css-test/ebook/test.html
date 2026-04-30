@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>How to use AI without giving up your data — HTML/CSS test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Page 1 — Cover (mirrors Typst cover() primitive)
+       ============================================================ -->
+  <section class="page cover surface-teal">
+    <img class="lockup"
+         src="../../../assets/logo/lockup-light.svg"
+         alt="MyVault">
+    <div class="closing">
+      <h1 class="title">How to use AI without giving up your data</h1>
+      <p class="subtitle">A practical guide to the settings, rights, and decisions that keep your data yours.</p>
+      <p class="author">By Markos Symeonides</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Page 4 — Body content + hero-stats panel
+       ============================================================ -->
+  <section class="page body-page surface-white">
+    <div class="running-header">How to use AI without giving up your data</div>
+
+    <h2 class="subhead">You're already an AI user</h2>
+
+    <p>According to a Gallup study in late 2024, 99% of Americans used an AI-enabled product in the past week. Nearly two-thirds of them — 64% — had no idea they were doing it.</p>
+
+    <p>AI already runs inside apps you use every day. Your weather forecast, your GPS navigation, your email inbox, search results you scroll through. How your phone sorts photos by faces, places, and dates. Fraud detection that flags suspicious charges on your credit card.</p>
+
+    <p>You didn't opt into any of it. It showed up. And now it's part of how your phone, email, and apps work. So the question isn't whether you're an AI user — you are. The question is whether you're using it on your terms.</p>
+
+    <div class="hero-stats">
+      <div class="label">Adoption is universal. Trust is not.</div>
+      <div class="grid">
+        <div class="stat">
+          <div class="value">99%</div>
+          <div class="stat-label">of Americans used an AI product last week.</div>
+          <div class="source">Gallup, 2024.</div>
+        </div>
+        <div class="stat">
+          <div class="value">5%</div>
+          <div class="stat-label">say they trust AI &ldquo;a lot.&rdquo;</div>
+          <div class="source">YouGov, 2025.</div>
+        </div>
+        <div class="stat">
+          <div class="value">82%</div>
+          <div class="stat-label">abandoned a brand over data concerns.</div>
+          <div class="source">Capgemini, 2025.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="subhead">People aren't only skeptical, they're leaving</h2>
+
+    <p>57% of U.S. adults interact with AI several times a week, according to Pew Research Center. But only 5% trust AI &ldquo;a lot.&rdquo; A KPMG / University of Melbourne study of 48,000 people across 47 countries found only 46% willing to trust AI systems. People aren't just expressing opinions. They're acting on them.</p>
+
+    <div class="page-footer">
+      <img class="icon" src="../../../assets/logo/icon-primary.svg" alt="">
+      <span class="pgnum">4</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Page 7 — Model-grid 3+4 cards + data-grid table
+       ============================================================ -->
+  <section class="page body-page surface-white">
+    <div class="running-header">How to use AI without giving up your data</div>
+
+    <div class="model-grid">
+      <div class="grid">
+        <div class="card fill-off">
+          <div class="card-label">Model 3</div>
+          <h3>Zero-trust architecture</h3>
+          <div class="card-body">Encrypted with keys only you hold. The service stores or processes data without ever being able to read it. Used by Proton Mail, Signal, and Proton's Scribe and Lumo AI. Even if the company is hacked or subpoenaed, your data stays encrypted.</div>
+        </div>
+        <div class="card fill-white">
+          <div class="card-label">Model 4</div>
+          <h3>Self-hosted models</h3>
+          <div class="card-body">Open-source models — Qwen, Llama, DeepSeek — run on your own infrastructure. Nothing sent to the model creator. No training pipeline. No reviewer. The same model in the cloud has the privacy of any cloud service; on your hardware, none of those risks apply.</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Once your data is incorporated into model training, it becomes permanent. Unlike deleting a social media post, there is no undo button. Your conversation patterns, writing style, and personal details become part of the model's weights, and there's no way to remove them. This applies specifically to cloud-hosted AI services. If you run an open-source model on your own infrastructure, there is no training pipeline — the model runs as-is, and your data stays with you.</p>
+
+    <div class="data-grid">
+      <h3>How long AI companies keep your data</h3>
+      <div class="intro">The retention windows are not equivalent across services.</div>
+      <div class="rule-top"></div>
+      <div class="row head">
+        <div>Service</div><div>Retention</div><div>Notes</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>ChatGPT (with opt-out)</div><div>30 days</div><div class="notes">Conversations retained for safety review.</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>ChatGPT (no opt-out)</div><div>Indefinite</div><div class="notes">May train future models; humans may review.</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>Google Gemini</div><div>Up to 18 months</div><div class="notes">Some retained up to 3 years for human review.</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>Apple Intelligence (PCC)</div><div>Deleted after processing</div><div class="notes">Encrypted end-to-end; physically can't persist.</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>Apple Intelligence (on-device)</div><div>Stays on device</div><div class="notes">Never leaves your hardware.</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>Self-hosted (Qwen, Llama)</div><div>Stays with you</div><div class="notes">No training pipeline; nothing to retain.</div>
+      </div>
+      <div class="rule-row"></div>
+      <div class="row body">
+        <div>Proton (Scribe, Lumo)</div><div>Encrypted; not readable</div><div class="notes">Zero-trust — Proton itself can't access.</div>
+      </div>
+      <div class="rule-row"></div>
+    </div>
+
+    <div class="page-footer">
+      <img class="icon" src="../../../assets/logo/icon-primary.svg" alt="">
+      <span class="pgnum">7</span>
+    </div>
+  </section>
+
+</body>
+</html>

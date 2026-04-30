@@ -1,0 +1,93 @@
+{
+  "$description": "Run history for brand.tokens.json. Each entry records a single extraction run with timestamps, totals, and a per-element log of what was added/removed/changed against the previous run. The first run records every element under 'added' and leaves 'removed'/'changed' empty. Future runs compute deltas against the prior canonical brand.tokens.json. See tokens/README.md for the re-extraction procedure.",
+  "current": {
+    "runIndex": 1,
+    "timestamp": "2026-04-29T12:26:40.310Z",
+    "totalAtoms": 54
+  },
+  "runs": [
+    {
+      "runIndex": 1,
+      "timestamp": "2026-04-29T12:26:40.310Z",
+      "fileKey": "Pm31BDHj34WjJ7NjBK4Ady",
+      "fileName": "MyVault — Brand Design System",
+      "collectionName": "MyVault Tokens",
+      "modes": [
+        {
+          "id": "1:0",
+          "name": "Mode 1",
+          "isDefault": true
+        }
+      ],
+      "totalAtoms": 54,
+      "summary": {
+        "color": 14,
+        "space": 14,
+        "radius": 9,
+        "typography": 12,
+        "gradient": 5,
+        "alias": 1
+      },
+      "added": [
+        { "path": "space.0", "type": "dimension", "value": "0px", "source": "variable", "figmaId": "VariableID:1:5" },
+        { "path": "space.1", "type": "dimension", "value": "4px", "source": "variable", "figmaId": "VariableID:1:6" },
+        { "path": "space.2", "type": "dimension", "value": "8px", "source": "variable", "figmaId": "VariableID:1:7" },
+        { "path": "space.3", "type": "dimension", "value": "12px", "source": "variable", "figmaId": "VariableID:1:8" },
+        { "path": "space.4", "type": "dimension", "value": "16px", "source": "variable", "figmaId": "VariableID:1:9" },
+        { "path": "space.5", "type": "dimension", "value": "20px", "source": "variable", "figmaId": "VariableID:1:10" },
+        { "path": "space.6", "type": "dimension", "value": "24px", "source": "variable", "figmaId": "VariableID:1:11" },
+        { "path": "space.8", "type": "dimension", "value": "32px", "source": "variable", "figmaId": "VariableID:1:12" },
+        { "path": "space.10", "type": "dimension", "value": "40px", "source": "variable", "figmaId": "VariableID:1:13" },
+        { "path": "space.12", "type": "dimension", "value": "48px", "source": "variable", "figmaId": "VariableID:1:14" },
+        { "path": "space.16", "type": "dimension", "value": "64px", "source": "variable", "figmaId": "VariableID:1:15" },
+        { "path": "space.20", "type": "dimension", "value": "80px", "source": "variable", "figmaId": "VariableID:1:16" },
+        { "path": "space.24", "type": "dimension", "value": "96px", "source": "variable", "figmaId": "VariableID:1:17" },
+        { "path": "space.32", "type": "dimension", "value": "128px", "source": "variable", "figmaId": "VariableID:1:18" },
+        { "path": "radius.none", "type": "dimension", "value": "0px", "source": "variable", "figmaId": "VariableID:1:19" },
+        { "path": "radius.xs", "type": "dimension", "value": "2px", "source": "variable", "figmaId": "VariableID:1:20" },
+        { "path": "radius.sm", "type": "dimension", "value": "4px", "source": "variable", "figmaId": "VariableID:1:21" },
+        { "path": "radius.md", "type": "dimension", "value": "6px", "source": "variable", "figmaId": "VariableID:1:22" },
+        { "path": "radius.lg", "type": "dimension", "value": "8px", "source": "variable", "figmaId": "VariableID:1:23" },
+        { "path": "radius.xl", "type": "dimension", "value": "12px", "source": "variable", "figmaId": "VariableID:1:24" },
+        { "path": "radius.2xl", "type": "dimension", "value": "16px", "source": "variable", "figmaId": "VariableID:1:25" },
+        { "path": "radius.3xl", "type": "dimension", "value": "24px", "source": "variable", "figmaId": "VariableID:1:26" },
+        { "path": "radius.full", "type": "dimension", "value": "999px", "source": "variable", "figmaId": "VariableID:1:27", "notes": "Sentinel for fully rounded corners; renderers consume as 9999px+ in CSS contexts." },
+        { "path": "color.core.teal", "type": "color", "value": "#094545", "source": "variable", "figmaId": "VariableID:1:28", "notes": "Vault Teal — primary brand color. Reserved for hero/divider use; never for body or title text per presentation canon." },
+        { "path": "color.core.white", "type": "color", "value": "#FFFFFF", "source": "variable", "figmaId": "VariableID:1:29" },
+        { "path": "color.core.off-white", "type": "color", "value": "#FBFAF5", "source": "variable", "figmaId": "VariableID:1:30", "notes": "Light Sand — primary background color." },
+        { "path": "color.core.gray-01", "type": "color", "value": "#DDDCD6", "source": "variable", "figmaId": "VariableID:1:31" },
+        { "path": "color.core.gray-02", "type": "color", "value": "#696969", "source": "variable", "figmaId": "VariableID:1:32" },
+        { "path": "color.core.black", "type": "color", "value": "#000000", "source": "variable", "figmaId": "VariableID:1:33" },
+        { "path": "color.secondary.premium-purple", "type": "color", "value": "#781C42", "source": "variable", "figmaId": "VariableID:1:34" },
+        { "path": "color.secondary.dark-earth", "type": "color", "value": "#502C0E", "source": "variable", "figmaId": "VariableID:1:35" },
+        { "path": "color.secondary.rich-blue", "type": "color", "value": "#1C4778", "source": "variable", "figmaId": "VariableID:1:36" },
+        { "path": "color.signal.go", "type": "color", "value": "#69DE49", "source": "variable", "figmaId": "VariableID:1:37" },
+        { "path": "color.signal.stop", "type": "color", "value": "#E75247", "source": "variable", "figmaId": "VariableID:1:38" },
+        { "path": "color.signal.sky", "type": "color", "value": "#4D80E6", "source": "variable", "figmaId": "VariableID:1:39" },
+        { "path": "color.signal.earth", "type": "color", "value": "#928178", "source": "variable", "figmaId": "VariableID:1:40" },
+        { "path": "color.icon.default", "type": "color", "value": "{color.core.black}", "source": "variable", "figmaId": "VariableID:10:120", "notes": "Alias → color.core.black (resolves to #000000). Default icon color; change here to retheme all icons." },
+        { "path": "gradient.primary", "type": "gradient", "value": "2 stops: #EFEBF5 → #E0E8E6", "source": "paintStyle", "figmaKey": "e7756d9f670a9bc3325f9900128757866267dd96" },
+        { "path": "gradient.cool", "type": "gradient", "value": "3 stops: #FAFAFA → #EFF0F4 → #D0D3DF", "source": "paintStyle", "figmaKey": "ad50b8288fd69ddb3160812fd85dac4d67615316" },
+        { "path": "gradient.warm", "type": "gradient", "value": "4 stops: #FBF5F5 → #F2F2F0 → #E6DDDD → #E7DCD4", "source": "paintStyle", "figmaKey": "91401b4040a4075bbcbee145a91b729bbcba12e7" },
+        { "path": "gradient.mist", "type": "gradient", "value": "4 stops: #FBF5F5 → #F2F0F0 → #E6DDDD → #DAD2DF", "source": "paintStyle", "figmaKey": "8bdbaa70504d8eff84d7865a950aaab63b090119" },
+        { "path": "gradient.greydient", "type": "gradient", "value": "4 stops: #FBF7F5 → #FAF6F5 → #E0D2CE → #9FBCBC", "source": "paintStyle", "figmaKey": "7171b8ece2b4bb593f1b5093c1c05e167a12058f" },
+        { "path": "typography.display.xxl", "type": "typography", "value": "PT Serif 400/160px @ 1.05", "source": "textStyle", "figmaKey": "2535d8b2960c163c768d6a48762e2bcd37a69586" },
+        { "path": "typography.display.xl", "type": "typography", "value": "PT Serif 400/120px @ 1.1", "source": "textStyle", "figmaKey": "a324eed3f80e7c20183dc14f06627dccefed197f" },
+        { "path": "typography.display.l", "type": "typography", "value": "PT Serif 400/96px @ 1.1", "source": "textStyle", "figmaKey": "cf7b0178f686b0e39566e5afe8ab08925f7e3a42" },
+        { "path": "typography.display.m", "type": "typography", "value": "PT Serif 400/72px @ 1.15", "source": "textStyle", "figmaKey": "5f14fa85ee921f343a0377623736d5f9116c5a5b" },
+        { "path": "typography.display.s", "type": "typography", "value": "PT Serif 400/56px @ 1.15", "source": "textStyle", "figmaKey": "6166ee2524610e535cfd58e22795e738d48b12c0" },
+        { "path": "typography.heading.l", "type": "typography", "value": "PT Serif 400/40px @ 1.25", "source": "textStyle", "figmaKey": "97f5bef7826d975e3df89aca28f882a5cf44f380" },
+        { "path": "typography.heading.m", "type": "typography", "value": "PT Serif 400/28px @ 1.3", "source": "textStyle", "figmaKey": "6ed9ccefca0cefb76dc6559901d7182c673c3a7c" },
+        { "path": "typography.body.xl", "type": "typography", "value": "Lato 400/20px @ 1.4", "source": "textStyle", "figmaKey": "692fabeed34de81bba2ef61938d36df4a8704aff" },
+        { "path": "typography.body.l", "type": "typography", "value": "Lato 400/18px @ 1.55", "source": "textStyle", "figmaKey": "bf399b1d2d365e96d254fdbb1cb1ffc41e48bc0b" },
+        { "path": "typography.body.default", "type": "typography", "value": "Lato 400/16px @ 1.5", "source": "textStyle", "figmaKey": "b03f8c4fdf86606ba0f2a927eb8ae59627bbecab", "notes": "Figma's flat 'body' text style → typography.body.default for consistency with the xl/l/s tier." },
+        { "path": "typography.body.s", "type": "typography", "value": "Lato 400/14px @ 1.5", "source": "textStyle", "figmaKey": "66225fe388fd22eeb3d168d0ab3dbdc70ff25a7c" },
+        { "path": "typography.caption", "type": "typography", "value": "Lato 400/12px @ 1.5", "source": "textStyle", "figmaKey": "4bc352b166a745fcef80966ad81e1d4ef0061638" }
+      ],
+      "removed": [],
+      "changed": [],
+      "diff": null,
+      "notes": "First extraction. No prior canonical to diff against — every element listed under 'added'. Effect styles (0) and grid styles (0) intentionally not extracted; chunk canon already pins 'no shadows by default'."
+    }
+  ]
+}

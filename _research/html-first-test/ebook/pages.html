@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MyVault AI Privacy Guide — pages 1, 4, 7 (HTML/CSS test)</title>
+<link rel="stylesheet" href="../_shared/tokens.css">
+<link rel="stylesheet" href="../_shared/fonts.css">
+<link rel="stylesheet" href="../_shared/primitives.css">
+<style>
+  /* CSS Paged Media — page geometry exactly matches R-EBOOK-001. */
+  @page {
+    size: 800pt 1200pt;
+    margin: 0;
+  }
+  /* Body: each .ebook-page / .cover paints its own surface and chrome. */
+  html, body {
+    width: 800pt;
+    background: var(--color-core-white);
+  }
+  /* When viewing in browser (not printing), stack pages with a gap so they read like a flipbook. */
+  @media screen {
+    body { background: #404040; padding: 24pt 0; }
+    .ebook-page, .cover { margin: 0 auto 24pt auto; box-shadow: 0 4pt 16pt rgba(0,0,0,.4); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     Page 1 — Cover. Vault Teal surface, lockup top-left, big PT Serif title bottom-left.
+     ============================================================ -->
+<section class="cover surface-teal">
+  <img class="lockup" src="../../../assets/logo/lockup-light.svg" alt="MyVault">
+  <div class="cover-title-block">
+    <h1 class="cover-title">How to use AI without giving up your data</h1>
+    <p class="cover-subtitle">A practical guide to the settings, rights, and decisions that keep your data yours.</p>
+    <p class="cover-author">By Markos Symeonides</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     Page 4 — Body content with hero-stats panel.
+     Mirrors privacy-pages-v4/page-4.png:
+     - subhead "You're already an AI user"
+     - 3 paragraphs of body
+     - hero-stats panel (3-up: 99% / 5% / 82%)
+     - subhead "People aren't only skeptical, they're leaving"
+     - 1 paragraph of body
+     - footer canonical
+     ============================================================ -->
+<section class="ebook-page surface-white">
+  <p class="running-header">How to use AI without giving up your data</p>
+
+  <div class="body-stream">
+    <h2 class="subhead">You're already an AI user</h2>
+
+    <p>According to a Gallup study in late 2024, 99% of Americans used an AI-enabled product in the past week. Nearly two-thirds of them — 64% — had no idea they were doing it.</p>
+
+    <p>AI already runs inside apps you use every day. Your weather forecast, your GPS navigation, your email inbox, search results you scroll through. How your phone sorts photos by faces, places, and dates. Fraud detection that flags suspicious charges on your credit card.</p>
+
+    <p>You didn't opt into any of it. It showed up. And now it's part of how your phone, email, and apps work. So the question isn't whether you're an AI user — you are. The question is whether you're using it on your terms.</p>
+
+    <div class="hero-stats" style="--n-stats: 3;">
+      <div class="hero-stats__label">Adoption is universal. Trust is not.</div>
+      <div class="hero-stats__grid">
+        <div class="hero-stats__cell">
+          <p class="hero-stats__value">99%</p>
+          <p class="hero-stats__cell-label">of Americans used an AI product last week.</p>
+          <p class="hero-stats__source">Gallup, 2024.</p>
+        </div>
+        <div class="hero-stats__cell">
+          <p class="hero-stats__value">5%</p>
+          <p class="hero-stats__cell-label">say they trust AI &ldquo;a lot.&rdquo;</p>
+          <p class="hero-stats__source">YouGov, 2025.</p>
+        </div>
+        <div class="hero-stats__cell">
+          <p class="hero-stats__value">82%</p>
+          <p class="hero-stats__cell-label">abandoned a brand over data concerns.</p>
+          <p class="hero-stats__source">Capgemini, 2025.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="subhead">People aren't only skeptical, they're leaving</h2>
+
+    <p>57% of U.S. adults interact with AI several times a week, according to Pew Research Center. But only 5% trust AI &ldquo;a lot.&rdquo; A KPMG / University of Melbourne study of 48,000 people across 47 countries found only 46% willing to trust AI systems. People aren't just expressing opinions. They're acting on them.</p>
+
+    <p>82% of consumers say companies losing control of personal data inside AI systems is a serious problem, with 43% calling it &ldquo;very serious.&rdquo; 81% believe the information collected by AI companies will be used in ways people never agreed to. And 82% have abandoned a brand in the past 12 months over concerns about how their personal data was being used.</p>
+  </div>
+
+  <div class="footer-canonical">
+    <img src="../../../assets/logo/icon-primary.svg" alt="">
+    <span class="page-num">04</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     Page 7 — model-grid 2x2 (just the bottom 2 cards on this page in v4)
+     + data-grid table. Mirrors privacy-pages-v4/page-7.png exactly.
+     ============================================================ -->
+<section class="ebook-page surface-white">
+  <p class="running-header">How to use AI without giving up your data</p>
+
+  <div class="body-stream">
+
+    <div class="model-grid">
+      <div class="model-grid__card">
+        <p class="model-grid__card-label">Model 3</p>
+        <h3 class="model-grid__card-title">Zero-trust architecture</h3>
+        <p class="model-grid__card-body">Encrypted with keys only you hold. The service stores or processes data without ever being able to read it. Used by Proton Mail, Signal, and Proton's Scribe and Lumo AI. Even if the company is hacked or subpoenaed, your data stays encrypted.</p>
+      </div>
+      <div class="model-grid__card">
+        <p class="model-grid__card-label">Model 4</p>
+        <h3 class="model-grid__card-title">Self-hosted models</h3>
+        <p class="model-grid__card-body">Open-source models — Qwen, Llama, DeepSeek — run on your own infrastructure. Nothing sent to the model creator. No training pipeline. No reviewer. The same model in the cloud has the privacy of any cloud service; on your hardware, none of those risks apply.</p>
+      </div>
+    </div>
+
+    <p>Once your data is incorporated into model training, it becomes permanent. Unlike deleting a social media post, there is no undo button. Your conversation patterns, writing style, and personal details become part of the model's weights, and there's no way to remove them. This applies specifically to cloud-hosted AI services. If you run an open-source model on your own infrastructure, there is no training pipeline — the model runs as-is, and your data stays with you.</p>
+
+    <div class="data-grid">
+      <h3 class="data-grid__header">How long AI companies keep your data</h3>
+      <p class="data-grid__intro">The retention windows are not equivalent across services.</p>
+      <table class="data-grid__table">
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Retention</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ChatGPT (with opt-out)</td><td>30 days</td><td>Conversations retained for safety review.</td></tr>
+          <tr><td>ChatGPT (no opt-out)</td><td>Indefinite</td><td>May train future models; humans may review.</td></tr>
+          <tr><td>Google Gemini</td><td>Up to 18 months</td><td>Some retained up to 3 years for human review.</td></tr>
+          <tr><td>Apple Intelligence (PCC)</td><td>Deleted after processing</td><td>Encrypted end-to-end; physically can't persist.</td></tr>
+          <tr><td>Apple Intelligence (on-device)</td><td>Stays on device</td><td>Never leaves your hardware.</td></tr>
+          <tr><td>Self-hosted (Qwen, Llama)</td><td>Stays with you</td><td>No training pipeline; nothing to retain.</td></tr>
+          <tr><td>Proton (Scribe, Lumo)</td><td>Encrypted; not readable</td><td>Zero-trust — Proton itself can't access.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer-canonical">
+    <img src="../../../assets/logo/icon-primary.svg" alt="">
+    <span class="page-num">07</span>
+  </div>
+</section>
+
+</body>
+</html>

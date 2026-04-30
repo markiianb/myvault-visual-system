@@ -1,0 +1,3367 @@
+{
+  "$description": "Run history for the icons manifest. Each run syncs against Phosphor's published metadata + the Figma component set on the Icons page (10:119). First run lists all 210 curated icons under 'added'.",
+  "current": {
+    "runIndex": 1,
+    "timestamp": "2026-04-29T17:02:13Z",
+    "totalIcons": 210
+  },
+  "runs": [
+    {
+      "runIndex": 1,
+      "timestamp": "2026-04-29T17:02:13Z",
+      "phosphor_library": "@phosphor-icons/core",
+      "figma_file_key": "Pm31BDHj34WjJ7NjBK4Ady",
+      "figma_page_id": "10:119",
+      "totalIcons": 210,
+      "summary_by_category": {
+        "system": 87,
+        "objects": 52,
+        "office": 33,
+        "communication": 28,
+        "editor": 25,
+        "media": 21,
+        "": 18,
+        "map": 17,
+        "finance": 17,
+        "arrows": 16,
+        "commerce": 16,
+        "people": 13,
+        "nature": 12,
+        "design": 9,
+        "health": 8,
+        "development": 7,
+        "weather": 5,
+        "games": 3
+      },
+      "added": [
+        {
+          "name": "address-book",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "contacts",
+            "directory",
+            "roledex"
+          ]
+        },
+        {
+          "name": "airplane-tilt",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "vehicles",
+            "airports",
+            "flights"
+          ]
+        },
+        {
+          "name": "alarm",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "times",
+            "timer",
+            "clock"
+          ]
+        },
+        {
+          "name": "archive",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "SYSTEM"
+          ],
+          "tags": [
+            "saved",
+            "saving",
+            "archived"
+          ]
+        },
+        {
+          "name": "arrow-clockwise",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-counter-clockwise",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-down",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-down-left",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-down-right",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-left",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-right",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-up",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-up-left",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "arrow-up-right",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "directional",
+            "pointer",
+            "pointing"
+          ]
+        },
+        {
+          "name": "article",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "OBJECTS"
+          ],
+          "tags": [
+            "reading",
+            "writing",
+            "journals"
+          ]
+        },
+        {
+          "name": "at",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "@",
+            "address",
+            "email"
+          ]
+        },
+        {
+          "name": "baby",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE",
+            "HEALTH"
+          ],
+          "tags": [
+            "infant",
+            "child",
+            "children"
+          ]
+        },
+        {
+          "name": "baby-carriage",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "PEOPLE"
+          ],
+          "tags": [
+            "pram",
+            "stroller",
+            "infant"
+          ]
+        },
+        {
+          "name": "bank",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "FINANCE",
+            "MAP"
+          ],
+          "tags": [
+            "banking",
+            "checking",
+            "money"
+          ]
+        },
+        {
+          "name": "basket",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "OBJECTS"
+          ],
+          "tags": [
+            "ecommerce",
+            "market",
+            "cart"
+          ]
+        },
+        {
+          "name": "battery-charging",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "charged",
+            "charger",
+            "charging"
+          ]
+        },
+        {
+          "name": "battery-full",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "charged",
+            "charger",
+            "charging"
+          ]
+        },
+        {
+          "name": "battery-low",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "charged",
+            "charger",
+            "charging"
+          ]
+        },
+        {
+          "name": "bell",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "alarm",
+            "notifications",
+            "times"
+          ]
+        },
+        {
+          "name": "bell-ringing",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "alarm",
+            "notifications",
+            "times"
+          ]
+        },
+        {
+          "name": "bell-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "alarm",
+            "notifications",
+            "times"
+          ]
+        },
+        {
+          "name": "bell-slash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "alarm",
+            "notifications",
+            "times"
+          ]
+        },
+        {
+          "name": "book",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "MEDIA",
+            "OBJECTS"
+          ],
+          "tags": [
+            "reading",
+            "reader",
+            "novel"
+          ]
+        },
+        {
+          "name": "book-open",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "MEDIA",
+            "OBJECTS"
+          ],
+          "tags": [
+            "reading",
+            "reader",
+            "novel"
+          ]
+        },
+        {
+          "name": "bookmark-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "MEDIA",
+            "OBJECTS"
+          ],
+          "tags": [
+            "reading",
+            "reader",
+            "novel"
+          ]
+        },
+        {
+          "name": "bookmarks-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "OBJECTS"
+          ],
+          "tags": [
+            "reading",
+            "reader",
+            "novel"
+          ]
+        },
+        {
+          "name": "books",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "MAP",
+            "MEDIA",
+            "OBJECTS",
+            ""
+          ],
+          "tags": [
+            "reading",
+            "reader",
+            "bookshelf"
+          ]
+        },
+        {
+          "name": "briefcase",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "OBJECTS"
+          ],
+          "tags": [
+            "suitcase",
+            "valise",
+            "baggage"
+          ]
+        },
+        {
+          "name": "broadcast",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "MEDIA",
+            "SYSTEM",
+            ""
+          ],
+          "tags": [
+            "radio",
+            "hotspot",
+            "wifi"
+          ]
+        },
+        {
+          "name": "cake",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS"
+          ],
+          "tags": [
+            "dessert",
+            "birthday",
+            "celebration"
+          ]
+        },
+        {
+          "name": "calculator",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "FINANCE",
+            "OFFICE",
+            "OBJECTS",
+            ""
+          ],
+          "tags": [
+            "addition",
+            "sum",
+            "subtraction"
+          ]
+        },
+        {
+          "name": "calendar",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "SYSTEM"
+          ],
+          "tags": [
+            "dates",
+            "times",
+            "events"
+          ]
+        },
+        {
+          "name": "calendar-blank",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "SYSTEM"
+          ],
+          "tags": [
+            "dates",
+            "times",
+            "events"
+          ]
+        },
+        {
+          "name": "calendar-check",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "SYSTEM"
+          ],
+          "tags": [
+            "dates",
+            "times",
+            "events"
+          ]
+        },
+        {
+          "name": "calendar-plus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "SYSTEM"
+          ],
+          "tags": [
+            "dates",
+            "times",
+            "events"
+          ]
+        },
+        {
+          "name": "camera",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "photography",
+            "pictures",
+            "lens"
+          ]
+        },
+        {
+          "name": "car",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "cars",
+            "vehicles",
+            "automobile"
+          ]
+        },
+        {
+          "name": "caret-double-left",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "chevron",
+            "directional",
+            "pointer"
+          ]
+        },
+        {
+          "name": "caret-double-right",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "chevron",
+            "directional",
+            "pointer"
+          ]
+        },
+        {
+          "name": "caret-down",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "chevron",
+            "directional",
+            "pointer"
+          ]
+        },
+        {
+          "name": "caret-left",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "chevron",
+            "directional",
+            "pointer"
+          ]
+        },
+        {
+          "name": "caret-right",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "chevron",
+            "directional",
+            "pointer"
+          ]
+        },
+        {
+          "name": "caret-up",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "ARROWS"
+          ],
+          "tags": [
+            "chevron",
+            "directional",
+            "pointer"
+          ]
+        },
+        {
+          "name": "chart-bar",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "FINANCE",
+            "OFFICE"
+          ],
+          "tags": [
+            "graphs",
+            "graphing",
+            "charts"
+          ]
+        },
+        {
+          "name": "chart-line",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "FINANCE",
+            "OFFICE"
+          ],
+          "tags": [
+            "graphs",
+            "graphing",
+            "charts"
+          ]
+        },
+        {
+          "name": "chart-pie",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "FINANCE",
+            "OFFICE"
+          ],
+          "tags": [
+            "graphs",
+            "graphing",
+            "charts"
+          ]
+        },
+        {
+          "name": "chat-circle",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "send",
+            "sent",
+            "messages"
+          ]
+        },
+        {
+          "name": "chat-circle-dots",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "send",
+            "sent",
+            "messages"
+          ]
+        },
+        {
+          "name": "chat-teardrop",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "send",
+            "sent",
+            "messages"
+          ]
+        },
+        {
+          "name": "chat-text",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "send",
+            "sent",
+            "messages"
+          ]
+        },
+        {
+          "name": "chats",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "send",
+            "sent",
+            "messages"
+          ]
+        },
+        {
+          "name": "check",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "todo",
+            "to-do",
+            "task"
+          ]
+        },
+        {
+          "name": "check-circle",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "todo",
+            "to-do",
+            "task"
+          ]
+        },
+        {
+          "name": "check-fat",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "todo",
+            "to-do",
+            "task"
+          ]
+        },
+        {
+          "name": "circle-notch",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "round",
+            "shapes",
+            "loading"
+          ]
+        },
+        {
+          "name": "clipboard",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "copy",
+            "copied",
+            "checklist"
+          ]
+        },
+        {
+          "name": "clipboard-text",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "copy",
+            "copied",
+            "checklist"
+          ]
+        },
+        {
+          "name": "clock",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "times",
+            "timer",
+            "alarm"
+          ]
+        },
+        {
+          "name": "clock-countdown",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "times",
+            "timer",
+            "alarm"
+          ]
+        },
+        {
+          "name": "cloud",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "WEATHER"
+          ],
+          "tags": [
+            "serverless",
+            "backup",
+            "storage"
+          ]
+        },
+        {
+          "name": "cloud-arrow-down",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "serverless",
+            "backup",
+            "storage"
+          ]
+        },
+        {
+          "name": "cloud-arrow-up",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "serverless",
+            "backup",
+            "storage"
+          ]
+        },
+        {
+          "name": "coffee",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "OBJECTS",
+            "MAP"
+          ],
+          "tags": [
+            "tea",
+            "java",
+            "beverages"
+          ]
+        },
+        {
+          "name": "coin-vertical",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "FINANCE"
+          ],
+          "tags": [
+            "cents",
+            "change",
+            "money"
+          ]
+        },
+        {
+          "name": "coins",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "FINANCE"
+          ],
+          "tags": [
+            "cents",
+            "change",
+            "money"
+          ]
+        },
+        {
+          "name": "compass",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "navigation",
+            "directions",
+            "maps"
+          ]
+        },
+        {
+          "name": "copy",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "duplicated",
+            "copied",
+            "clipboard"
+          ]
+        },
+        {
+          "name": "credit-card",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "FINANCE"
+          ],
+          "tags": [
+            "debit",
+            "visa",
+            "mastercard"
+          ]
+        },
+        {
+          "name": "crown",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "GAMES",
+            "OBJECTS"
+          ],
+          "tags": [
+            "king",
+            "queen",
+            "royalty"
+          ]
+        },
+        {
+          "name": "currency-dollar",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "FINANCE"
+          ],
+          "tags": [
+            "money",
+            "usd",
+            "payment"
+          ]
+        },
+        {
+          "name": "desktop",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "OBJECTS"
+          ],
+          "tags": [
+            "computer",
+            "pc",
+            "imac"
+          ]
+        },
+        {
+          "name": "device-mobile",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS"
+          ],
+          "tags": [
+            "cellphone",
+            "cellular"
+          ]
+        },
+        {
+          "name": "dog",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE"
+          ],
+          "tags": [
+            "pets",
+            "animals",
+            "puppy"
+          ]
+        },
+        {
+          "name": "dots-six-vertical",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "drag handle",
+            "knurling",
+            "circles"
+          ]
+        },
+        {
+          "name": "dots-three",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "menu",
+            "overflow",
+            "circles"
+          ]
+        },
+        {
+          "name": "dots-three-vertical",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "menu",
+            "overflow",
+            "circles"
+          ]
+        },
+        {
+          "name": "download-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "saved",
+            "saving",
+            "archived"
+          ]
+        },
+        {
+          "name": "drop",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE",
+            "WEATHER"
+          ],
+          "tags": [
+            "droplet",
+            "teardrop",
+            "raindrop"
+          ]
+        },
+        {
+          "name": "envelope",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "mail",
+            "email",
+            "send"
+          ]
+        },
+        {
+          "name": "envelope-open",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "mail",
+            "email",
+            "send"
+          ]
+        },
+        {
+          "name": "envelope-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "mail",
+            "email",
+            "send"
+          ]
+        },
+        {
+          "name": "eye",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR"
+          ],
+          "tags": [
+            "visible",
+            "hidden",
+            "show"
+          ]
+        },
+        {
+          "name": "eye-closed",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR"
+          ],
+          "tags": [
+            "visible",
+            "hidden",
+            "show"
+          ]
+        },
+        {
+          "name": "eye-slash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR"
+          ],
+          "tags": [
+            "visible",
+            "hidden",
+            "show"
+          ]
+        },
+        {
+          "name": "file",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR"
+          ],
+          "tags": [
+            "documents",
+            "files",
+            "save"
+          ]
+        },
+        {
+          "name": "file-image",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "MEDIA"
+          ],
+          "tags": [
+            "documents",
+            "pictures",
+            "photograph"
+          ]
+        },
+        {
+          "name": "file-pdf",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR"
+          ],
+          "tags": [
+            "documents",
+            "files",
+            "acrobat"
+          ]
+        },
+        {
+          "name": "file-text",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR"
+          ],
+          "tags": [
+            "documents",
+            "files",
+            "save"
+          ]
+        },
+        {
+          "name": "files",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR"
+          ],
+          "tags": [
+            "documents",
+            "open",
+            "library"
+          ]
+        },
+        {
+          "name": "film-strip",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA"
+          ],
+          "tags": [
+            "camera",
+            "photography",
+            "darkroom"
+          ]
+        },
+        {
+          "name": "fingerprint",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "security",
+            "secured",
+            "authentication"
+          ]
+        },
+        {
+          "name": "first-aid-kit",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "HEALTH"
+          ],
+          "tags": [
+            "bandages",
+            "medical",
+            "medicine"
+          ]
+        },
+        {
+          "name": "flame",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE",
+            "WEATHER"
+          ],
+          "tags": [
+            "fire",
+            "burning",
+            "match"
+          ]
+        },
+        {
+          "name": "flower-tulip",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE"
+          ],
+          "tags": [
+            "plants",
+            "green",
+            "environmental"
+          ]
+        },
+        {
+          "name": "folder",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "directory",
+            "directories",
+            "files"
+          ]
+        },
+        {
+          "name": "folder-open",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "directory",
+            "directories",
+            "files"
+          ]
+        },
+        {
+          "name": "folder-plus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "directory",
+            "directories",
+            "files"
+          ]
+        },
+        {
+          "name": "folder-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "directory",
+            "directories",
+            "files"
+          ]
+        },
+        {
+          "name": "fork-knife",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "food",
+            "meal",
+            "eating"
+          ]
+        },
+        {
+          "name": "gear",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "8",
+            "settings",
+            "setup"
+          ]
+        },
+        {
+          "name": "gear-six",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "6",
+            "settings",
+            "setup"
+          ]
+        },
+        {
+          "name": "globe",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP"
+          ],
+          "tags": [
+            "world",
+            "earth",
+            "global"
+          ]
+        },
+        {
+          "name": "graduation-cap",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "classroom",
+            "teacher",
+            "education"
+          ]
+        },
+        {
+          "name": "hammer",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM",
+            "COMMERCE",
+            ""
+          ],
+          "tags": [
+            "tools",
+            "carpentry",
+            "construction"
+          ]
+        },
+        {
+          "name": "handbag",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "OBJECTS"
+          ],
+          "tags": [
+            "suitcases",
+            "valises",
+            "baggage"
+          ]
+        },
+        {
+          "name": "hash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "hashtag",
+            "octothorpe",
+            "pound sign"
+          ]
+        },
+        {
+          "name": "headphones",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "OBJECTS"
+          ],
+          "tags": [
+            "music",
+            "audio",
+            "listening"
+          ]
+        },
+        {
+          "name": "heart",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "GAMES",
+            "HEALTH",
+            ""
+          ],
+          "tags": [
+            "wellness",
+            "love",
+            "healthy"
+          ]
+        },
+        {
+          "name": "heartbeat",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "HEALTH",
+            "SYSTEM"
+          ],
+          "tags": [
+            "wellness",
+            "healthy",
+            "ecg"
+          ]
+        },
+        {
+          "name": "hourglass-medium",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "times",
+            "timer",
+            "alarms"
+          ]
+        },
+        {
+          "name": "house",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "SYSTEM"
+          ],
+          "tags": [
+            "homes",
+            "buildings",
+            "places"
+          ]
+        },
+        {
+          "name": "identification-card",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "license",
+            "badge",
+            "credentials"
+          ]
+        },
+        {
+          "name": "image",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM"
+          ],
+          "tags": [
+            "pictures",
+            "photographs",
+            "photography"
+          ]
+        },
+        {
+          "name": "info",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "information",
+            "help",
+            "support"
+          ]
+        },
+        {
+          "name": "key",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM"
+          ],
+          "tags": [
+            "padlock",
+            "security",
+            "secured"
+          ]
+        },
+        {
+          "name": "laptop",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "OBJECTS"
+          ],
+          "tags": [
+            "computer",
+            "notebook",
+            "pc"
+          ]
+        },
+        {
+          "name": "layout",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR"
+          ],
+          "tags": [
+            "wireframe",
+            "sidebar",
+            "ui"
+          ]
+        },
+        {
+          "name": "leaf",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE"
+          ],
+          "tags": [
+            "plants",
+            "trees",
+            "branches"
+          ]
+        },
+        {
+          "name": "link",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "OBJECTS"
+          ],
+          "tags": [
+            "anchor",
+            "hyperlink",
+            "hypertext"
+          ]
+        },
+        {
+          "name": "link-break",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "OBJECTS"
+          ],
+          "tags": [
+            "anchor",
+            "hyperlink",
+            "hypertext"
+          ]
+        },
+        {
+          "name": "link-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "OBJECTS"
+          ],
+          "tags": [
+            "anchor",
+            "hyperlink",
+            "hypertext"
+          ]
+        },
+        {
+          "name": "list-bullets",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "EDITOR"
+          ],
+          "tags": [
+            "ul",
+            "unordered list",
+            "bulleted list"
+          ]
+        },
+        {
+          "name": "list-checks",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR"
+          ],
+          "tags": [
+            "checklist",
+            "todo"
+          ]
+        },
+        {
+          "name": "list-numbers",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "EDITOR"
+          ],
+          "tags": [
+            "ol",
+            "ordered list",
+            "numbered list"
+          ]
+        },
+        {
+          "name": "lock",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM"
+          ],
+          "tags": [
+            "padlock",
+            "security",
+            "secured"
+          ]
+        },
+        {
+          "name": "lock-key",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM"
+          ],
+          "tags": [
+            "padlock",
+            "security",
+            "secured"
+          ]
+        },
+        {
+          "name": "lock-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM"
+          ],
+          "tags": [
+            "padlock",
+            "security",
+            "secured"
+          ]
+        },
+        {
+          "name": "lock-simple-open",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM"
+          ],
+          "tags": [
+            "padlock",
+            "security",
+            "unsecured"
+          ]
+        },
+        {
+          "name": "magnifying-glass",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "EDITOR",
+            "SYSTEM"
+          ],
+          "tags": [
+            "search",
+            "find",
+            "locate"
+          ]
+        },
+        {
+          "name": "map-pin",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP"
+          ],
+          "tags": [
+            "maps",
+            "places",
+            "markers"
+          ]
+        },
+        {
+          "name": "map-trifold",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP"
+          ],
+          "tags": [
+            "maps",
+            "places",
+            "locations"
+          ]
+        },
+        {
+          "name": "megaphone",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "OBJECTS"
+          ],
+          "tags": [
+            "bullhorn",
+            "announcements",
+            "loudspeaker"
+          ]
+        },
+        {
+          "name": "microphone",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "MEDIA",
+            "SYSTEM",
+            ""
+          ],
+          "tags": [
+            "audio",
+            "recording",
+            "music"
+          ]
+        },
+        {
+          "name": "microphone-slash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "MEDIA",
+            "SYSTEM",
+            ""
+          ],
+          "tags": [
+            "audio",
+            "recording",
+            "music"
+          ]
+        },
+        {
+          "name": "minus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "FINANCE",
+            "SYSTEM",
+            ""
+          ],
+          "tags": [
+            "-",
+            "subtraction",
+            "difference"
+          ]
+        },
+        {
+          "name": "moon",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE",
+            "SYSTEM",
+            "WEATHER",
+            ""
+          ],
+          "tags": [
+            "night",
+            "evening",
+            "clear"
+          ]
+        },
+        {
+          "name": "music-note",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA"
+          ],
+          "tags": [
+            "songs",
+            "audio",
+            "playlist"
+          ]
+        },
+        {
+          "name": "music-notes",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA"
+          ],
+          "tags": [
+            "songs",
+            "audio",
+            "playlist"
+          ]
+        },
+        {
+          "name": "note-pencil",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "EDITOR"
+          ],
+          "tags": [
+            "notes",
+            "note-taking",
+            "memorandum"
+          ]
+        },
+        {
+          "name": "paper-plane-tilt",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "MAP",
+            "OBJECTS",
+            ""
+          ],
+          "tags": [
+            "mail",
+            "email",
+            "send"
+          ]
+        },
+        {
+          "name": "paperclip",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "EDITOR",
+            "OFFICE",
+            "OBJECTS",
+            ""
+          ],
+          "tags": [
+            "attachments",
+            "mail",
+            "email"
+          ]
+        },
+        {
+          "name": "pause",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM"
+          ],
+          "tags": [
+            "music",
+            "audio",
+            "resume"
+          ]
+        },
+        {
+          "name": "paw-print",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE",
+            "COMMERCE",
+            "HEALTH",
+            ""
+          ],
+          "tags": [
+            "pets",
+            "pet store",
+            "pet shop"
+          ]
+        },
+        {
+          "name": "pencil-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR",
+            "OFFICE"
+          ],
+          "tags": [
+            "write",
+            "writing",
+            "editing"
+          ]
+        },
+        {
+          "name": "percent",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "FINANCE"
+          ],
+          "tags": [
+            "%",
+            "percentage",
+            "percentile"
+          ]
+        },
+        {
+          "name": "phone",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "SYSTEM"
+          ],
+          "tags": [
+            "calls",
+            "telephone",
+            "landline"
+          ]
+        },
+        {
+          "name": "phone-call",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "SYSTEM"
+          ],
+          "tags": [
+            "calls",
+            "calling",
+            "ringing"
+          ]
+        },
+        {
+          "name": "pill",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "HEALTH"
+          ],
+          "tags": [
+            "capsule",
+            "medicine",
+            "rx"
+          ]
+        },
+        {
+          "name": "plant",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "NATURE"
+          ],
+          "tags": [
+            "sprout",
+            "vegan",
+            "farm"
+          ]
+        },
+        {
+          "name": "play",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM"
+          ],
+          "tags": [
+            "music",
+            "audio",
+            "resume"
+          ]
+        },
+        {
+          "name": "plug",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "outlet",
+            "socket",
+            "plugin"
+          ]
+        },
+        {
+          "name": "plus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "FINANCE",
+            "SYSTEM",
+            ""
+          ],
+          "tags": [
+            "addition",
+            "sum",
+            "mathematics"
+          ]
+        },
+        {
+          "name": "prohibit",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "SYSTEM"
+          ],
+          "tags": [
+            "forbidden",
+            "prohibited",
+            "cancelled"
+          ]
+        },
+        {
+          "name": "question",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "information",
+            "help",
+            "support"
+          ]
+        },
+        {
+          "name": "receipt",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "FINANCE"
+          ],
+          "tags": [
+            "purchase",
+            "money",
+            "clipping"
+          ]
+        },
+        {
+          "name": "rss-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION"
+          ],
+          "tags": [
+            "radio",
+            "broadcast",
+            "web feed"
+          ]
+        },
+        {
+          "name": "scan",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "upc",
+            "barcode",
+            "products"
+          ]
+        },
+        {
+          "name": "seal-check",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN"
+          ],
+          "tags": [
+            "badge",
+            "verified",
+            "verification"
+          ]
+        },
+        {
+          "name": "share",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "SYSTEM"
+          ],
+          "tags": [
+            "send to",
+            "export",
+            "arrows"
+          ]
+        },
+        {
+          "name": "share-network",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "SYSTEM"
+          ],
+          "tags": [
+            "send to",
+            "export"
+          ]
+        },
+        {
+          "name": "shield",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "badge",
+            "security",
+            "secured"
+          ]
+        },
+        {
+          "name": "shield-check",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "badge",
+            "security",
+            "defense"
+          ]
+        },
+        {
+          "name": "shield-star",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OBJECTS",
+            "SYSTEM"
+          ],
+          "tags": [
+            "badge",
+            "security",
+            "defense"
+          ]
+        },
+        {
+          "name": "shield-warning",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "badge",
+            "security",
+            "unsecured"
+          ]
+        },
+        {
+          "name": "shopping-cart",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "ecommerce",
+            "market",
+            "basket"
+          ]
+        },
+        {
+          "name": "sidebar-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR"
+          ],
+          "tags": [
+            "left rail",
+            "wireframe",
+            "ui"
+          ]
+        },
+        {
+          "name": "sliders-horizontal",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM"
+          ],
+          "tags": [
+            "music",
+            "audio",
+            "faders"
+          ]
+        },
+        {
+          "name": "sparkle",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "NATURE"
+          ],
+          "tags": [
+            "star",
+            "rate",
+            "ratings"
+          ]
+        },
+        {
+          "name": "speaker-high",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM"
+          ],
+          "tags": [
+            "music",
+            "audio",
+            "volume"
+          ]
+        },
+        {
+          "name": "speaker-slash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM"
+          ],
+          "tags": [
+            "music",
+            "audio",
+            "muted"
+          ]
+        },
+        {
+          "name": "squares-four",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "SYSTEM"
+          ],
+          "tags": [
+            "4",
+            "shapes",
+            "polygons"
+          ]
+        },
+        {
+          "name": "star",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMUNICATION",
+            "MAP",
+            "NATURE",
+            ""
+          ],
+          "tags": [
+            "rate",
+            "ratings",
+            "favorites"
+          ]
+        },
+        {
+          "name": "stethoscope",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "HEALTH",
+            "OBJECTS"
+          ],
+          "tags": [
+            "hospital",
+            "medical",
+            "medicine"
+          ]
+        },
+        {
+          "name": "sun",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE",
+            "SYSTEM",
+            "WEATHER",
+            ""
+          ],
+          "tags": [
+            "day",
+            "daytime",
+            "daylight"
+          ]
+        },
+        {
+          "name": "syringe",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "HEALTH"
+          ],
+          "tags": [
+            "needle",
+            "hypodermic",
+            "vaccine"
+          ]
+        },
+        {
+          "name": "target",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MAP",
+            "OBJECTS"
+          ],
+          "tags": [
+            "bullseye",
+            "radar",
+            "archery"
+          ]
+        },
+        {
+          "name": "text-aa",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DESIGN",
+            "EDITOR"
+          ],
+          "tags": [
+            "typography",
+            "typeface",
+            "print"
+          ]
+        },
+        {
+          "name": "timer",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "clock",
+            "alarm",
+            "schedule"
+          ]
+        },
+        {
+          "name": "toggle-left",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "switch",
+            "controls",
+            "settings"
+          ]
+        },
+        {
+          "name": "toggle-right",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "switch",
+            "controls",
+            "settings"
+          ]
+        },
+        {
+          "name": "trash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "OFFICE",
+            "SYSTEM"
+          ],
+          "tags": [
+            "garbage",
+            "remove",
+            "delete"
+          ]
+        },
+        {
+          "name": "tree",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "NATURE"
+          ],
+          "tags": [
+            "plants",
+            "branches",
+            "leaves"
+          ]
+        },
+        {
+          "name": "trend-down",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "FINANCE",
+            "OFFICE"
+          ],
+          "tags": [
+            "graphs",
+            "graphing",
+            "charts"
+          ]
+        },
+        {
+          "name": "trend-up",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "FINANCE",
+            "OFFICE"
+          ],
+          "tags": [
+            "graphs",
+            "graphing",
+            "charts"
+          ]
+        },
+        {
+          "name": "trophy",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "GAMES",
+            "OBJECTS"
+          ],
+          "tags": [
+            "ribbons",
+            "medals",
+            "winning"
+          ]
+        },
+        {
+          "name": "upload-simple",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "saved",
+            "saving",
+            "archived"
+          ]
+        },
+        {
+          "name": "user",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profile"
+          ]
+        },
+        {
+          "name": "user-check",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profile"
+          ]
+        },
+        {
+          "name": "user-circle",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profile"
+          ]
+        },
+        {
+          "name": "user-focus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "identification",
+            "biometrics",
+            "facial recognition"
+          ]
+        },
+        {
+          "name": "user-gear",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profile"
+          ]
+        },
+        {
+          "name": "user-list",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profiles"
+          ]
+        },
+        {
+          "name": "user-minus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profile"
+          ]
+        },
+        {
+          "name": "user-plus",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "person",
+            "users",
+            "profile"
+          ]
+        },
+        {
+          "name": "users",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "user",
+            "group",
+            "team"
+          ]
+        },
+        {
+          "name": "users-three",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "PEOPLE"
+          ],
+          "tags": [
+            "user",
+            "group",
+            "team"
+          ]
+        },
+        {
+          "name": "video-camera",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "MEDIA",
+            "SYSTEM",
+            "OBJECTS"
+          ],
+          "tags": [
+            "videography",
+            "films",
+            "movies"
+          ]
+        },
+        {
+          "name": "wallet",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "COMMERCE",
+            "FINANCE",
+            "OBJECTS",
+            ""
+          ],
+          "tags": [
+            "money",
+            "payment",
+            "paying"
+          ]
+        },
+        {
+          "name": "warning",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "alert",
+            "danger",
+            "dangerous"
+          ]
+        },
+        {
+          "name": "warning-circle",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "alert",
+            "danger",
+            "dangerous"
+          ]
+        },
+        {
+          "name": "wifi-high",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "wireless",
+            "internet",
+            "network"
+          ]
+        },
+        {
+          "name": "wifi-slash",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "wireless",
+            "internet",
+            "network"
+          ]
+        },
+        {
+          "name": "wrench",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM",
+            "OBJECTS",
+            "COMMERCE",
+            ""
+          ],
+          "tags": [
+            "settings",
+            "setup",
+            "preferences"
+          ]
+        },
+        {
+          "name": "x",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "DEVELOPMENT",
+            "FINANCE",
+            "SYSTEM",
+            ""
+          ],
+          "tags": [
+            "\u00d7",
+            "closed",
+            "cancelled"
+          ]
+        },
+        {
+          "name": "x-circle",
+          "weights": [
+            "regular",
+            "fill"
+          ],
+          "categories": [
+            "SYSTEM"
+          ],
+          "tags": [
+            "closed",
+            "cancelled",
+            "dismissed"
+          ]
+        }
+      ],
+      "removed": [],
+      "changed": [],
+      "notes": "First sync. 210 icons matched 1:1 against Phosphor's official metadata. No local SVGs committed (Approach C: Phosphor as versioned dependency)."
+    }
+  ]
+}

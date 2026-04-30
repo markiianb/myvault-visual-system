@@ -1,0 +1,30 @@
+{
+  "id": "radial-light",
+  "type": "radial-light",
+  "description_for_agent": "MyVault Radial Comparison — Light — fixture (Figma reference 70:8678). Card 960 wide, gradient.greydient surface, 3 cells with comparative palette, black text, gray-01 track ring, BLACK footer dot (not teal).",
+  "card": {
+    "width": 960,
+    "padding": [40, 40, 40, 40],
+    "surface": "greydient",
+    "headerGap": 20,
+    "footerGap": 20
+  },
+  "header": {
+    "title": "Chart Title Goes Here",
+    "description": "A concise line describing what the chart shows and why it matters.",
+    "innerGap": 8
+  },
+  "footer": {
+    "show": true,
+    "source": "Source / caption — MyVault, 2026"
+  },
+  "plot": {
+    "data": {
+      "values": [
+        {"label": "Without MyVault", "percentage": 47},
+        {"label": "With assistance",  "percentage": 52},
+        {"label": "Fully set up",     "percentage": 98}
+      ]
+    }
+  }
+}

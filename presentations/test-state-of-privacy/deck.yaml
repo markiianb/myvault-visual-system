@@ -1,0 +1,138 @@
+#
+# State of Family Privacy 2026 — author-facing deck spec.
+#
+# This is the analog of documents/ebook-test/spec.typ — the author writes content
+# + a few tags per slide, the compiler (renderers/marp/compile-deck.js) emits
+# marp-ready deck.md, marp renders to PDF.
+#
+# Pipeline:
+#   deck.yaml  →  compile-deck.js  →  deck.md  →  marp  →  deck.pdf
+#
+# Each slide has a `type:` matching one of the emitters in compile-deck.js.
+# Field schemas per type are documented in compile-deck.js (each emitter).
+#
+
+deck:
+  theme: myvault-presentation
+  size: 1920x1080
+  meta: "Privacy Summit · 2026"
+
+  slides:
+    # ----- Slide 1 — Cover -----
+    - type: cover
+      title: The State of Family Privacy in 2026
+      subtitle: What we learned building for the household, not the user.
+      speaker: Markos Symeonides   ·   Founder, MyVault   ·   IAPP Global Privacy Summit
+
+    # ----- Slide 2 — Opening Statement -----
+    - type: statement
+      section: Opening
+      page: 2
+      text: Privacy was a product question. It is becoming a household question.
+
+    # ----- Slide 3 — Problem (dramatic teal full-bleed) -----
+    - type: problem
+      section: Problem
+      page: 3
+      title: The household is the new edge.
+      rows:
+        - heading: Fragmentation.
+          body: A typical household manages 72+ online accounts and stores critical documents across 4–6 cloud services. Insurance in email. Wills in a lawyer's drawer. Photos buried across drives.
+        - heading: Trust collapse.
+          body: Mainstream AI assistants read private files in order to train on them. The tools designed to help require households to surrender what they own.
+        - heading: Crisis fragility.
+          body: When something goes wrong — identity stolen, parent's diagnosis, estate triggered — families spend weeks hunting documents that should be one search away.
+      closing: "Three different problems. One missing solution: software that treats the household as the unit, not the user."
+
+    # ----- Slide 4 — Three Shifts (3-card grid) -----
+    - type: three-shifts
+      section: Why Now
+      page: 4
+      title: Three shifts make this the moment.
+      cards:
+        - heading: AI is reliable enough to reason over private documents.
+          body: Foundation-model accuracy on domain-specific document analysis crossed the usable threshold in 2024–25.
+        - heading: Privacy is no longer niche.
+          body: Twelve US state privacy laws active or scheduled by 2025; post-scandal consumer wariness is mainstream.
+        - heading: Zero Trust is buildable at consumer scale.
+          body: Per-user customer-managed keys, serverless processing, isolated tenancy — startup-affordable.
+      closing: Each shift on its own would be useful. Together they make this the moment a household-grade system can ship.
+
+    # ----- Slide 5 — Architecture (editorial dark, 4-layer stack) -----
+    - type: architecture
+      section: Architecture
+      page: 5
+      title: Zero Trust is the architecture, not the marketing.
+      intro: Files are processed in isolation, encrypted at rest with per-user keys customers control, and never used to train any model. If any single layer is breached, every other layer still protects the data.
+      layers:
+        - label: Device.
+          body: TLS 1.3 in transit. Customer keys never leave the device unprotected.
+        - label: Processing.
+          body: Short-lived, scoped, audited. Data is readable only during the work.
+        - label: Keys.
+          body: AWS KMS, per-user, customer-controlled. Revocable at any time.
+        - label: Storage.
+          body: Encrypted at rest. Isolated tenancy. Never enters a training pipeline.
+      closing: If the policy can't be verified by the architecture, it isn't a guarantee.
+
+    # ----- Slide 6 — Stat Hero -----
+    - type: stat-hero
+      section: The Number
+      page: 6
+      number: 72+
+      headline: online accounts in a typical household.
+      supporting: And growing 12% year over year. Each one a credential, a document, a memory, a vulnerability — and an entry point for a system that should hold all of them safely.
+      source: Source · MyVault internal data + Pew 2025 household digital footprint study.
+
+    # ----- Slide 7 — Comparison (Harvey Ball table) -----
+    - type: comparison
+      section: Approaches
+      page: 7
+      title: How four approaches handle family data.
+      columns:
+        - ""
+        - MyVault
+        - Trustworthy
+        - Lumo (Proton)
+        - Generic AI
+      myvault_col: 1
+      rows:
+        - [Family-context AI, full, partial, none, partial]
+        - [Zero Trust architecture, full, partial, partial, none]
+        - [Estate / inheritance built-in, full, full, none, none]
+        - [Multi-cloud ingest, full, partial, none, partial]
+        - [No-training-data guarantee, full, full, full, none]
+      legend_note: Axes are the four questions families and privacy practitioners ask first.
+
+    # ----- Slide 8 — Lessons (Thesis pattern, 3+2 staircase) -----
+    - type: thesis
+      section: Lessons
+      page: 8
+      title: Five things we've learned building for the household.
+      cards_per_row: 3
+      lessons:
+        - The household is the unit, not the user. Treat shared documents and shared decisions as first-class.
+        - Crises are when the system has to work. Build for the worst day, not the average day.
+        - The agent must be domain-aware. Generic AI fails at specialized recall.
+        - Architecture is the moat. Marketing-layer privacy promises cannot be verified.
+        - Trust is earned across years, lost in a session. Calm operation is a feature.
+
+    # ----- Slide 9 — Action (3 use-of-funds blocks) -----
+    - type: action
+      section: Action
+      page: 9
+      title: If you're building for families, here's where to start.
+      blocks:
+        - heading: Treat the household as a tenant.
+          body: One vault per family. Shared keys, shared access controls. Households are not a row in your users table.
+        - heading: Make encryption the contract.
+          body: Per-user keys customers control should be the default, not the upsell. Architectural privacy survives the next breach; marketing privacy doesn't.
+        - heading: Surface the architecture.
+          body: Show the layers — diagrams, audits, key custody — not just the policy. Privacy decided in the diagram is privacy customers can verify.
+      closing: We'd rather you build it than us alone.
+
+    # ----- Slide 10 — Closing (gradient/cool, hero text + speaker + period) -----
+    - type: closing
+      headline: Built on calm.<br>Private AI for the things that matter most.
+      speaker: Markos Symeonides   ·   markos@myvault.ai   ·   myvaultai.com
+      period: true

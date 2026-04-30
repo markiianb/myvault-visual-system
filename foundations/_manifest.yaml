@@ -1,0 +1,238 @@
+# MyVault visual-system / foundations manifest
+# Registry of all foundation chunks. An agent loading this manifest discovers
+# every active foundation, its severity rules, its visual canon, and the
+# reviewer agents that consume it.
+#
+# Mirror of the verbal brand-system manifest pattern.
+# Update when a new foundation chunk lands or an existing one ships a major version.
+
+manifest_version: "1.0"
+domain: foundations
+last_updated: 2026-04-29
+owner: mark
+summary: >
+  Four active foundation chunks define MyVault's visual canon: color, typography,
+  logo-usage, iconography. 39 HARD rules total, each with a stable ID
+  (R-COLOR-NNN, R-TYPE-NNN, R-LOGO-NNN, R-ICON-NNN). All chunks share the same
+  shape: rich frontmatter, severity tiers, decision tree, reviewer-agent
+  integration, anti-patterns, visual-canon pointer. Reviewers cite rule IDs.
+
+chunks:
+
+  - chunk_id: color
+    file: color.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-04-29
+    summary: >
+      Color rules for MyVault. 14-token palette across Core/Secondary/Signal tiers
+      + 5 gradients. 10 HARD rules with machine-checkable predicates, BASE rules
+      (80/10/10 ratio, 80/20 hero split, white default, Greydient default),
+      pairings reference, WCAG 2.2 AA contrast table (the contrast authority for
+      every other chunk), decision tree.
+    hard_rule_count: 10
+    hard_rule_ids: [R-COLOR-001, R-COLOR-002, R-COLOR-003, R-COLOR-004, R-COLOR-005, R-COLOR-006, R-COLOR-007, R-COLOR-008, R-COLOR-009, R-COLOR-010]
+    review_axes: [color-reviewer, brand-element-reviewer, accessibility-reviewer]
+    visual_canon:
+      pageId: "121:10583"
+      pageName: Color
+    is_authority_for:
+      - WCAG accessibility contrast pairs
+      - color-token catalog
+      - gradient-token catalog
+    consumes:
+      - tokens/brand.tokens.json (color.* and gradient.*)
+
+  - chunk_id: typography
+    file: typography.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-04-29
+    summary: >
+      Typography rules. Two families (PT Serif Regular for display+heading;
+      Lato Regular for body+caption), 12 styles in 4 tiers. 9 HARD rules including
+      Regular-only weights, family-tier mapping, 14pt practical floor, 18pt
+      presentation body floor, no display for body content, no teal below display
+      tier. BASE 80/15/5 tier distribution.
+    hard_rule_count: 9
+    hard_rule_ids: [R-TYPE-001, R-TYPE-002, R-TYPE-003, R-TYPE-004, R-TYPE-005, R-TYPE-006, R-TYPE-007, R-TYPE-008, R-TYPE-009]
+    review_axes: [typography-reviewer, accessibility-reviewer]
+    visual_canon:
+      pageId: "121:10779"
+      pageName: Typography
+    is_authority_for:
+      - typography-token catalog
+      - tier-distribution ratio
+      - body-floor by context
+    consumes:
+      - tokens/brand.tokens.json (typography.*)
+    cross_refs_from_other_chunks:
+      - color.md R-COLOR-009 (no teal below display) → typography enforces it via R-TYPE-008
+
+  - chunk_id: logo-usage
+    file: logo-usage.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-04-29
+    summary: >
+      Logo placement rules. Three forms (Icon / Wordmark / Lockup) × 4 active
+      color variants (Primary, Teal, Light, White). Gray variant deprecated.
+      10 HARD rules including no-Gray, no-recolor, no-distortion, no-effects,
+      clear-space minimums (1× icon height all sides), minimum sizes (24/120/160 px).
+      BASE Lockup-as-default. Pairings matrix is the canonical home.
+    hard_rule_count: 10
+    hard_rule_ids: [R-LOGO-001, R-LOGO-002, R-LOGO-003, R-LOGO-004, R-LOGO-005, R-LOGO-006, R-LOGO-007, R-LOGO-008, R-LOGO-009, R-LOGO-010]
+    review_axes: [brand-element-reviewer, accessibility-reviewer]
+    visual_canon:
+      pageId: "125:11406"
+      pageName: Logo
+    is_authority_for:
+      - logo-on-surface pairings matrix (14-row canonical)
+      - logo asset catalog
+    consumes:
+      - tokens/brand.tokens.json (color.*, gradient.*)
+      - assets/logo/* (12 active variants + 3 deprecated)
+    cross_refs_from_other_chunks:
+      - color.md R-COLOR-006 (no logo on gradient under text)
+
+  - chunk_id: iconography
+    file: iconography.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-04-29
+    summary: >
+      Icon rules. Phosphor Icons as versioned dependency (no local SVGs);
+      210 curated icons in 2 weights (Regular + Fill). 10 HARD rules including
+      Phosphor exclusivity, manifest-only, only Regular and Fill weights, default
+      24px black, Fill for active states only, no decorative tiling, no recolor
+      outside palette, no <16px or >96px without explicit reason.
+    hard_rule_count: 10
+    hard_rule_ids: [R-ICON-001, R-ICON-002, R-ICON-003, R-ICON-004, R-ICON-005, R-ICON-006, R-ICON-007, R-ICON-008, R-ICON-009, R-ICON-010]
+    review_axes: [icon-reviewer, accessibility-reviewer, brand-element-reviewer]
+    visual_canon:
+      componentSetPageId: "10:119"
+      guidePageId: "125:12294"
+      pageName: Iconography
+    is_authority_for:
+      - icon-token catalog (the 210 curated names)
+      - icon-text size pairings
+      - Phosphor library version pinning
+    consumes:
+      - tokens/brand.tokens.json (color.icon.default, color.signal.*, space.2)
+      - assets/icons/icons-manifest.json (210 curated)
+    external_dependencies:
+      - "@phosphor-icons/core@2.x"
+      - "@phosphor-icons/react (for JSX renderers)"
+      - "@phosphor-icons/web (for vanilla web)"
+    cross_refs_from_other_chunks:
+      - color.md R-COLOR-003 (signal colors only for status) → iconography enforces via R-ICON-006
+      - logo-usage.md R-LOGO-008 (no logo as decoration) → iconography mirrors via R-ICON-009
+
+# Reviewer agent registry — which reviewers exist and which chunks they consume
+reviewers:
+  - id: color-reviewer
+    purpose: Color rule enforcement, palette compliance, gradient discipline
+    consumes: [color]
+    mandatory_for: any deliverable with color decisions
+
+  - id: typography-reviewer
+    purpose: Type family/weight/size/family-tier mapping enforcement
+    consumes: [typography]
+    mandatory_for: any deliverable with text
+
+  - id: brand-element-reviewer
+    purpose: Logo placement, icon decorative-use prohibition, asset integrity
+    consumes: [logo-usage, iconography, color]
+    mandatory_for: any deliverable with the logo or icons
+
+  - id: icon-reviewer
+    purpose: Icon-specific rule enforcement; manifest-conformance check
+    consumes: [iconography]
+    mandatory_for: any deliverable with icons
+
+  - id: accessibility-reviewer
+    purpose: WCAG 2.2 AA contrast, size floors, line-height conformance, touch targets
+    consumes: [color, typography, logo-usage, iconography]
+    mandatory_for: every shipped deliverable
+    authority_chunk: color (the contrast table is here, never duplicated)
+
+# Cross-foundation rule lattice — explicit links between rules in different chunks
+rule_lattice:
+  - rule: R-COLOR-003
+    chunk: color
+    cross_refs:
+      - R-ICON-006 (iconography also enforces signal-color discipline)
+  - rule: R-COLOR-006
+    chunk: color
+    cross_refs:
+      - R-LOGO-010 (logo on gradient under content also fails)
+  - rule: R-COLOR-009
+    chunk: color
+    cross_refs:
+      - R-TYPE-008 (typography enforces no teal below display)
+      - R-ICON-006 (icon teal below display also disallowed by extension)
+  - rule: R-LOGO-008
+    chunk: logo-usage
+    cross_refs:
+      - R-ICON-009 (icon-as-decoration mirrors logo-as-decoration prohibition)
+  - rule: R-TYPE-005
+    chunk: typography
+    cross_refs:
+      - R-ICON-008 (icon size floor 16 mirrors text floor 14)
+
+# Token-dependency graph — what each chunk consumes from tokens/brand.tokens.json
+token_consumption:
+  color:
+    - color.core.*
+    - color.secondary.*
+    - color.signal.*
+    - color.icon.*
+    - gradient.*
+  typography:
+    - typography.*
+    - color.core.black (default content color)
+    - color.core.teal (cross-ref color rules)
+  logo-usage:
+    - color.core.*
+    - color.secondary.*
+    - color.signal.stop
+    - color.signal.sky
+    - gradient.*
+  iconography:
+    - color.icon.default
+    - color.core.{black, white, off-white, gray-02}
+    - color.signal.*
+    - space.2
+
+# Memory canon — durable feedback that loads alongside foundation chunks
+related_memories:
+  universal:
+    - feedback_white_is_default_surface
+    - project_foundation_page_layout_pattern
+    - feedback_hero_color_80_20_black_teal
+    - feedback_14pt_practical_text_floor
+    - feedback_no_gray_logo_variant
+    - feedback_regular_weight_only
+    - feedback_no_uppercase_eyebrows
+    - feedback_myvault_fonts_lato_primary
+    - feedback_presentation_design_canon
+    - feedback_figma_imported_assets_scale_fix
+
+# When to load what — quick reference for agents
+load_for_task:
+  any_visual_deliverable: [color, typography]
+  deliverable_with_logo: [color, typography, logo-usage]
+  deliverable_with_icons: [color, typography, iconography]
+  deliverable_with_logo_and_icons: [color, typography, logo-usage, iconography]
+  presentation: [color, typography, logo-usage]
+  social_image: [color, typography, logo-usage]
+  document_or_ebook: [color, typography, logo-usage, iconography]
+  email: [color, typography, logo-usage, iconography]
+  web_or_app_ui: [color, typography, logo-usage, iconography]
+  chart_or_data_viz: [color, typography]
+
+# Changelog
+changelog:
+  - date: 2026-04-29
+    change: Initial. 4 active chunks (color, typography, logo-usage, iconography), 39 HARD rules, 5 reviewer agents, complete rule lattice + token consumption + memory linkage. Iconography integrated as the fourth foundation.
+    by: Mark + Claude

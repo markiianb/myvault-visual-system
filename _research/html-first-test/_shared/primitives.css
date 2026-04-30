@@ -1,0 +1,436 @@
+/* MyVault editorial primitives — HTML/CSS port of myvault-editorial.typ. */
+/* Encodes brand rules (R-TYPE, R-COLOR, R-LOGO, R-EBOOK-001..007) as classes. */
+
+/* ============================================================
+   Reset (minimal)
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Lato", system-ui, sans-serif;  /* will be overridden per role */
+  color: var(--color-core-black);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; height: auto; }
+
+/* ============================================================
+   Type roles — direct mapping to brand.tokens.json typography.*
+   Only Regular weight (feedback_regular_weight_only).
+   ============================================================ */
+.type-display-l   { font-family: var(--type-display-l-family);   font-size: var(--type-display-l-size);   line-height: var(--type-display-l-lh); }
+.type-display-m   { font-family: var(--type-display-m-family);   font-size: var(--type-display-m-size);   line-height: var(--type-display-m-lh); }
+.type-display-s   { font-family: var(--type-display-s-family);   font-size: var(--type-display-s-size);   line-height: var(--type-display-s-lh); }
+.type-heading-l   { font-family: var(--type-heading-l-family);   font-size: var(--type-heading-l-size);   line-height: var(--type-heading-l-lh); }
+.type-heading-m   { font-family: var(--type-heading-m-family);   font-size: var(--type-heading-m-size);   line-height: var(--type-heading-m-lh); }
+.type-body-xl     { font-family: var(--type-body-xl-family);     font-size: var(--type-body-xl-size);     line-height: var(--type-body-xl-lh); }
+.type-body-l      { font-family: var(--type-body-l-family);      font-size: var(--type-body-l-size);      line-height: var(--type-body-l-lh); }
+.type-body-default{ font-family: var(--type-body-default-family);font-size: var(--type-body-default-size);line-height: var(--type-body-default-lh); }
+.type-body-s      { font-family: var(--type-body-s-family);      font-size: var(--type-body-s-size);      line-height: var(--type-body-s-lh); }
+.type-caption     { font-family: var(--type-caption-family);     font-size: var(--type-caption-size);     line-height: var(--type-caption-lh); }
+
+/* Hero stat number (inline scale — extends the ladder past 96pt) */
+.type-stat-hero   { font-family: "PT Serif", serif; font-size: 220pt; line-height: 1; }
+.type-stat-mid    { font-family: "PT Serif", serif; font-size: 80pt;  line-height: 1; }
+
+/* Color helpers (semantic, not paint-by-numbers) */
+.fg-black     { color: var(--color-core-black); }
+.fg-white     { color: var(--color-core-white); }
+.fg-teal      { color: var(--color-core-teal); }
+.fg-gray-02   { color: var(--color-core-gray-02); }
+.fg-gray-01   { color: var(--color-core-gray-01); }
+.fg-off-white { color: var(--color-core-off-white); }
+
+/* Surfaces (R-EBOOK-002 page categories) */
+.surface-white     { background: var(--color-core-white);     color: var(--color-core-black); }
+.surface-off-white { background: var(--color-core-off-white); color: var(--color-core-black); }
+.surface-teal      { background: var(--color-core-teal);      color: var(--color-core-white); }
+.surface-black     { background: var(--color-core-black);     color: var(--color-core-white); }
+
+/* ============================================================
+   Page geometry primitives
+   ============================================================ */
+
+/* Ebook page — R-EBOOK-001: 800 × 1200, padding 40/80/40/80.
+   Uses CSS Paged Media so per-page surface and chrome are honored. */
+.ebook-page {
+  width: 800pt;
+  height: 1200pt;
+  padding: 40pt 80pt;            /* top/right=bottom/left, see below */
+  padding-top: 60pt;
+  padding-bottom: 56pt;
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+.ebook-page--full-bleed { padding: 0; }
+.ebook-page:last-child { page-break-after: auto; break-after: auto; }
+
+/* Slide — 1920 × 1080 (16:9). */
+.slide {
+  width: 1920px;
+  height: 1080px;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Social image — 1080 × 1080. */
+.social {
+  width: 1080px;
+  height: 1080px;
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   Footer (R-EBOOK-002 canonical: Icon-left + page-number-right)
+   Variant flips per surface pairings.
+   ============================================================ */
+.footer-canonical {
+  position: absolute;
+  bottom: 40pt;
+  left: 80pt;
+  right: 80pt;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24pt;
+}
+.footer-canonical img { width: 24pt; height: 24pt; }
+.footer-canonical .page-num {
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  line-height: 1;
+}
+.surface-white     .footer-canonical .page-num,
+.surface-off-white .footer-canonical .page-num { color: var(--color-core-gray-02); }
+.surface-teal      .footer-canonical .page-num,
+.surface-black     .footer-canonical .page-num { color: var(--color-core-white); }
+
+/* Running header — Lato 12pt gray-02, top-left at the padding line. */
+.running-header {
+  position: absolute;
+  top: 28pt;
+  left: 80pt;
+  right: 80pt;
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  line-height: 1;
+  color: var(--color-core-gray-02);
+}
+
+/* ============================================================
+   Cover (R-EBOOK-004: every cover has a lockup)
+   ============================================================ */
+.cover {
+  width: 800pt;
+  height: 1200pt;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+.cover .lockup {
+  position: absolute;
+  top: 60pt;
+  left: 60pt;
+  width: 171pt;
+  height: 48pt;
+}
+.cover .cover-title-block {
+  position: absolute;
+  bottom: 60pt;
+  left: 60pt;
+  right: 60pt;
+}
+.cover .cover-title {
+  font-family: "PT Serif", serif;
+  font-size: 64pt;
+  line-height: 1.1;
+  margin: 0 0 24pt 0;
+}
+.cover .cover-subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: 22pt;
+  line-height: 1.4;
+  margin: 0 0 24pt 0;
+  max-width: 560pt;
+}
+.cover .cover-author {
+  font-family: "Lato", sans-serif;
+  font-size: 17pt;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================================
+   Body content primitives (inline editorial blocks)
+   ============================================================ */
+
+/* Body text — editorial density. Matches Typst editorial-doc baseline:
+   Lato 18pt @ 155%. */
+.body-stream {
+  font-family: "Lato", sans-serif;
+  font-size: 18pt;
+  line-height: 1.55;
+  color: var(--color-core-black);
+}
+.body-stream p {
+  margin: 0 0 14pt 0;
+  max-width: 640pt;
+}
+
+/* subhead — PT Serif 28pt, breath above + below */
+.subhead {
+  font-family: "PT Serif", serif;
+  font-size: 28pt;
+  line-height: 1.3;
+  font-weight: 400;
+  margin: 32pt 0 16pt 0;
+  max-width: 640pt;
+}
+
+/* chapter — inline section break, big PT Serif heading */
+.chapter {
+  margin: 56pt 0 32pt 0;
+  break-inside: avoid;
+}
+.chapter-number {
+  font-family: "Lato", sans-serif;
+  font-size: 14pt;
+  color: var(--color-core-gray-02);
+  margin-bottom: 8pt;
+}
+.chapter-title {
+  font-family: "PT Serif", serif;
+  font-size: 56pt;
+  line-height: 1.15;
+  font-weight: 400;
+  margin: 0 0 16pt 0;
+  max-width: 640pt;
+}
+.chapter-subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: 18pt;
+  line-height: 1.55;
+  color: var(--color-core-gray-02);
+  margin: 0;
+  max-width: 640pt;
+}
+
+/* hero-stats — multi-stat inline panel.
+   Surface, n columns, inline, breathing-room above + below. */
+.hero-stats {
+  width: 640pt;
+  padding: 40pt;
+  border-radius: var(--radius-2xl);
+  background: var(--color-core-off-white);
+  margin: 32pt 0 32pt 0;
+  break-inside: avoid;
+}
+.hero-stats--teal { background: var(--color-core-teal); color: var(--color-core-white); }
+.hero-stats__label {
+  font-family: "Lato", sans-serif;
+  font-size: 14pt;
+  letter-spacing: 1pt;
+  color: var(--color-core-gray-02);
+  margin-bottom: 20pt;
+}
+.hero-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--n-stats, 3), 1fr);
+  gap: 32pt;
+}
+.hero-stats__cell {
+  display: flex;
+  flex-direction: column;
+}
+.hero-stats__value {
+  font-family: "PT Serif", serif;
+  font-size: 80pt;
+  line-height: 1;
+  color: var(--color-core-teal);
+  margin: 0 0 16pt 0;
+}
+.hero-stats--teal .hero-stats__value { color: var(--color-core-white); }
+.hero-stats__cell-label {
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  line-height: 1.5;
+  margin: 0 0 8pt 0;
+}
+.hero-stats__source {
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: var(--color-core-gray-02);
+  margin: 0;
+}
+.hero-stats--teal .hero-stats__source { color: var(--color-core-gray-01); }
+
+/* model-grid — n-up cards (default 2x2) for parallel concepts */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 350pt);
+  gap: 20pt;
+  margin: 24pt 0 32pt 0;
+}
+.model-grid__intro {
+  grid-column: 1 / -1;
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  line-height: 1.5;
+  color: var(--color-core-gray-02);
+  margin: 0 0 8pt 0;
+  max-width: 640pt;
+}
+.model-grid__card {
+  padding: 28pt;
+  border-radius: var(--radius-xl);
+  break-inside: avoid;
+}
+.model-grid__card:nth-child(odd of .model-grid__card) {
+  background: var(--color-core-off-white);
+}
+.model-grid__card:nth-child(even of .model-grid__card) {
+  background: var(--color-core-white);
+  border: 1pt solid var(--color-core-gray-01);
+}
+.model-grid__card-label {
+  font-family: "Lato", sans-serif;
+  font-size: 14pt;
+  letter-spacing: 1pt;
+  color: var(--color-core-teal);
+  margin: 0 0 12pt 0;
+}
+.model-grid__card-title {
+  font-family: "PT Serif", serif;
+  font-size: 28pt;
+  line-height: 1.2;
+  margin: 0 0 16pt 0;
+  max-width: 294pt;
+}
+.model-grid__card-body {
+  font-family: "Lato", sans-serif;
+  font-size: 14pt;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 294pt;
+}
+.model-grid__card--accent {
+  border-left: 4pt solid var(--color-core-teal);
+}
+
+/* data-grid — flowing reference table.
+   R-EBOOK ebook table primitive: 1px gray hairlines, header gray, cells black.
+   `break-inside: avoid` = Typst's `breakable: false`. */
+.data-grid {
+  width: 640pt;
+  margin: 24pt 0 32pt 0;
+  break-inside: avoid;
+}
+.data-grid__header {
+  font-family: "PT Serif", serif;
+  font-size: 28pt;
+  line-height: 1.3;
+  margin: 0 0 12pt 0;
+}
+.data-grid__intro {
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  line-height: 1.5;
+  color: var(--color-core-gray-02);
+  margin: 0 0 20pt 0;
+}
+.data-grid__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-grid__table thead th {
+  font-family: "Lato", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: left;
+  color: var(--color-core-gray-02);
+  border-top: 1pt solid var(--color-core-gray-02);
+  border-bottom: 1pt solid var(--color-core-gray-01);
+  padding: 8pt 20pt 8pt 0;
+}
+.data-grid__table tbody td {
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  line-height: 1.5;
+  color: var(--color-core-black);
+  border-bottom: 1pt solid var(--color-core-gray-01);
+  padding: 10pt 20pt 10pt 0;
+  vertical-align: top;
+}
+.data-grid__table tbody td:nth-child(3) {
+  font-size: 14pt;
+  color: var(--color-core-gray-02);
+}
+.data-grid__table th:first-child,
+.data-grid__table td:first-child  { width: 200pt; }
+.data-grid__table th:nth-child(2),
+.data-grid__table td:nth-child(2) { width: 200pt; }
+
+/* takeaways — boxed numbered summary at end of section */
+.takeaways {
+  width: 640pt;
+  padding: 32pt;
+  background: var(--color-core-off-white);
+  border-radius: var(--radius-2xl);
+  margin: 56pt 0 40pt 0;
+  break-inside: avoid;
+}
+.takeaways__head {
+  display: flex;
+  align-items: center;
+  gap: 16pt;
+  margin-bottom: 20pt;
+}
+.takeaways__rule {
+  width: 28pt;
+  height: 2pt;
+  background: var(--color-core-teal);
+}
+.takeaways__label {
+  font-family: "Lato", sans-serif;
+  font-size: 14pt;
+  letter-spacing: 1pt;
+  color: var(--color-core-teal);
+}
+.takeaways__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: takeaway;
+}
+.takeaways__list li {
+  display: grid;
+  grid-template-columns: 32pt 1fr;
+  gap: 16pt;
+  margin-bottom: 16pt;
+}
+.takeaways__list li::before {
+  counter-increment: takeaway;
+  content: counter(takeaway);
+  font-family: "PT Serif", serif;
+  font-size: 24pt;
+  line-height: 1.3;
+  color: var(--color-core-teal);
+}
+
+/* sources caption — Lato 12pt gray-02 */
+.source-caption {
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  color: var(--color-core-gray-02);
+  margin: 8pt 0 0 0;
+}

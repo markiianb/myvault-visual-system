@@ -1,0 +1,396 @@
+# MyVault visual-system / chunks manifest
+# Registry of all asset-type chunks. Parallel to foundations/_manifest.yaml.
+#
+# Each chunk pins a renderer + spec format and inherits from the foundations layer.
+# Update when a new asset-type chunk lands or an existing one ships a major version.
+
+manifest_version: "1.5"
+domain: chunks
+last_updated: 2026-04-30
+owner: mark
+summary: >
+  Asset-type chunks define rules for specific deliverable types (ebook, presentation,
+  social, chart, email, web component). Each chunk extends the foundations layer
+  (color, typography, logo-usage, iconography), pins one renderer per asset type,
+  and uses three severity tiers — HARD (universal-within-asset-type), BASE (defaults),
+  MENU (kit catalog of layouts to choose from).
+
+  This is the "patterns" layer of the visual-system pipeline. Phase 2 ships the
+  renderers in myvault-tools/brand-studio/.
+
+# === ACTIVE CHUNKS ===
+chunks:
+
+  - chunk_id: ebook
+    file: ebook.md
+    status: active
+    version: "1.1"
+    last_updated: 2026-04-30
+    asset_type: ebook
+    covers_pdf_documents: true
+    summary: >
+      Ebook + PDF document. 7 HARD rules covering page geometry + inner grid (1-col / 2-col),
+      surface-by-category + canonical Icon-left / page-number-right footer, signal-go reservation,
+      every-cover-has-a-lockup, mandatory pages, reading order, footnote signal-go semantics.
+      BASE typography table per role (Section Opener title and Stat Page hero number are flexible
+      defaults, not locks). MENU of 3 cover treatments (covers are an experimental surface — not a
+      closed catalog) + 17 interior page types (added stat-page-3-teal-mirror in v1.1).
+    hard_rule_count: 7
+    hard_rule_ids: [R-EBOOK-001, R-EBOOK-002, R-EBOOK-003, R-EBOOK-004, R-EBOOK-005, R-EBOOK-006, R-EBOOK-007]
+    renderer: typst
+    spec_format: typ
+    template_path_phase_2: brand-studio/templates/ebook/myvault-ebook.typ
+    output_formats: [pdf, pdf-a, pdf-ua]
+    visual_canon:
+      pageId: "70:8798"
+      pageName: "eBooks & Documents"
+      reference_examples:
+        - { nodeId: "72:9166", what: "canonical interior page footer (Icon-left + page-number-right) on white surface" }
+        - { nodeId: "89:6938", what: "dual-stat 2-column composition on Vault Teal with Icon-white footer flip" }
+    inherits_from_foundations: [color, typography, logo-usage, iconography]
+    review_axes: [ebook-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
+    foundation_overrides: []  # No HARD rules from foundations are overridden
+    is_authority_for:
+      - ebook interior page-type catalog (17 types in MENU)
+      - page-category → surface mapping (with documented dramatic-register override)
+      - canonical interior-page footer pattern (Icon-left + page-number-right; variant flips per pairings)
+      - inner-grid options for ebook pages (1-column 640 / 2-column 300/40/300)
+      - footnote/endnote signal-go semantics
+    cover_policy: |
+      Covers are intentionally not catalogued as a HARD spec. Three treatments are documented in MENU
+      as examples, but new compositions are welcome as long as R-EBOOK-001 (page geometry),
+      R-EBOOK-004 (every cover has a lockup), and the foundation rules hold.
+
+  - chunk_id: presentation
+    file: presentation.md
+    status: active
+    version: "1.2"
+    last_updated: 2026-04-30
+    asset_type: presentation
+    summary: >
+      Slide deck rules. 3 HARD rules covering canvas geometry (1920×1080, padding 20/40/20/40,
+      vertical auto-layout); no decorative top header bar (text-only deck-name + section-name labels
+      allowed); canonical footer shape when chrome is used; and 18-pt text floor (R-TYPE-005
+      foundation override). BASE rules cover full typography ladder
+      (144 / 72 / 64 / 56 / 48 / 40 / 32 / 28 / 18), surface palette + register guidance
+      (white default, off-white rare alternate), Vault Teal discipline with chart-annotation
+      scoped exception, body color on dark surfaces is solid white, 70/20/7/3 + max-2-colours,
+      1/2/3-column grid, card padding, header-label + footer Icon-variant pairing per surface,
+      typical deck shape (Cover and Closing as default patterns, not contracts). Pattern Reference
+      points at Figma Section 1 (13 prototypes) — study material for register, not templates.
+      Two-layer reviewer: Layer 1 rule compliance (automated, blocking) + Layer 2 reader
+      experience (judgment-based, advisory).
+    hard_rule_count: 3
+    hard_rule_ids: [R-PRES-001, R-PRES-002, R-PRES-003]
+    renderer: marp
+    renderer_status: provisional
+    spec_format: md
+    template_path_phase_2: brand-studio/templates/presentation/myvault-presentation/
+    output_formats: [pdf, pptx, html]
+    visual_canon:
+      pageId: "74:9684"
+      pageName: "Presentations"
+      pattern_reference_sections:
+        - { sectionId: "97:8611", sectionName: "Section 1", parentSectionId: "97:7729", parentSectionName: "Title slides", what: "13 finished slide-type prototypes (Slide 09 / Thesis Block through Slide 21 / Ask · Use of Funds) + Mark's draft frames Title-9 through Title-20 (12 ground-truth sketches)" }
+      prior_section_removed:
+        sectionId: "76:9735"
+        sectionName: "Slide Templates"
+        note: "Held 8 earlier canonical types (Title, Agenda, Section Divider Light/Dark, Statement, Stat Block, Logo Reveal, Comparison). Deleted from Figma during v3 of the investor-deck test. Section 1 is now the only canonical pattern reference."
+    inherits_from_foundations: [color, typography, logo-usage, iconography]
+    review_axes: [presentation-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
+    foundation_overrides:
+      - { rule_id: R-TYPE-005, chunk: typography, nature: raise-floor, from: "14pt practical text floor", to: "18pt presentation text floor", enforced_by: R-PRES-003 }
+      - { rule_id: R-COLOR-009, chunk: color, nature: scoped-exception, scope: "chart annotations within chart cards (axis labels, year labels, legend labels, source captions on chart surfaces)", note: "Vault Teal allowed at 18 pt for chart-context labeling inside chart card boundaries. Body and non-chart captions still bind R-COLOR-009. Will be ratified at foundation level when chunks/chart.md ships.", enforced_by: "BASE Vault Teal discipline section" }
+    is_authority_for:
+      - presentation slide canvas + auto-layout structure
+      - presentation-asset 18-pt text floor (R-TYPE-005 override)
+      - presentation header-label + footer canonical shape and Icon-variant pairing per surface
+      - presentation typography ladder (144 / 72 / 64 / 56 / 48 / 40 / 32 / 28 / 18)
+      - presentation column system (1-col 1840 / 2-col 900×N / 3-col 587×N, all gap 40)
+      - Vault Teal discipline interpretation (sparingly, every instance earns its presence — no closed reservation list; chart-card 18pt scoped exception)
+      - body color on dark surfaces (solid white, not opacity-reduced)
+    structure_policy: |
+      No mandatory deck structure. Per `feedback_no_mandatory_pages_editorial_first`, each deck
+      decides what slides it needs based on what serves its audience. Cover and Closing are typical
+      default patterns documented in BASE — not contracts. A 4th HARD rule (minimum-viable structure)
+      was drafted and removed during initial authoring once that principle landed.
+    chrome_policy: |
+      Header labels (deck-name left + section-name right, Lato 18 text-only) and footer (icon-left +
+      page-number-right, 1840×24 SPACE_BETWEEN) are conditional, not mandatory. Cover, Closing,
+      full-bleed editorial slides typically omit one or both. The HARD constraint is the SHAPE of
+      header labels and footer when present, plus the universal prohibition on a decorative top
+      header bar / strip / fill.
+
+  - chunk_id: chart
+    file: chart.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-04-30
+    asset_type: chart
+    summary: >
+      Data-visualization chart deliverables. 7 HARD rules (R-CHART-001..007) covering
+      chart-card geometry (cornerRadius 0; 1px gray-01 stroke; 40 padding), no-eyebrow-above-title,
+      footer canonical shape (1px top stroke + dot+caption together-LEFT gap 10 — the Figma
+      data-property says SPACE_BETWEEN but visual canon shows together-LEFT, visual wins),
+      comparative-palette reservation (signal.stop / sky / go for 3-state status comparisons only —
+      sequential data uses teal), value-labels-on-every-comparative-segment (color-blind safety),
+      Vault Teal at 18pt allowed for chart annotations within chart-card boundary (ratifies the
+      scoped R-COLOR-009 exception declared in presentation.md v1.1), and the negative-bar /
+      zero-line / dashed-gridline distinction for axis charts. BASE rules cover typography per
+      role, surface palette (gradient default; flat off-white; solid teal), per-surface color
+      recipes, bar/radial geometry, axis-chart specifics. MENU catalog of 5 canonical types.
+      Renderer: Vega-Lite + JSON spec; SVG composer wraps Vega-Lite plot output in chart-card
+      chrome (renderers/vega-lite/compose.mjs). 5 fixtures validated end-to-end against Figma
+      reference frames on 2026-04-30.
+    hard_rule_count: 7
+    hard_rule_ids: [R-CHART-001, R-CHART-002, R-CHART-003, R-CHART-004, R-CHART-005, R-CHART-006, R-CHART-007]
+    renderer: vega-lite
+    spec_format: json
+    template_path_phase_2: renderers/vega-lite/
+    output_formats: [svg, png, pdf]
+    visual_canon:
+      pageId: "70:8479"
+      pageName: "Diagrams"
+      reference_examples:
+        - { nodeId: "70:8480", what: "Horizontal Bar Chart on gradient.mist (5 rows)" }
+        - { nodeId: "70:8520", what: "Horizontal Bar Chart on gradient.primary (alternate register)" }
+        - { nodeId: "70:8617", what: "Vertical Bar Chart on gradient.warm" }
+        - { nodeId: "70:8705", what: "Vertical Bar Chart with Axes on flat off-white" }
+        - { nodeId: "70:8651", what: "Radial Comparison — Dramatic on solid teal" }
+        - { nodeId: "70:8678", what: "Radial Comparison — Light on gradient.greydient" }
+    inherits_from_foundations: [color, typography, logo-usage, iconography]
+    review_axes: [chart-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
+    foundation_overrides:
+      - { rule_id: R-COLOR-009, chunk: color, nature: scoped-exception, scope: "chart annotations within chart-card boundary (axis labels, year labels, legend labels, source captions)", note: "Vault Teal allowed at 18pt for chart-context labeling inside chart-card. Ratifies the exception that presentation.md v1.1 anticipated.", enforced_by: R-CHART-006 }
+    is_authority_for:
+      - chart-card geometry + chrome shape across the visual system
+      - comparative palette reservation (signal.stop / sky / go for 3-state status only)
+      - value-labels-on-every-comparative-segment color-blind solution
+      - chart-annotation scoped Vault Teal exception (ratifies presentation.md v1.1's anticipation)
+      - axis-chart treatment (negative bars + zero line + dashed gridlines)
+    out_of_scope:
+      - { what: "Flow Diagram (Figma 70:8560)", where_to: "future chunks/diagram.md (Typst+Fletcher)" }
+      - { what: "Stat Infographic (Figma 70:8598)", where_to: "stat-infographic editorial primitive in renderers/typst/myvault-editorial.typ" }
+
+# === ROADMAP — chunks not yet built ===
+roadmap:
+
+  - chunk_id: social
+    status: planned
+    asset_type: social-image
+    renderer_proposed: satori
+    spec_format_proposed: tsx
+    output_formats: [png, jpg]
+    summary: "Single social images + carousels. Stream A (editorial) and Stream B (newsroom) registers per existing canon."
+    blocker: open question — Stream A/B split rules
+    estimated_hard_rules: 8-10
+
+  - chunk_id: diagram
+    status: planned
+    asset_type: diagram
+    renderer_proposed: typst
+    spec_format_proposed: typ
+    output_formats: [svg, png, pdf]
+    summary: "Flow diagrams + node-graph diagrams. Adopts Flow Diagram (Figma 70:8560) from chart.md's out-of-scope list. Typst+Fletcher renders pill nodes, accent nodes, code nodes, right-angle connectors natively."
+    blocker: none
+    estimated_hard_rules: 5-8
+
+  - chunk_id: email
+    status: planned
+    asset_type: email
+    renderer_proposed: react-email
+    spec_format_proposed: tsx
+    output_formats: [html]
+    summary: "Newsletter + transactional email. Less existing canon."
+    blocker: minimal canon collected so far
+    estimated_hard_rules: 6-8
+
+  - chunk_id: web-component
+    status: deferred
+    asset_type: web-component
+    renderer_proposed: tailwind-v4-react
+    spec_format_proposed: tsx
+    output_formats: [react-component]
+    summary: "Deferred — only when ui-system phase arrives (per locked scope)."
+    blocker: ui-system layer not yet scoped
+
+# === RENDERER MATRIX ===
+renderer_pinning:
+  ebook: { renderer: typst, spec_format: typ, phase: 2.0 }
+  presentation: { renderer: marp, spec_format: md, phase: 2.1 }
+  chart: { renderer: vega-lite, spec_format: json, phase: 2.0, status: shipped, note: "renderers/vega-lite/ active 2026-04-30; SVG composer wraps Vega-Lite plot output in brand chart-card chrome" }
+  social: { renderer: satori, spec_format: tsx, phase: 2.2 }
+  diagram: { renderer: typst, spec_format: typ, phase: 2.4 }
+  email: { renderer: react-email, spec_format: tsx, phase: 3.1 }
+  web_component: { renderer: tailwind-v4-react, spec_format: tsx, phase: 3.2 }
+
+# === REVIEWER AGENT ROSTER (asset-type specific) ===
+reviewers:
+  - id: ebook-reviewer
+    consumes: [ebook]
+    purpose: "Ebook-specific HARD rule enforcement (R-EBOOK-001..010), MENU/BASE conformance"
+    runs_when: deliverable_type in [ebook, pdf-document]
+
+  - id: presentation-reviewer
+    consumes: [presentation]
+    purpose: "Two-layer review: Layer 1 enforces R-PRES-001..003 + foundation rules (automated, blocking); Layer 2 evaluates reader experience — 3-second test, one-idea test, distance legibility, register match, Vault Teal earns presence, calm-not-loud, brand voice; deck-level arc / cadence / chrome consistency / opening-closing loop (judgment-based, advisory)"
+    runs_when: deliverable_type == presentation
+    status: contract-defined  # chunk shipped; agent implementation pending
+
+  - id: social-reviewer
+    consumes: [social]
+    purpose: "Social image + carousel HARD enforcement, platform-aspect compliance"
+    runs_when: deliverable_type == social-image
+    status: planned
+
+  - id: chart-reviewer
+    consumes: [chart]
+    purpose: "Chart HARD enforcement (R-CHART-001..007), comparative palette compliance, value-labels-on-comparative-segment color-blind check, axis-chart negative-bar / zero-line / dashed-gridline distinction"
+    runs_when: deliverable_type == chart
+    status: contract-defined  # chunk shipped; agent implementation pending
+
+  - id: email-reviewer
+    consumes: [email]
+    purpose: "Email HARD enforcement, client-compatibility, dark-mode"
+    runs_when: deliverable_type == email
+    status: planned
+
+# === LOAD-FOR-TASK QUICK LOOKUP ===
+# Which chunks (foundations + asset-types) to load when generating a deliverable
+load_for_task:
+  ebook:
+    foundations: [color, typography, logo-usage, iconography]
+    chunks: [ebook]
+    chunks_if_brief_mentions_data_viz: [ebook, chart]
+    tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
+  pdf_document:
+    foundations: [color, typography, logo-usage, iconography]
+    chunks: [ebook]  # ebook chunk covers PDF docs
+    chunks_if_brief_mentions_data_viz: [ebook, chart]
+    tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
+  presentation:
+    foundations: [color, typography, logo-usage, iconography]
+    chunks: [presentation]
+    tokens_filter: [color.*, typography.*, gradient.*, space.*]
+  social_image:
+    foundations: [color, typography, logo-usage, iconography]
+    chunks: [social]  # planned
+    tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
+  chart:
+    foundations: [color, typography]
+    chunks: [chart]
+    tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
+  email:
+    foundations: [color, typography, logo-usage, iconography]
+    chunks: [email]  # planned
+    tokens_filter: [color.*, typography.*, space.*]
+
+# === FOUNDATIONS LAYER REFERENCE ===
+# This chunks layer extends the foundations layer.
+# See foundations/_manifest.yaml for the foundation chunk registry.
+foundations_manifest_path: "../foundations/_manifest.yaml"
+
+# === SEVERITY TIER REFERENCE ===
+# Asset-type chunks use three tiers — HARD, BASE, MENU.
+# Foundations chunks use two tiers — HARD, BASE.
+# MENU is unique to asset-type chunks (kit catalog of choose-one alternatives).
+severity_tiers:
+  HARD:
+    enforcement: "reviewer agents reject violations"
+    examples: "R-EBOOK-001 page geometry, R-EBOOK-002 surface-by-category"
+  BASE:
+    enforcement: "default behavior; deviation must be documented in deliverable spec"
+    examples: "body Lato 16pt @ 150%, default header alignment"
+  MENU:
+    enforcement: "no enforcement — pick one"
+    examples: "3 cover treatments, 16 page types, variant duplicates"
+
+# === MEMORY CANON THAT INFORMS ALL ASSET-TYPE CHUNKS ===
+related_memories:
+  universal:
+    - feedback_no_mandatory_pages_editorial_first
+    - feedback_design_pages_are_guidelines
+    - feedback_chunk_size_placement_pins
+    - feedback_grid_is_content_specific
+    - feedback_white_is_default_surface
+    - feedback_hero_color_80_20_black_teal
+    - feedback_14pt_practical_text_floor
+    - feedback_regular_weight_only
+    - feedback_no_uppercase_eyebrows
+
+# === CHANGELOG ===
+changelog:
+  - date: 2026-04-30
+    change: >
+      Manifest v1.5 — **chart chunk shipped (v1.0).** Moved from roadmap to active. 7 HARD rules
+      (R-CHART-001..007) covering chart-card geometry, no-eyebrow-above-title, footer canonical
+      shape (dot+caption together-LEFT — visual canon overrides Figma's SPACE_BETWEEN data
+      property), comparative palette reservation, value-labels-on-comparative-segment color-blind
+      solution, Vault Teal at 18pt allowed within chart-card boundary (ratifies presentation.md
+      v1.1's anticipated scoped exception), negative-bar / zero-line / dashed-gridline distinction.
+      One foundation override (scoped R-COLOR-009 exception per R-CHART-006). Renderer pinned to
+      Vega-Lite + JSON spec; SVG composer (renderers/vega-lite/compose.mjs) wraps Vega-Lite plot
+      output in brand chart-card chrome. 5 fixtures validated end-to-end against Figma reference
+      frames (70:8480 horizontal-bar, 70:8617 vertical-bar, 70:8705 vertical-bar-axes, 70:8651
+      radial-dramatic, 70:8678 radial-light). Flow Diagram (70:8560) and Stat Infographic (70:8598)
+      explicitly out of scope — Flow goes to a new roadmap entry chunks/diagram.md (Typst+Fletcher);
+      Stat Infographic adopted as a stat-infographic editorial primitive in myvault-editorial.typ.
+      Renderer matrix updated: chart promoted to phase 2.0 / status shipped; diagram added at phase
+      2.4. chart-reviewer status: contract-defined.
+    by: Mark + Claude
+  - date: 2026-04-30
+    change: >
+      Manifest v1.4 — presentation chunk → v1.2 after end-to-end test deck. Built the State of Family
+      Privacy 2026 deck (10 slides, novel content) via figma_execute, ran 3 review cycles. Chunk's
+      HARD + BASE contract held without rule changes. Three additive BASE patterns documented:
+      (a) Closing observation pattern (optional 28–32 pt synthesizing line at bottom of content slides
+      with layoutGrow=1 spacer); (b) Cover brand-mark anchor (optional small Icon-variant ≈32 px at
+      top-left of Cover/Closing in lieu of header-label chrome); (c) Shape-primitive glyphs
+      (implement Harvey Balls / status markers as Figma Ellipse/shape primitives, not unicode characters,
+      for token-bound fill consistency). No HARD rule changes. Foundation overrides unchanged.
+      Test artifacts at `presentations/test-state-of-privacy/` (content.md + learnings.md + Figma
+      Section 2 at 151:9048).
+    by: Mark + Claude
+  - date: 2026-04-30
+    change: >
+      Manifest v1.3 — presentation chunk → v1.1 after Cycle 0 audit. Eight deltas resolved:
+      R-PRES-002 reshaped (no decorative top header bar; text-only header labels allowed);
+      Slide Templates section reference dropped (deleted from Figma during v3); BASE Surface
+      Palette swap (white default, off-white rare alternate per `feedback_white_is_default_surface`);
+      body on dark surfaces is solid white, not @ 0.85; second `foundation_overrides` entry —
+      scoped R-COLOR-009 exception for chart annotations within chart cards (Vault Teal at 18pt
+      allowed inside chart card boundaries only); typography ladder extended to 9 tiers
+      (144 / 72 / 64 / 56 / 48 / 40 / 32 / 28 / 18); 56pt usage broadened beyond Statement
+      headlines; Slide 09 Thesis-pattern title at 40pt documented as deliberate stylistic choice.
+      Manifest entry expanded with `chrome_policy`. Manifest version bumped 1.2 → 1.3.
+    by: Mark + Claude
+  - date: 2026-04-30
+    change: >
+      Manifest v1.2 — second active chunk. presentation chunk v1.0 added under active chunks
+      (moved out of roadmap). 3 HARD rules (R-PRES-001..003): canvas geometry, no-top-header-strip
+      + canonical footer shape when chrome is used (footer presence conditional, not mandatory),
+      and 18-pt text floor (the chunks layer's first explicit foundation override — R-TYPE-005).
+      Pattern Reference replaces MENU. Two-layer reviewer (Layer 1 rule compliance blocking,
+      Layer 2 reader experience advisory). presentation-reviewer status: contract-defined
+      (chunk shipped; agent implementation pending). `feedback_no_mandatory_pages_editorial_first`
+      added to universal memory canon — applies to every asset-type chunk going forward.
+      `feedback_chunk_size_placement_pins` also added to universal memory canon.
+    by: Mark + Claude
+  - date: 2026-04-30
+    change: >
+      ebook chunk → v1.1. Pinning relaxed per `feedback_chunk_size_placement_pins`.
+      R-EBOOK-004 reshaped (every cover has a lockup; placement/size flexible per R-LOGO).
+      R-EBOOK-005 (Section Opener title) and R-EBOOK-006 (Stat Page hero number) demoted to BASE.
+      R-EBOOK-009 (cover composition split) deleted — covers are now an experimental surface.
+      Renumbered remaining HARD rules; total 10 → 7. R-EBOOK-002 reshaped around canonical
+      Icon-left / page-number-right footer pattern (Figma 72:9166) with surface-flip override
+      for dramatic content (Figma 89:6938). R-EBOOK-001 expanded with explicit 1-col / 2-col
+      inner-grid options. New MENU entry: stat-page-3-teal-mirror.
+    by: Mark + Claude
+  - date: 2026-04-29
+    change: >
+      Initial. ebook chunk shipped (10 HARD rules, renderer pinned to Typst,
+      visual canon Figma 70:8798). 5 chunks roadmapped (presentation, social,
+      chart, email, web-component). Renderer matrix pinned per architecture v2.
+      MENU tier introduced (unique to asset-type chunks vs. foundations).
+    by: Mark + Claude

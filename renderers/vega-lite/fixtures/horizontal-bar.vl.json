@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "MyVault Horizontal Bar Chart — fixture (Figma reference 70:8480). Card 960x451, gradient.mist surface, 5 rows.",
+  "background": "transparent",
+  "padding": 40,
+  "width": 880,
+  "config": {
+    "background": "transparent",
+    "padding": 0,
+    "font": "Lato",
+    "view": {"stroke": null, "fill": null},
+    "axis": {
+      "labelFont": "Lato",
+      "labelFontSize": 14,
+      "labelFontWeight": 400,
+      "labelColor": "#000000",
+      "labelPadding": 0,
+      "domain": false,
+      "ticks": false,
+      "grid": false,
+      "title": null
+    }
+  },
+  "title": {
+    "text": "Chart Title Goes Here",
+    "subtitle": "A concise line describing what the chart shows and why it matters.",
+    "anchor": "start",
+    "offset": 20,
+    "font": "PT Serif",
+    "fontSize": 40,
+    "fontWeight": 400,
+    "color": "#000000",
+    "subtitleFont": "Lato",
+    "subtitleFontSize": 14,
+    "subtitleFontWeight": 400,
+    "subtitleColor": "#696969",
+    "subtitlePadding": 8,
+    "lineHeight": 50
+  },
+  "data": {
+    "values": [
+      {"category": "Category 01", "value": 92},
+      {"category": "Category 02", "value": 78},
+      {"category": "Category 03", "value": 63},
+      {"category": "Category 04", "value": 45},
+      {"category": "Category 05", "value": 31}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#094545",
+        "cornerRadius": 0,
+        "height": 40
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "axis": {
+            "labelAlign": "right",
+            "labelPadding": 12,
+            "labelFontSize": 14,
+            "labelColor": "#000000",
+            "domain": false,
+            "ticks": false,
+            "title": null
+          },
+          "scale": {"paddingInner": 0.09, "paddingOuter": 0}
+        },
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {"domain": [0, 100], "nice": false}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 12,
+        "fontSize": 14,
+        "font": "Lato",
+        "color": "#000000"
+      },
+      "encoding": {
+        "y": {"field": "category", "type": "nominal"},
+        "x": {"field": "value", "type": "quantitative"},
+        "text": {"field": "value", "type": "quantitative"}
+      }
+    }
+  ],
+  "height": 220
+}

@@ -1,0 +1,30 @@
+{
+  "id": "radial-dramatic",
+  "type": "radial-dramatic",
+  "description_for_agent": "MyVault Radial Comparison — Dramatic — fixture (Figma reference 70:8651). Card 960 wide, solid teal surface, 3 cells with comparative palette (signal.stop / sky / go), white text, white-at-0.25 track ring.",
+  "card": {
+    "width": 960,
+    "padding": [40, 40, 40, 40],
+    "surface": "teal",
+    "headerGap": 20,
+    "footerGap": 20
+  },
+  "header": {
+    "title": "Chart Title Goes Here",
+    "description": "A concise line describing what the chart shows and why it matters.",
+    "innerGap": 8
+  },
+  "footer": {
+    "show": true,
+    "source": "Source / caption — MyVault, 2026"
+  },
+  "plot": {
+    "data": {
+      "values": [
+        {"label": "Without MyVault", "percentage": 47},
+        {"label": "With assistance",  "percentage": 52},
+        {"label": "Fully set up",     "percentage": 98}
+      ]
+    }
+  }
+}

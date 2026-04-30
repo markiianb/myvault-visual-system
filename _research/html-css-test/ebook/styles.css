@@ -1,0 +1,373 @@
+/* MyVault editorial — HTML/CSS print stylesheet
+ * Mirror of myvault-editorial.typ for head-to-head test.
+ * Tokens are CSS custom properties (would be generated from brand.tokens.json
+ * in production via a small build script).
+ */
+
+@font-face {
+  font-family: "PT Serif";
+  src: url("../fonts/PTSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  /* color.core */
+  --c-teal: #094545;
+  --c-white: #ffffff;
+  --c-off-white: #fbfaf5;
+  --c-gray-01: #dddcd6;
+  --c-gray-02: #696969;
+  --c-black: #000000;
+
+  /* typography */
+  --f-serif: "PT Serif", serif;
+  --f-sans: "Lato", system-ui, sans-serif;
+
+  /* spacing — page geometry mirrors flow() in myvault-editorial.typ */
+  --pg-w: 800pt;
+  --pg-h: 1200pt;
+  --pg-margin-top: 60pt;
+  --pg-margin-bottom: 56pt;
+  --pg-margin-x: 40pt;
+  --pg-content-w: 720pt;
+
+  /* radius */
+  --r-xl: 12pt;
+  --r-2xl: 16pt;
+  --r-full: 999pt;
+}
+
+/* ============================================================
+   Page sizing — CSS Paged Media
+   Each .page is one printed page; @page sets the canvas.
+   ============================================================ */
+
+@page {
+  size: 800pt 1200pt;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  line-height: 1.55;
+  color: var(--c-black);
+  background: var(--c-white);
+}
+
+/* The .page element is the printable canvas. break-after forces a page break. */
+.page {
+  width: 800pt;
+  height: 1200pt;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  background: var(--c-white);
+}
+
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* ============================================================
+   Surface variants (mirror Typst _surface-fill)
+   ============================================================ */
+
+.surface-teal     { background: var(--c-teal); color: var(--c-white); }
+.surface-off      { background: var(--c-off-white); color: var(--c-black); }
+.surface-white    { background: var(--c-white); color: var(--c-black); }
+
+/* ============================================================
+   Cover page (mirrors cover() primitive)
+   ============================================================ */
+
+.cover {
+  padding: 0;
+}
+
+.cover .lockup {
+  position: absolute;
+  top: 60pt;
+  left: 60pt;
+  width: 171pt;
+  height: 48pt;
+}
+
+.cover .closing {
+  position: absolute;
+  bottom: 60pt;
+  left: 60pt;
+  width: 680pt;
+}
+
+.cover .title {
+  font-family: var(--f-serif);
+  font-size: 64pt;
+  line-height: 1.10;
+  color: var(--c-white);
+}
+
+.cover .subtitle {
+  font-family: var(--f-sans);
+  font-size: 22pt;
+  line-height: 1.40;
+  color: var(--c-off-white);
+  margin-top: 24pt;
+  width: 560pt;
+}
+
+.cover .author {
+  font-family: var(--f-sans);
+  font-size: 17pt;
+  line-height: 1.50;
+  color: var(--c-off-white);
+  margin-top: 24pt;
+}
+
+/* ============================================================
+   Body page chrome (running header + footer per Typst flow())
+   ============================================================ */
+
+.body-page {
+  padding: var(--pg-margin-top) var(--pg-margin-x) var(--pg-margin-bottom);
+  position: relative;
+}
+
+.running-header {
+  position: absolute;
+  top: 20pt;
+  left: var(--pg-margin-x);
+  right: var(--pg-margin-x);
+  font-family: var(--f-sans);
+  font-size: 16pt;
+  line-height: 1;
+  color: var(--c-gray-02);
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 20pt;
+  left: var(--pg-margin-x);
+  right: var(--pg-margin-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24pt;
+}
+
+.page-footer .icon {
+  width: 24pt;
+  height: 24pt;
+}
+
+.page-footer .pgnum {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  color: var(--c-gray-02);
+  line-height: 1;
+}
+
+/* ============================================================
+   subhead() — block-level subhead
+   ============================================================ */
+
+.subhead {
+  font-family: var(--f-serif);
+  font-size: 28pt;
+  line-height: 1.30;
+  color: var(--c-black);
+  margin: 48pt 0 20pt;
+}
+
+.subhead:first-child { margin-top: 0; }
+
+/* body paragraphs */
+p {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  line-height: 1.55;
+  color: var(--c-black);
+  margin-bottom: 14pt;
+}
+
+p:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   hero-stats() panel
+   ============================================================ */
+
+.hero-stats {
+  width: var(--pg-content-w);
+  background: var(--c-off-white);
+  border-radius: var(--r-2xl);
+  padding: 40pt;
+  margin: 48pt 0;
+}
+
+.hero-stats .label {
+  font-family: var(--f-sans);
+  font-size: 14pt;
+  letter-spacing: 1pt;
+  color: var(--c-gray-02);
+  margin-bottom: 20pt;
+  line-height: 1;
+}
+
+.hero-stats .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32pt;
+}
+
+.hero-stats .stat .value {
+  font-family: var(--f-serif);
+  font-size: 80pt;
+  line-height: 1;
+  color: var(--c-teal);
+}
+
+.hero-stats .stat .stat-label {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  line-height: 1.50;
+  color: var(--c-black);
+  margin-top: 16pt;
+}
+
+.hero-stats .stat .source {
+  font-family: var(--f-sans);
+  font-size: 12pt;
+  line-height: 1.50;
+  color: var(--c-gray-02);
+  margin-top: 8pt;
+}
+
+/* ============================================================
+   model-grid() — 2x2 cards
+   ============================================================ */
+
+.model-grid {
+  margin: 40pt 0;
+}
+
+.model-grid .intro {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  line-height: 1.55;
+  color: var(--c-gray-02);
+  margin-bottom: 28pt;
+  width: var(--pg-content-w);
+}
+
+.model-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 350pt);
+  gap: 20pt;
+}
+
+.model-grid .card {
+  width: 350pt;
+  border-radius: var(--r-xl);
+  padding: 28pt;
+}
+
+.model-grid .card.fill-off { background: var(--c-off-white); }
+.model-grid .card.fill-white {
+  background: var(--c-white);
+  border: 1px solid var(--c-gray-01);
+}
+
+.model-grid .card .card-label {
+  font-family: var(--f-sans);
+  font-size: 14pt;
+  letter-spacing: 1pt;
+  color: var(--c-teal);
+  line-height: 1;
+  margin-bottom: 12pt;
+}
+
+.model-grid .card h3 {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  font-size: 28pt;
+  line-height: 1.20;
+  color: var(--c-black);
+  margin-bottom: 16pt;
+}
+
+.model-grid .card .card-body {
+  font-family: var(--f-sans);
+  font-size: 14pt;
+  line-height: 1.50;
+  color: var(--c-black);
+}
+
+/* ============================================================
+   data-grid() — flowing reference table
+   ============================================================ */
+
+.data-grid {
+  margin: 32pt 0;
+  width: var(--pg-content-w);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.data-grid h3 {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  font-size: 28pt;
+  line-height: 1.30;
+  color: var(--c-black);
+  margin-bottom: 12pt;
+}
+
+.data-grid .intro {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  color: var(--c-gray-02);
+  margin-bottom: 20pt;
+}
+
+.data-grid .rule-top { height: 1pt; background: var(--c-gray-02); margin-bottom: 8pt; }
+.data-grid .rule-row { height: 1pt; background: var(--c-gray-01); margin: 8pt 0 10pt; }
+
+.data-grid .row {
+  display: grid;
+  grid-template-columns: 200pt 200pt 1fr;
+  gap: 20pt;
+  align-items: start;
+}
+
+.data-grid .row.head {
+  font-family: var(--f-sans);
+  font-size: 14pt;
+  color: var(--c-gray-02);
+}
+
+.data-grid .row.body {
+  font-family: var(--f-sans);
+  font-size: 18pt;
+  color: var(--c-black);
+}
+
+.data-grid .row.body .notes {
+  font-family: var(--f-sans);
+  font-size: 14pt;
+  color: var(--c-gray-02);
+}

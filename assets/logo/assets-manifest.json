@@ -1,0 +1,341 @@
+{
+  "$schema": "https://design-tokens.org/schemas/v1.0.json",
+  "$description": "MyVault brand logo asset manifest. Catalogs every exported variant of the Figma 'Logo' component set with dimensions, color-token bindings, intended use, and Figma round-trip metadata. Companion to brand.tokens.json. See README.md for re-extraction procedure.",
+  "$extensions": {
+    "com.myvault.figma": {
+      "fileKey": "Pm31BDHj34WjJ7NjBK4Ady",
+      "fileName": "MyVault \u2014 Brand Design System",
+      "componentSetId": "1:572",
+      "componentSetName": "Logo",
+      "componentSetKey": "90670806c08a9e4e2025910b78192cce03839a6f",
+      "variantProperties": {
+        "Type": [
+          "Icon",
+          "Wordmark",
+          "Lockup"
+        ],
+        "Color": [
+          "Primary",
+          "Teal",
+          "Light",
+          "White",
+          "Gray"
+        ]
+      },
+      "exportSettings": {
+        "format": "SVG_STRING",
+        "svgIdAttribute": false,
+        "svgSimplifyStroke": true,
+        "svgOutlineText": true,
+        "rationale": "svgOutlineText:true converts the wordmark text to vector paths so SVGs render identically without needing PT Serif/Lato fonts installed in the consuming renderer."
+      },
+      "extractedAt": "2026-04-29T12:36:48.407Z",
+      "extractedBy": "figma_execute (exportAsync) via figma-console MCP"
+    }
+  },
+  "logos": {
+    "icon-primary": {
+      "$description": "Default mark on light backgrounds. Use on off-white, white, or any neutral light surface.",
+      "filename": "icon-primary.svg",
+      "type": "Icon",
+      "color": "Primary",
+      "width": 219,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.black"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:573",
+          "componentKey": "e3ee4af35f4c3144aaf46ca3c007aca2ab448672",
+          "variantName": "Type=Icon, Color=Primary",
+          "svgBytes": 3261
+        }
+      }
+    },
+    "icon-teal": {
+      "$description": "Brand-emphasis mark in Vault Teal. Use sparingly on off-white when the wordmark itself should reinforce the brand color (e.g., in formal documents).",
+      "filename": "icon-teal.svg",
+      "type": "Icon",
+      "color": "Teal",
+      "width": 219,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.teal"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:581",
+          "componentKey": "530757bff7d04151c0d826b7bc6ec420fe171837",
+          "variantName": "Type=Icon, Color=Teal",
+          "svgBytes": 3274
+        }
+      }
+    },
+    "icon-light": {
+      "$description": "Mark in off-white for use on dark backgrounds (black, dark-earth, premium-purple, rich-blue). Slightly warmer than pure white \u2014 preferred over white where soft contrast is wanted.",
+      "filename": "icon-light.svg",
+      "type": "Icon",
+      "color": "Light",
+      "width": 219,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.off-white"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:589",
+          "componentKey": "2c3854f76fef410f5b34747a5103802e90ebe4bb",
+          "variantName": "Type=Icon, Color=Light",
+          "svgBytes": 3274
+        }
+      }
+    },
+    "icon-white": {
+      "$description": "Pure white mark for use on the darkest or most saturated backgrounds (teal hero blocks, premium-purple, signal colors). Maximum contrast.",
+      "filename": "icon-white.svg",
+      "type": "Icon",
+      "color": "White",
+      "width": 219,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.white"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:597",
+          "componentKey": "bafcbf9dfa286e9cfa3e225cd6bf8cc5849f1535",
+          "variantName": "Type=Icon, Color=White",
+          "svgBytes": 3262
+        }
+      }
+    },
+    "icon-gray": {
+      "$description": "Deprecated. The asset exists for archival reasons but is never used in deliverables. Use Primary, Teal, Light, or White instead.",
+      "filename": "icon-gray.svg",
+      "type": "Icon",
+      "color": "Gray",
+      "width": 219,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.gray-02"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:605",
+          "componentKey": "75fa054b2838e993164a79f84394ea6f5d3b2d0a",
+          "variantName": "Type=Icon, Color=Gray",
+          "svgBytes": 3274
+        }
+      },
+      "status": "deprecated"
+    },
+    "wordmark-primary": {
+      "$description": "Default mark on light backgrounds. Use on off-white, white, or any neutral light surface.",
+      "filename": "wordmark-primary.svg",
+      "type": "Wordmark",
+      "color": "Primary",
+      "width": 563,
+      "height": 167,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.black"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:613",
+          "componentKey": "91740248dbc47b80ea541419a0da34419f4b092e",
+          "variantName": "Type=Wordmark, Color=Primary",
+          "svgBytes": 4993
+        }
+      }
+    },
+    "wordmark-teal": {
+      "$description": "Brand-emphasis mark in Vault Teal. Use sparingly on off-white when the wordmark itself should reinforce the brand color (e.g., in formal documents).",
+      "filename": "wordmark-teal.svg",
+      "type": "Wordmark",
+      "color": "Teal",
+      "width": 563,
+      "height": 167,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.teal"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:622",
+          "componentKey": "e08a2f415cbd5cb3e9438ae0ba6fbf52940ce1ce",
+          "variantName": "Type=Wordmark, Color=Teal",
+          "svgBytes": 5007
+        }
+      }
+    },
+    "wordmark-light": {
+      "$description": "Mark in off-white for use on dark backgrounds (black, dark-earth, premium-purple, rich-blue). Slightly warmer than pure white \u2014 preferred over white where soft contrast is wanted.",
+      "filename": "wordmark-light.svg",
+      "type": "Wordmark",
+      "color": "Light",
+      "width": 563,
+      "height": 167,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.off-white"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:631",
+          "componentKey": "42225691267a76df80ce3b2c316f66e7e4680422",
+          "variantName": "Type=Wordmark, Color=Light",
+          "svgBytes": 5007
+        }
+      }
+    },
+    "wordmark-white": {
+      "$description": "Pure white mark for use on the darkest or most saturated backgrounds (teal hero blocks, premium-purple, signal colors). Maximum contrast.",
+      "filename": "wordmark-white.svg",
+      "type": "Wordmark",
+      "color": "White",
+      "width": 563,
+      "height": 167,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.white"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:640",
+          "componentKey": "a0b31978cf430c4f5394da3aa60608e292a27d86",
+          "variantName": "Type=Wordmark, Color=White",
+          "svgBytes": 4993
+        }
+      }
+    },
+    "wordmark-gray": {
+      "$description": "Deprecated. The asset exists for archival reasons but is never used in deliverables. Use Primary, Teal, Light, or White instead.",
+      "filename": "wordmark-gray.svg",
+      "type": "Wordmark",
+      "color": "Gray",
+      "width": 563,
+      "height": 167,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.gray-02"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:649",
+          "componentKey": "d35edc6a6e9323469a58e8632cf24cb1ddb1af26",
+          "variantName": "Type=Wordmark, Color=Gray",
+          "svgBytes": 5009
+        }
+      },
+      "status": "deprecated"
+    },
+    "lockup-primary": {
+      "$description": "Default mark on light backgrounds. Use on off-white, white, or any neutral light surface.",
+      "filename": "lockup-primary.svg",
+      "type": "Lockup",
+      "color": "Primary",
+      "width": 814,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.black"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:658",
+          "componentKey": "36e6b8e51aa87fe0536fe4ed6d5e83801f28c3e0",
+          "variantName": "Type=Lockup, Color=Primary",
+          "svgBytes": 8113
+        }
+      }
+    },
+    "lockup-teal": {
+      "$description": "Brand-emphasis mark in Vault Teal. Use sparingly on off-white when the wordmark itself should reinforce the brand color (e.g., in formal documents).",
+      "filename": "lockup-teal.svg",
+      "type": "Lockup",
+      "color": "Teal",
+      "width": 814,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.teal"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:676",
+          "componentKey": "fac212f13428bf27ff5bf12fca1c639572d35569",
+          "variantName": "Type=Lockup, Color=Teal",
+          "svgBytes": 8140
+        }
+      }
+    },
+    "lockup-light": {
+      "$description": "Mark in off-white for use on dark backgrounds (black, dark-earth, premium-purple, rich-blue). Slightly warmer than pure white \u2014 preferred over white where soft contrast is wanted.",
+      "filename": "lockup-light.svg",
+      "type": "Lockup",
+      "color": "Light",
+      "width": 814,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.off-white"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:694",
+          "componentKey": "998bf454d660bd5efd913438c986bfeb4e564706",
+          "variantName": "Type=Lockup, Color=Light",
+          "svgBytes": 8141
+        }
+      }
+    },
+    "lockup-white": {
+      "$description": "Pure white mark for use on the darkest or most saturated backgrounds (teal hero blocks, premium-purple, signal colors). Maximum contrast.",
+      "filename": "lockup-white.svg",
+      "type": "Lockup",
+      "color": "White",
+      "width": 814,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.white"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:712",
+          "componentKey": "60daf1fc43c5b057295d1681b5da380216d4079e",
+          "variantName": "Type=Lockup, Color=White",
+          "svgBytes": 8112
+        }
+      }
+    },
+    "lockup-gray": {
+      "$description": "Deprecated. The asset exists for archival reasons but is never used in deliverables. Use Primary, Teal, Light, or White instead.",
+      "filename": "lockup-gray.svg",
+      "type": "Lockup",
+      "color": "Gray",
+      "width": 814,
+      "height": 220,
+      "format": "svg",
+      "tokenDependencies": [
+        "color.core.gray-02"
+      ],
+      "$extensions": {
+        "com.myvault.figma": {
+          "componentId": "1:730",
+          "componentKey": "290e83318937e6ad842e6ee99c71b607ad678e46",
+          "variantName": "Type=Lockup, Color=Gray",
+          "svgBytes": 8138
+        }
+      },
+      "status": "deprecated"
+    }
+  }
+}

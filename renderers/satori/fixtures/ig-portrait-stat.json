@@ -1,0 +1,15 @@
+{
+  "id": "ig-portrait-stat",
+  "frame": "instagram-portrait",
+  "surface": "teal",
+  "footerLine": "myvaultai.com — Private by design",
+  "content": {
+    "pattern": "stat-panel",
+    "headline": "Trust is the gap your brand has to close.",
+    "stats": [
+      { "value": "99%", "label": "used AI last week.",      "source": "Gallup, 2024." },
+      { "value": "5%",  "label": "trust AI “a lot.”",        "source": "YouGov, 2025." },
+      { "value": "82%", "label": "left a brand over data.", "source": "Capgemini, 2025." }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "myvault-vega-lite-renderer",
+  "version": "0.1.0",
+  "description": "Vega-Lite renderer for MyVault chart asset-type chunk. Produces SVG/PNG/PDF chart outputs from JSON specs that inherit brand tokens.",
+  "private": true,
+  "scripts": {
+    "build:tokens": "bash build-tokens-vega.sh",
+    "render:svg": "bash render.sh svg",
+    "render:png": "bash render.sh png",
+    "render:pdf": "bash render.sh pdf",
+    "render:all": "bash render.sh all"
+  },
+  "dependencies": {
+    "vega": "^5.30.0",
+    "vega-lite": "^5.21.0",
+    "vega-cli": "^5.30.0"
+  }
+}

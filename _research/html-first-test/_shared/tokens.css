@@ -1,0 +1,88 @@
+/* Auto-generated from tokens/brand.tokens.json — do not hand-edit. */
+/* Built by: _research/html-first-test/_scripts/build-tokens.sh */
+
+:root {
+  /* === Core colors === */
+  --color-core-teal: #094545;
+  --color-core-white: #FFFFFF;
+  --color-core-off-white: #FBFAF5;
+  --color-core-gray-01: #DDDCD6;
+  --color-core-gray-02: #696969;
+  --color-core-black: #000000;
+
+  /* === Secondary colors === */
+  --color-secondary-premium-purple: #781C42;
+  --color-secondary-dark-earth: #502C0E;
+  --color-secondary-rich-blue: #1C4778;
+
+  /* === Signal colors === */
+  --color-signal-go: #69DE49;
+  --color-signal-stop: #E75247;
+  --color-signal-sky: #4D80E6;
+  --color-signal-earth: #928178;
+
+  /* === Typography (size + leading per role; family is fixed) === */
+  --type-display-xxl-family: "PT Serif", serif;
+  --type-display-xxl-size: 160pt;
+  --type-display-xxl-lh: 1.05;
+  --type-display-xl-family: "PT Serif", serif;
+  --type-display-xl-size: 120pt;
+  --type-display-xl-lh: 1.1;
+  --type-display-l-family: "PT Serif", serif;
+  --type-display-l-size: 96pt;
+  --type-display-l-lh: 1.1;
+  --type-display-m-family: "PT Serif", serif;
+  --type-display-m-size: 72pt;
+  --type-display-m-lh: 1.15;
+  --type-display-s-family: "PT Serif", serif;
+  --type-display-s-size: 56pt;
+  --type-display-s-lh: 1.15;
+  --type-heading-l-family: "PT Serif", serif;
+  --type-heading-l-size: 40pt;
+  --type-heading-l-lh: 1.25;
+  --type-heading-m-family: "PT Serif", serif;
+  --type-heading-m-size: 28pt;
+  --type-heading-m-lh: 1.3;
+  --type-body-xl-family: "Lato", serif;
+  --type-body-xl-size: 20pt;
+  --type-body-xl-lh: 1.4;
+  --type-body-l-family: "Lato", serif;
+  --type-body-l-size: 18pt;
+  --type-body-l-lh: 1.55;
+  --type-body-default-family: "Lato", serif;
+  --type-body-default-size: 16pt;
+  --type-body-default-lh: 1.5;
+  --type-body-s-family: "Lato", serif;
+  --type-body-s-size: 14pt;
+  --type-body-s-lh: 1.5;
+  --type-caption-family: "Lato", serif;
+  --type-caption-size: 12pt;
+  --type-caption-lh: 1.5;
+
+  /* === Radius === */
+  --radius-none: 0pt;
+  --radius-xs: 2pt;
+  --radius-sm: 4pt;
+  --radius-md: 6pt;
+  --radius-lg: 8pt;
+  --radius-xl: 12pt;
+  --radius-2xl: 16pt;
+  --radius-3xl: 24pt;
+  --radius-full: 999pt;
+
+  /* === Space === */
+  --space-0: 0pt;
+  --space-1: 4pt;
+  --space-2: 8pt;
+  --space-3: 12pt;
+  --space-4: 16pt;
+  --space-5: 20pt;
+  --space-6: 24pt;
+  --space-8: 32pt;
+  --space-10: 40pt;
+  --space-12: 48pt;
+  --space-16: 64pt;
+  --space-20: 80pt;
+  --space-24: 96pt;
+  --space-32: 128pt;
+}

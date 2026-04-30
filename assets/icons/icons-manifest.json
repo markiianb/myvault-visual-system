@@ -1,0 +1,6169 @@
+{
+  "$schema": "https://design-tokens.org/schemas/v1.0.json",
+  "$description": "MyVault icon manifest. References Phosphor Icons (https://phosphoricons.com) as a versioned dependency \u2014 no SVGs are committed to the vault. The 210 icons listed here are MyVault's curated subset of Phosphor's library; renderers consume Phosphor directly via @phosphor-icons/react, @phosphor-icons/web, the @phosphor-icons/core SVG distribution, or the public CDN. See README.md for the rationale and per-renderer integration notes.",
+  "$extensions": {
+    "com.myvault.phosphor": {
+      "library": "@phosphor-icons/core",
+      "library_version_pinned": "2.x",
+      "official_source": "https://phosphoricons.com",
+      "github_source": "https://github.com/phosphor-icons/core",
+      "npm_packages": {
+        "react": "@phosphor-icons/react",
+        "vue": "@phosphor-icons/vue",
+        "web_components": "@phosphor-icons/web",
+        "raw_svgs": "@phosphor-icons/core",
+        "vanilla_js": "@phosphor-icons/web"
+      },
+      "cdn_pattern": "https://unpkg.com/@phosphor-icons/core@2/assets/{weight}/{name}.svg",
+      "weights_used": [
+        "regular",
+        "fill"
+      ],
+      "weights_available_in_phosphor_but_not_used": [
+        "thin",
+        "light",
+        "bold",
+        "duotone"
+      ],
+      "default_weight": "regular",
+      "default_size_px": 24,
+      "default_color_token": "color.icon.default",
+      "totalIcons": 210,
+      "extractedAt": "2026-04-29T17:02:13Z",
+      "extractedFrom": {
+        "figma_file_key": "Pm31BDHj34WjJ7NjBK4Ady",
+        "figma_page_id": "10:119",
+        "figma_page_name": "Icons",
+        "phosphor_metadata_source": "https://raw.githubusercontent.com/phosphor-icons/core/main/src/icons.ts"
+      }
+    }
+  },
+  "icons": {
+    "address-book": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "address-book",
+        "pascal_name": "AddressBook",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "contacts",
+          "directory",
+          "roledex"
+        ],
+        "codepoint": 59128,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "airplane-tilt": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "airplane-tilt",
+        "pascal_name": "AirplaneTilt",
+        "categories": [
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "vehicles",
+          "airports",
+          "flights",
+          "flying",
+          "planes",
+          "transit",
+          "transportation",
+          "traveling",
+          "departure"
+        ],
+        "codepoint": 58838,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "alarm": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "alarm",
+        "pascal_name": "Alarm",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "times",
+          "timer",
+          "clock",
+          "schedule",
+          "events",
+          "watch"
+        ],
+        "codepoint": 57350,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "archive": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "archive",
+        "pascal_name": "Archive",
+        "categories": [
+          "OFFICE",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "saved",
+          "saving",
+          "archived",
+          "archiving",
+          "archival",
+          "downloaded",
+          "downloading"
+        ],
+        "codepoint": 57356,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-clockwise": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-clockwise",
+        "pascal_name": "ArrowClockwise",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "redo",
+          "refreshing",
+          "rotate",
+          "spin",
+          "flip"
+        ],
+        "codepoint": 57398,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "arrow-counter-clockwise": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-counter-clockwise",
+        "pascal_name": "ArrowCounterClockwise",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "undo",
+          "refreshing",
+          "rotate",
+          "spin",
+          "flip"
+        ],
+        "codepoint": 57400,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "arrow-down": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-down",
+        "pascal_name": "ArrowDown",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57406,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-down-left": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-down-left",
+        "pascal_name": "ArrowDownLeft",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57408,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-down-right": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-down-right",
+        "pascal_name": "ArrowDownRight",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57410,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-left": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-left",
+        "pascal_name": "ArrowLeft",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57432,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-right": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-right",
+        "pascal_name": "ArrowRight",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57452,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-up": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-up",
+        "pascal_name": "ArrowUp",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57486,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-up-left": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-up-left",
+        "pascal_name": "ArrowUpLeft",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57488,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "arrow-up-right": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "arrow-up-right",
+        "pascal_name": "ArrowUpRight",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead"
+        ],
+        "codepoint": 57490,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "article": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "article",
+        "pascal_name": "Article",
+        "categories": [
+          "MEDIA",
+          "OBJECTS"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "reading",
+          "writing",
+          "journals",
+          "periodicals",
+          "text",
+          "newspaper"
+        ],
+        "codepoint": 57512,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "at": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "at",
+        "pascal_name": "At",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "@",
+          "address",
+          "email",
+          "at symbol",
+          "commercial at",
+          "arobase"
+        ],
+        "codepoint": 57516,
+        "published_in": 1.0,
+        "updated_in": 1.4
+      }
+    },
+    "baby": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "baby",
+        "pascal_name": "Baby",
+        "categories": [
+          "PEOPLE",
+          "HEALTH"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "infant",
+          "child",
+          "children",
+          "toddler"
+        ],
+        "codepoint": 59252,
+        "published_in": 1.3,
+        "updated_in": 1.4
+      }
+    },
+    "baby-carriage": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "baby-carriage",
+        "pascal_name": "BabyCarriage",
+        "categories": [
+          "COMMERCE",
+          "PEOPLE"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "pram",
+          "stroller",
+          "infant",
+          "child",
+          "children",
+          "toddler"
+        ],
+        "codepoint": 59416,
+        "published_in": 2.1,
+        "updated_in": 2.1
+      }
+    },
+    "bank": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bank",
+        "pascal_name": "Bank",
+        "categories": [
+          "FINANCE",
+          "MAP"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "banking",
+          "checking",
+          "money",
+          "savings",
+          "deposit",
+          "withdraw",
+          "places",
+          "locations"
+        ],
+        "codepoint": 57524,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "basket": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "basket",
+        "pascal_name": "Basket",
+        "categories": [
+          "COMMERCE",
+          "OBJECTS"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "ecommerce",
+          "market",
+          "cart",
+          "buying",
+          "shopping",
+          "groceries",
+          "checkout",
+          "places",
+          "locations"
+        ],
+        "codepoint": 59748,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "battery-charging": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "battery-charging",
+        "pascal_name": "BatteryCharging",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "charged",
+          "charger",
+          "charging",
+          "power"
+        ],
+        "codepoint": 57530,
+        "published_in": 1.0,
+        "updated_in": 2.0
+      }
+    },
+    "battery-full": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "battery-full",
+        "pascal_name": "BatteryFull",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "charged",
+          "charger",
+          "charging",
+          "power",
+          "filled"
+        ],
+        "codepoint": 57536,
+        "published_in": 1.0,
+        "updated_in": 2.0
+      }
+    },
+    "battery-low": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "battery-low",
+        "pascal_name": "BatteryLow",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "charged",
+          "charger",
+          "charging",
+          "power"
+        ],
+        "codepoint": 57540,
+        "published_in": 1.0,
+        "updated_in": 2.0
+      }
+    },
+    "bell": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bell",
+        "pascal_name": "Bell",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "alarm",
+          "notifications",
+          "times",
+          "timer",
+          "clock",
+          "schedule",
+          "events",
+          "ringer",
+          "calls"
+        ],
+        "codepoint": 57550,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "bell-ringing": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bell-ringing",
+        "pascal_name": "BellRinging",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "alarm",
+          "notifications",
+          "times",
+          "timer",
+          "clock",
+          "schedule",
+          "events",
+          "ringer",
+          "calls"
+        ],
+        "codepoint": 58856,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "bell-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bell-simple",
+        "pascal_name": "BellSimple",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "alarm",
+          "notifications",
+          "times",
+          "timer",
+          "clock",
+          "schedule",
+          "events",
+          "ringer",
+          "calls"
+        ],
+        "codepoint": 57552,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "bell-slash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bell-slash",
+        "pascal_name": "BellSlash",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "alarm",
+          "notifications",
+          "times",
+          "timer",
+          "clock",
+          "schedule",
+          "events",
+          "silent",
+          "silenced",
+          "ringer",
+          "calls",
+          "disabled"
+        ],
+        "codepoint": 57556,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "book": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "book",
+        "pascal_name": "Book",
+        "categories": [
+          "OFFICE",
+          "MEDIA",
+          "OBJECTS"
+        ],
+        "figma_category": "EDUCATION",
+        "tags": [
+          "reading",
+          "reader",
+          "novel",
+          "story",
+          "library"
+        ],
+        "codepoint": 57570,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "book-open": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "book-open",
+        "pascal_name": "BookOpen",
+        "categories": [
+          "OFFICE",
+          "MEDIA",
+          "OBJECTS"
+        ],
+        "figma_category": "EDUCATION",
+        "tags": [
+          "reading",
+          "reader",
+          "novel",
+          "story",
+          "library"
+        ],
+        "codepoint": 57574,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "bookmark-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bookmark-simple",
+        "pascal_name": "BookmarkSimple",
+        "categories": [
+          "OFFICE",
+          "MEDIA",
+          "OBJECTS"
+        ],
+        "figma_category": "EDUCATION",
+        "tags": [
+          "reading",
+          "reader",
+          "novel",
+          "story",
+          "placeholder",
+          "favorites",
+          "favorited",
+          "library"
+        ],
+        "codepoint": 57578,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "bookmarks-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "bookmarks-simple",
+        "pascal_name": "BookmarksSimple",
+        "categories": [
+          "OFFICE",
+          "OBJECTS"
+        ],
+        "figma_category": "EDUCATION",
+        "tags": [
+          "reading",
+          "reader",
+          "novel",
+          "story",
+          "placeholder",
+          "favorites",
+          "favorited",
+          "library"
+        ],
+        "codepoint": 58864,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "books": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "books",
+        "pascal_name": "Books",
+        "categories": [
+          "OFFICE",
+          "MAP",
+          "MEDIA",
+          "OBJECTS",
+          ""
+        ],
+        "figma_category": "EDUCATION",
+        "tags": [
+          "reading",
+          "reader",
+          "bookshelf",
+          "library",
+          "places",
+          "locations"
+        ],
+        "codepoint": 59224,
+        "published_in": 1.3,
+        "updated_in": 2.0
+      }
+    },
+    "briefcase": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "briefcase",
+        "pascal_name": "Briefcase",
+        "categories": [
+          "OFFICE",
+          "OBJECTS"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "suitcase",
+          "valise",
+          "baggage",
+          "folders",
+          "portfolio"
+        ],
+        "codepoint": 57582,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "broadcast": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "broadcast",
+        "pascal_name": "Broadcast",
+        "categories": [
+          "COMMUNICATION",
+          "MEDIA",
+          "SYSTEM",
+          ""
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "radio",
+          "hotspot",
+          "wifi",
+          "emit"
+        ],
+        "codepoint": 57586,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "cake": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "cake",
+        "pascal_name": "Cake",
+        "categories": [
+          "OBJECTS"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "dessert",
+          "birthday",
+          "celebration",
+          "event"
+        ],
+        "codepoint": 59264,
+        "published_in": 1.3,
+        "updated_in": 2.0
+      }
+    },
+    "calculator": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "calculator",
+        "pascal_name": "Calculator",
+        "categories": [
+          "DEVELOPMENT",
+          "FINANCE",
+          "OFFICE",
+          "OBJECTS",
+          ""
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "addition",
+          "sum",
+          "subtraction",
+          "difference",
+          "multiply",
+          "multiplication",
+          "product",
+          "divide",
+          "division",
+          "divisor",
+          "dividend",
+          "quotient",
+          "equals",
+          "equality",
+          "mathematics",
+          "arithmetic",
+          "+",
+          "-",
+          "\u00b1",
+          "\u00d7",
+          "\u00f7",
+          "="
+        ],
+        "codepoint": 58680,
+        "published_in": 1.1,
+        "updated_in": 1.1
+      }
+    },
+    "calendar": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "calendar",
+        "pascal_name": "Calendar",
+        "categories": [
+          "OFFICE",
+          "SYSTEM"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "dates",
+          "times",
+          "events",
+          "schedule",
+          "12"
+        ],
+        "codepoint": 57608,
+        "published_in": 1.0,
+        "updated_in": 2.0
+      }
+    },
+    "calendar-blank": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "calendar-blank",
+        "pascal_name": "CalendarBlank",
+        "categories": [
+          "OFFICE",
+          "SYSTEM"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "dates",
+          "times",
+          "events",
+          "schedule",
+          "none"
+        ],
+        "codepoint": 57610,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "calendar-check": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "calendar-check",
+        "pascal_name": "CalendarCheck",
+        "categories": [
+          "OFFICE",
+          "SYSTEM"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "dates",
+          "times",
+          "events",
+          "schedule",
+          "todo",
+          "checklist"
+        ],
+        "codepoint": 59154,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "calendar-plus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "calendar-plus",
+        "pascal_name": "CalendarPlus",
+        "categories": [
+          "OFFICE",
+          "SYSTEM"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "dates",
+          "times",
+          "events",
+          "schedule",
+          "add"
+        ],
+        "codepoint": 59156,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "camera": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "camera",
+        "pascal_name": "Camera",
+        "categories": [
+          "MEDIA",
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "photography",
+          "pictures",
+          "lens"
+        ],
+        "codepoint": 57614,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "car": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "car",
+        "pascal_name": "Car",
+        "categories": [
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "cars",
+          "vehicles",
+          "automobile",
+          "transit",
+          "transportation",
+          "traveling"
+        ],
+        "codepoint": 57618,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "caret-double-left": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "caret-double-left",
+        "pascal_name": "CaretDoubleLeft",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "chevron",
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "triangle"
+        ],
+        "codepoint": 57640,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "caret-double-right": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "caret-double-right",
+        "pascal_name": "CaretDoubleRight",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "chevron",
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "triangle"
+        ],
+        "codepoint": 57642,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "caret-down": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "caret-down",
+        "pascal_name": "CaretDown",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "chevron",
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "triangle"
+        ],
+        "codepoint": 57654,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "caret-left": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "caret-left",
+        "pascal_name": "CaretLeft",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "chevron",
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "triangle"
+        ],
+        "codepoint": 57656,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "caret-right": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "caret-right",
+        "pascal_name": "CaretRight",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "chevron",
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "triangle"
+        ],
+        "codepoint": 57658,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "caret-up": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "caret-up",
+        "pascal_name": "CaretUp",
+        "categories": [
+          "ARROWS"
+        ],
+        "figma_category": "ARROWS",
+        "tags": [
+          "chevron",
+          "directional",
+          "pointer",
+          "pointing",
+          "arrowhead",
+          "triangle"
+        ],
+        "codepoint": 57660,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chart-bar": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chart-bar",
+        "pascal_name": "ChartBar",
+        "categories": [
+          "FINANCE",
+          "OFFICE"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "graphs",
+          "graphing",
+          "charts",
+          "statistics",
+          "histogram",
+          "analyze",
+          "analysis"
+        ],
+        "codepoint": 57680,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chart-line": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chart-line",
+        "pascal_name": "ChartLine",
+        "categories": [
+          "FINANCE",
+          "OFFICE"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "graphs",
+          "graphing",
+          "charts",
+          "statistics",
+          "analyze",
+          "analysis",
+          "stocks"
+        ],
+        "codepoint": 57684,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chart-pie": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chart-pie",
+        "pascal_name": "ChartPie",
+        "categories": [
+          "FINANCE",
+          "OFFICE"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "graphs",
+          "graphing",
+          "charts",
+          "statistics",
+          "circle",
+          "analyze",
+          "analysis"
+        ],
+        "codepoint": 57688,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chat-circle": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chat-circle",
+        "pascal_name": "ChatCircle",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send",
+          "sent",
+          "messages",
+          "messaging",
+          "sms",
+          "texting",
+          "comment",
+          "round",
+          "bubble"
+        ],
+        "codepoint": 57704,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chat-circle-dots": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chat-circle-dots",
+        "pascal_name": "ChatCircleDots",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send",
+          "sent",
+          "messages",
+          "messaging",
+          "sms",
+          "texting",
+          "comment",
+          "round",
+          "bubble"
+        ],
+        "codepoint": 57708,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chat-teardrop": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chat-teardrop",
+        "pascal_name": "ChatTeardrop",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send",
+          "sent",
+          "messages",
+          "messaging",
+          "sms",
+          "texting",
+          "comment",
+          "bubble"
+        ],
+        "codepoint": 57714,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chat-text": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chat-text",
+        "pascal_name": "ChatText",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send",
+          "sent",
+          "messages",
+          "messaging",
+          "sms",
+          "texting",
+          "comment",
+          "square",
+          "bubble"
+        ],
+        "codepoint": 57722,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "chats": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "chats",
+        "pascal_name": "Chats",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send",
+          "sent",
+          "messages",
+          "messaging",
+          "sms",
+          "texting",
+          "comment",
+          "square",
+          "bubble"
+        ],
+        "codepoint": 57724,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "check": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "check",
+        "pascal_name": "Check",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "todo",
+          "to-do",
+          "task",
+          "list",
+          "checkbox",
+          "ok",
+          "done"
+        ],
+        "codepoint": 57730,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "check-circle": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "check-circle",
+        "pascal_name": "CheckCircle",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "todo",
+          "to-do",
+          "task",
+          "list",
+          "checkbox",
+          "round",
+          "ok",
+          "done"
+        ],
+        "codepoint": 57732,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "check-fat": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "check-fat",
+        "pascal_name": "CheckFat",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "todo",
+          "to-do",
+          "task",
+          "list",
+          "checkbox",
+          "ok",
+          "done"
+        ],
+        "codepoint": 60326,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "circle-notch": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "circle-notch",
+        "pascal_name": "CircleNotch",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "round",
+          "shapes",
+          "loading",
+          "loader",
+          "spinner",
+          "waiting",
+          "progress"
+        ],
+        "codepoint": 60228,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "clipboard": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "clipboard",
+        "pascal_name": "Clipboard",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "copy",
+          "copied",
+          "checklist"
+        ],
+        "codepoint": 57750,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "clipboard-text": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "clipboard-text",
+        "pascal_name": "ClipboardText",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "copy",
+          "copied",
+          "checklist"
+        ],
+        "codepoint": 57752,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "clock": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "clock",
+        "pascal_name": "Clock",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "times",
+          "timer",
+          "alarm",
+          "schedule",
+          "events",
+          "watch"
+        ],
+        "codepoint": 57754,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "clock-countdown": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "clock-countdown",
+        "pascal_name": "ClockCountdown",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "times",
+          "timer",
+          "alarm",
+          "schedule",
+          "events",
+          "watch"
+        ],
+        "codepoint": 60716,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "cloud": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "cloud",
+        "pascal_name": "Cloud",
+        "categories": [
+          "SYSTEM",
+          "WEATHER"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "serverless",
+          "backup",
+          "storage",
+          "meteorology",
+          "cloudy",
+          "overcast"
+        ],
+        "codepoint": 57770,
+        "published_in": 1.0,
+        "updated_in": 1.4
+      }
+    },
+    "cloud-arrow-down": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "cloud-arrow-down",
+        "pascal_name": "CloudArrowDown",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "serverless",
+          "backup",
+          "storage",
+          "download"
+        ],
+        "codepoint": 57772,
+        "published_in": 1.0,
+        "updated_in": 1.4
+      }
+    },
+    "cloud-arrow-up": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "cloud-arrow-up",
+        "pascal_name": "CloudArrowUp",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "serverless",
+          "backup",
+          "storage",
+          "upload"
+        ],
+        "codepoint": 57774,
+        "published_in": 1.0,
+        "updated_in": 1.4
+      }
+    },
+    "coffee": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "coffee",
+        "pascal_name": "Coffee",
+        "categories": [
+          "COMMERCE",
+          "OBJECTS",
+          "MAP"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "tea",
+          "java",
+          "beverages",
+          "drinks",
+          "cafe",
+          "cup",
+          "mug",
+          "espresso",
+          "cappuccino",
+          "latte",
+          "places",
+          "locations",
+          "bars",
+          "restaurants",
+          "food",
+          "dining"
+        ],
+        "codepoint": 57794,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "coin-vertical": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "coin-vertical",
+        "pascal_name": "CoinVertical",
+        "categories": [
+          "COMMERCE",
+          "FINANCE"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "cents",
+          "change",
+          "money",
+          "currency",
+          "payment",
+          "paying",
+          "purchase",
+          "price",
+          "sell"
+        ],
+        "codepoint": 60232,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "coins": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "coins",
+        "pascal_name": "Coins",
+        "categories": [
+          "COMMERCE",
+          "FINANCE"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "cents",
+          "change",
+          "money",
+          "currency",
+          "payment",
+          "paying",
+          "purchase",
+          "price",
+          "sell"
+        ],
+        "codepoint": 59278,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "compass": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "compass",
+        "pascal_name": "Compass",
+        "categories": [
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "navigation",
+          "directions",
+          "maps",
+          "safari",
+          "apple"
+        ],
+        "codepoint": 57800,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "copy": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "copy",
+        "pascal_name": "Copy",
+        "categories": [
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "duplicated",
+          "copied",
+          "clipboard"
+        ],
+        "codepoint": 57802,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "credit-card": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "credit-card",
+        "pascal_name": "CreditCard",
+        "categories": [
+          "COMMERCE",
+          "FINANCE"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "debit",
+          "visa",
+          "mastercard",
+          "money",
+          "payment",
+          "paying",
+          "purchase",
+          "swipe"
+        ],
+        "codepoint": 57810,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "crown": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "crown",
+        "pascal_name": "Crown",
+        "categories": [
+          "GAMES",
+          "OBJECTS"
+        ],
+        "figma_category": "GAMES",
+        "tags": [
+          "king",
+          "queen",
+          "royalty",
+          "monarch",
+          "ruler",
+          "leader",
+          "chess"
+        ],
+        "codepoint": 58900,
+        "published_in": 1.2,
+        "updated_in": 2.1
+      }
+    },
+    "currency-dollar": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "currency-dollar",
+        "pascal_name": "CurrencyDollar",
+        "categories": [
+          "COMMERCE",
+          "FINANCE"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "money",
+          "usd",
+          "payment",
+          "paying",
+          "purchase"
+        ],
+        "codepoint": 58704,
+        "published_in": 1.1,
+        "updated_in": 1.1
+      }
+    },
+    "desktop": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "desktop",
+        "pascal_name": "Desktop",
+        "categories": [
+          "DEVELOPMENT",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "computer",
+          "pc",
+          "imac",
+          "tower"
+        ],
+        "codepoint": 58720,
+        "published_in": 1.1,
+        "updated_in": 1.1
+      }
+    },
+    "device-mobile": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "device-mobile",
+        "pascal_name": "DeviceMobile",
+        "categories": [
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "cellphone",
+          "cellular"
+        ],
+        "codepoint": 57824,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "dog": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "dog",
+        "pascal_name": "Dog",
+        "categories": [
+          "NATURE"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "pets",
+          "animals",
+          "puppy"
+        ],
+        "codepoint": 59210,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "dots-six-vertical": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "dots-six-vertical",
+        "pascal_name": "DotsSixVertical",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "drag handle",
+          "knurling",
+          "circles",
+          "shapes",
+          "polygons",
+          "6"
+        ],
+        "codepoint": 60130,
+        "published_in": 1.3,
+        "updated_in": 2.1
+      }
+    },
+    "dots-three": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "dots-three",
+        "pascal_name": "DotsThree",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "menu",
+          "overflow",
+          "circles",
+          "shapes",
+          "polygons",
+          "3",
+          "ellipsis",
+          "ellipses",
+          "more"
+        ],
+        "codepoint": 57854,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "dots-three-vertical": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "dots-three-vertical",
+        "pascal_name": "DotsThreeVertical",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "menu",
+          "overflow",
+          "circles",
+          "shapes",
+          "polygons",
+          "3",
+          "ellipsis",
+          "ellipses",
+          "more"
+        ],
+        "codepoint": 57864,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "download-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "download-simple",
+        "pascal_name": "DownloadSimple",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "saved",
+          "saving",
+          "archived",
+          "archiving",
+          "archival",
+          "downloaded",
+          "downloading",
+          "hard drive",
+          "disk",
+          "import"
+        ],
+        "codepoint": 57868,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "drop": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "drop",
+        "pascal_name": "Drop",
+        "categories": [
+          "NATURE",
+          "WEATHER"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "droplet",
+          "teardrop",
+          "raindrop",
+          "raining",
+          "meteorology",
+          "water",
+          "blur"
+        ],
+        "codepoint": 57872,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "envelope": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "envelope",
+        "pascal_name": "Envelope",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "mail",
+          "email",
+          "send",
+          "sent",
+          "message",
+          "post",
+          "letter"
+        ],
+        "codepoint": 57876,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "envelope-open": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "envelope-open",
+        "pascal_name": "EnvelopeOpen",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "mail",
+          "email",
+          "send",
+          "sent",
+          "message",
+          "read",
+          "post",
+          "letter"
+        ],
+        "codepoint": 57878,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "envelope-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "envelope-simple",
+        "pascal_name": "EnvelopeSimple",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "mail",
+          "email",
+          "send",
+          "sent",
+          "message",
+          "post",
+          "letter"
+        ],
+        "codepoint": 57880,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "eye": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "eye",
+        "pascal_name": "Eye",
+        "categories": [
+          "DESIGN",
+          "EDITOR"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "visible",
+          "hidden",
+          "show",
+          "hide",
+          "visibility",
+          "view"
+        ],
+        "codepoint": 57888,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "eye-closed": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "eye-closed",
+        "pascal_name": "EyeClosed",
+        "categories": [
+          "DESIGN",
+          "EDITOR"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "visible",
+          "hidden",
+          "show",
+          "hide",
+          "visibility",
+          "view",
+          "invisible",
+          "private"
+        ],
+        "codepoint": 57890,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "eye-slash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "eye-slash",
+        "pascal_name": "EyeSlash",
+        "categories": [
+          "DESIGN",
+          "EDITOR"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "visible",
+          "hidden",
+          "show",
+          "hide",
+          "visibility",
+          "view",
+          "invisible",
+          "eyelashes",
+          "disabled",
+          "private"
+        ],
+        "codepoint": 57892,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "file": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "file",
+        "pascal_name": "File",
+        "categories": [
+          "OFFICE",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "documents",
+          "files",
+          "save",
+          "write",
+          "page"
+        ],
+        "codepoint": 57904,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "file-image": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "file-image",
+        "pascal_name": "FileImage",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "MEDIA"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "documents",
+          "pictures",
+          "photograph"
+        ],
+        "codepoint": 59940,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "file-pdf": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "file-pdf",
+        "pascal_name": "FilePdf",
+        "categories": [
+          "OFFICE",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "documents",
+          "files",
+          "acrobat"
+        ],
+        "codepoint": 59138,
+        "published_in": 1.3,
+        "updated_in": 1.4
+      }
+    },
+    "file-text": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "file-text",
+        "pascal_name": "FileText",
+        "categories": [
+          "OFFICE",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "documents",
+          "files",
+          "save",
+          "write"
+        ],
+        "codepoint": 57914,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "files": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "files",
+        "pascal_name": "Files",
+        "categories": [
+          "OFFICE",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "documents",
+          "open",
+          "library"
+        ],
+        "codepoint": 59152,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "film-strip": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "film-strip",
+        "pascal_name": "FilmStrip",
+        "categories": [
+          "MEDIA"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "camera",
+          "photography",
+          "darkroom",
+          "movie",
+          "analog"
+        ],
+        "codepoint": 59282,
+        "published_in": 1.3,
+        "updated_in": 1.4
+      }
+    },
+    "fingerprint": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "fingerprint",
+        "pascal_name": "Fingerprint",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "security",
+          "secured",
+          "authentication",
+          "authenticated",
+          "login",
+          "locked",
+          "biometrics",
+          "encrypted",
+          "encryption"
+        ],
+        "codepoint": 57918,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "first-aid-kit": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "first-aid-kit",
+        "pascal_name": "FirstAidKit",
+        "categories": [
+          "HEALTH"
+        ],
+        "figma_category": "HEALTH",
+        "tags": [
+          "bandages",
+          "medical",
+          "medicine",
+          "injury",
+          "safety",
+          "emergency",
+          "doctor"
+        ],
+        "codepoint": 58736,
+        "published_in": 1.1,
+        "updated_in": 1.1
+      }
+    },
+    "flame": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "flame",
+        "pascal_name": "Flame",
+        "categories": [
+          "NATURE",
+          "WEATHER"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "fire",
+          "burning",
+          "match",
+          "lighter"
+        ],
+        "codepoint": 58916,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "flower-tulip": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "flower-tulip",
+        "pascal_name": "FlowerTulip",
+        "categories": [
+          "NATURE"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "plants",
+          "green",
+          "environmental"
+        ],
+        "codepoint": 60108,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "folder": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "folder",
+        "pascal_name": "Folder",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "directory",
+          "directories",
+          "files",
+          "folders"
+        ],
+        "codepoint": 57930,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "folder-open": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "folder-open",
+        "pascal_name": "FolderOpen",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "directory",
+          "directories",
+          "files",
+          "folders",
+          "load"
+        ],
+        "codepoint": 57942,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "folder-plus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "folder-plus",
+        "pascal_name": "FolderPlus",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "directory",
+          "directories",
+          "files",
+          "save",
+          "write",
+          "add",
+          "new",
+          "create",
+          "+"
+        ],
+        "codepoint": 57944,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "folder-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "folder-simple",
+        "pascal_name": "FolderSimple",
+        "categories": [
+          "OFFICE",
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "directory",
+          "directories",
+          "files",
+          "folders"
+        ],
+        "codepoint": 57946,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "fork-knife": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "fork-knife",
+        "pascal_name": "ForkKnife",
+        "categories": [
+          "COMMERCE",
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "food",
+          "meal",
+          "eating",
+          "restaurants",
+          "dining",
+          "utensils"
+        ],
+        "codepoint": 57954,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "gear": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "gear",
+        "pascal_name": "Gear",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "8",
+          "settings",
+          "setup",
+          "preferences",
+          "cogs",
+          "gears",
+          "machinery",
+          "mechanical"
+        ],
+        "codepoint": 57968,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "gear-six": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "gear-six",
+        "pascal_name": "GearSix",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "6",
+          "settings",
+          "setup",
+          "preferences",
+          "cogs",
+          "gears",
+          "machinery",
+          "mechanical"
+        ],
+        "codepoint": 57970,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "globe": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "globe",
+        "pascal_name": "Globe",
+        "categories": [
+          "MAP"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "world",
+          "earth",
+          "global",
+          "planet",
+          "circle",
+          "round",
+          "internationalization",
+          "i18n",
+          "languages",
+          "country",
+          "countries",
+          "geography",
+          "internet"
+        ],
+        "codepoint": 57992,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "graduation-cap": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "graduation-cap",
+        "pascal_name": "GraduationCap",
+        "categories": [
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "EDUCATION",
+        "tags": [
+          "classroom",
+          "teacher",
+          "education",
+          "school",
+          "college",
+          "university",
+          "degree",
+          "graduate",
+          "hat"
+        ],
+        "codepoint": 58924,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "hammer": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "hammer",
+        "pascal_name": "Hammer",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM",
+          "COMMERCE",
+          ""
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "tools",
+          "carpentry",
+          "construction"
+        ],
+        "codepoint": 59406,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "handbag": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "handbag",
+        "pascal_name": "Handbag",
+        "categories": [
+          "COMMERCE",
+          "OBJECTS"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "suitcases",
+          "valises",
+          "baggage",
+          "purses"
+        ],
+        "codepoint": 58012,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "hash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "hash",
+        "pascal_name": "Hash",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "hashtag",
+          "octothorpe",
+          "pound sign",
+          "number sign",
+          "tic-tac-toe",
+          "symbol"
+        ],
+        "codepoint": 58018,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "headphones": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "headphones",
+        "pascal_name": "Headphones",
+        "categories": [
+          "MEDIA",
+          "OBJECTS"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "music",
+          "audio",
+          "listening"
+        ],
+        "codepoint": 58022,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "heart": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "heart",
+        "pascal_name": "Heart",
+        "categories": [
+          "COMMUNICATION",
+          "GAMES",
+          "HEALTH",
+          ""
+        ],
+        "figma_category": "GAMES",
+        "tags": [
+          "wellness",
+          "love",
+          "healthy",
+          "like",
+          "favorites",
+          "favorited",
+          "suits",
+          "cards",
+          "gambling",
+          "casino",
+          "gaming",
+          "emoji"
+        ],
+        "codepoint": 58024,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "heartbeat": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "heartbeat",
+        "pascal_name": "Heartbeat",
+        "categories": [
+          "HEALTH",
+          "SYSTEM"
+        ],
+        "figma_category": "HEALTH",
+        "tags": [
+          "wellness",
+          "healthy",
+          "ecg",
+          "ekg",
+          "vitals",
+          "monitor"
+        ],
+        "codepoint": 58028,
+        "published_in": 1.0,
+        "updated_in": 1.4
+      }
+    },
+    "hourglass-medium": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "hourglass-medium",
+        "pascal_name": "HourglassMedium",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "times",
+          "timer",
+          "alarms",
+          "clock",
+          "schedule",
+          "events",
+          "waiting",
+          "progress"
+        ],
+        "codepoint": 58040,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "house": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "house",
+        "pascal_name": "House",
+        "categories": [
+          "MAP",
+          "SYSTEM"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "homes",
+          "buildings",
+          "places",
+          "locations"
+        ],
+        "codepoint": 58050,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "identification-card": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "identification-card",
+        "pascal_name": "IdentificationCard",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "license",
+          "badge",
+          "credentials",
+          "nametag",
+          "user",
+          "verification"
+        ],
+        "codepoint": 58056,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "image": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "image",
+        "pascal_name": "Image",
+        "categories": [
+          "MEDIA",
+          "SYSTEM"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "pictures",
+          "photographs",
+          "photography",
+          "wallpapers",
+          "gallery",
+          "landscape"
+        ],
+        "codepoint": 58058,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "info": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "info",
+        "pascal_name": "Info",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "information",
+          "help",
+          "support"
+        ],
+        "codepoint": 58062,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "key": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "key",
+        "pascal_name": "Key",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "padlock",
+          "security",
+          "secured",
+          "authentication",
+          "authenticated",
+          "login",
+          "locked",
+          "encrypted",
+          "encryption"
+        ],
+        "codepoint": 58070,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "laptop": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "laptop",
+        "pascal_name": "Laptop",
+        "categories": [
+          "DEVELOPMENT",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "computer",
+          "notebook",
+          "pc",
+          "macbook"
+        ],
+        "codepoint": 58758,
+        "published_in": 1.1,
+        "updated_in": 1.1
+      }
+    },
+    "layout": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "layout",
+        "pascal_name": "Layout",
+        "categories": [
+          "DESIGN",
+          "EDITOR"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "wireframe",
+          "sidebar",
+          "ui",
+          "interface"
+        ],
+        "codepoint": 59094,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "leaf": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "leaf",
+        "pascal_name": "Leaf",
+        "categories": [
+          "NATURE"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "plants",
+          "trees",
+          "branches",
+          "leaves",
+          "nodes",
+          "green",
+          "environmental"
+        ],
+        "codepoint": 58074,
+        "published_in": 1.0,
+        "updated_in": 2.0
+      }
+    },
+    "link": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "link",
+        "pascal_name": "Link",
+        "categories": [
+          "COMMUNICATION",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "anchor",
+          "hyperlink",
+          "hypertext",
+          "chains",
+          "chained"
+        ],
+        "codepoint": 58082,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "link-break": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "link-break",
+        "pascal_name": "LinkBreak",
+        "categories": [
+          "COMMUNICATION",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "anchor",
+          "hyperlink",
+          "hypertext",
+          "chains",
+          "chained",
+          "errors",
+          "broken"
+        ],
+        "codepoint": 58084,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "link-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "link-simple",
+        "pascal_name": "LinkSimple",
+        "categories": [
+          "COMMUNICATION",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "anchor",
+          "hyperlink",
+          "hypertext",
+          "chains",
+          "chained"
+        ],
+        "codepoint": 58086,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "list-bullets": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "list-bullets",
+        "pascal_name": "ListBullets",
+        "categories": [
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "ul",
+          "unordered list",
+          "bulleted list",
+          "checklist"
+        ],
+        "codepoint": 58098,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "list-checks": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "list-checks",
+        "pascal_name": "ListChecks",
+        "categories": [
+          "OFFICE",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "checklist",
+          "todo"
+        ],
+        "codepoint": 60124,
+        "published_in": 1.4,
+        "updated_in": 2.1
+      }
+    },
+    "list-numbers": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "list-numbers",
+        "pascal_name": "ListNumbers",
+        "categories": [
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "ol",
+          "ordered list",
+          "numbered list",
+          "checklist"
+        ],
+        "codepoint": 58102,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "lock": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "lock",
+        "pascal_name": "Lock",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "padlock",
+          "security",
+          "secured",
+          "authentication",
+          "authenticated",
+          "login",
+          "locked",
+          "encrypted",
+          "encryption",
+          "privacy",
+          "private"
+        ],
+        "codepoint": 58106,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "lock-key": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "lock-key",
+        "pascal_name": "LockKey",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "padlock",
+          "security",
+          "secured",
+          "authentication",
+          "authenticated",
+          "login",
+          "locked",
+          "encrypted",
+          "encryption",
+          "privacy",
+          "private"
+        ],
+        "codepoint": 58110,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "lock-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "lock-simple",
+        "pascal_name": "LockSimple",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "padlock",
+          "security",
+          "secured",
+          "authentication",
+          "authenticated",
+          "login",
+          "locked",
+          "encrypted",
+          "encryption",
+          "privacy",
+          "private"
+        ],
+        "codepoint": 58120,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "lock-simple-open": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "lock-simple-open",
+        "pascal_name": "LockSimpleOpen",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "padlock",
+          "security",
+          "unsecured",
+          "authentication",
+          "unauthenticated",
+          "login",
+          "unlocked",
+          "unencrypted",
+          "encryption",
+          "privacy",
+          "private"
+        ],
+        "codepoint": 58122,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "magnifying-glass": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "magnifying-glass",
+        "pascal_name": "MagnifyingGlass",
+        "categories": [
+          "EDITOR",
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "search",
+          "find",
+          "locate",
+          "query",
+          "inspect"
+        ],
+        "codepoint": 58124,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "map-pin": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "map-pin",
+        "pascal_name": "MapPin",
+        "categories": [
+          "MAP"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "maps",
+          "places",
+          "markers",
+          "pins",
+          "locations",
+          "poi",
+          "point of interest"
+        ],
+        "codepoint": 58134,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "map-trifold": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "map-trifold",
+        "pascal_name": "MapTrifold",
+        "categories": [
+          "MAP"
+        ],
+        "figma_category": "MAP",
+        "tags": [
+          "maps",
+          "places",
+          "locations",
+          "cartography",
+          "geography"
+        ],
+        "codepoint": 58138,
+        "published_in": 1.0,
+        "updated_in": 2.0
+      }
+    },
+    "megaphone": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "megaphone",
+        "pascal_name": "Megaphone",
+        "categories": [
+          "COMMUNICATION",
+          "OBJECTS"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "bullhorn",
+          "announcements",
+          "loudspeaker",
+          "broadcast"
+        ],
+        "codepoint": 58148,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "microphone": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "microphone",
+        "pascal_name": "Microphone",
+        "categories": [
+          "COMMUNICATION",
+          "MEDIA",
+          "SYSTEM",
+          ""
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "audio",
+          "recording",
+          "music",
+          "sound",
+          "podcast",
+          "studio"
+        ],
+        "codepoint": 58150,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "microphone-slash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "microphone-slash",
+        "pascal_name": "MicrophoneSlash",
+        "categories": [
+          "COMMUNICATION",
+          "MEDIA",
+          "SYSTEM",
+          ""
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "audio",
+          "recording",
+          "music",
+          "sound",
+          "podcast",
+          "studio",
+          "muted",
+          "disabled"
+        ],
+        "codepoint": 58152,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "minus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "minus",
+        "pascal_name": "Minus",
+        "categories": [
+          "DEVELOPMENT",
+          "FINANCE",
+          "SYSTEM",
+          ""
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "-",
+          "subtraction",
+          "difference",
+          "mathematics",
+          "arithmetic",
+          "calculator",
+          "line",
+          "horizontal",
+          "divider"
+        ],
+        "codepoint": 58154,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "moon": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "moon",
+        "pascal_name": "Moon",
+        "categories": [
+          "NATURE",
+          "SYSTEM",
+          "WEATHER",
+          ""
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "night",
+          "evening",
+          "clear",
+          "sleep",
+          "snooze",
+          "night mode",
+          "dark mode",
+          "astronomy",
+          "stargazing"
+        ],
+        "codepoint": 58160,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "music-note": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "music-note",
+        "pascal_name": "MusicNote",
+        "categories": [
+          "MEDIA"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "songs",
+          "audio",
+          "playlist",
+          "albums"
+        ],
+        "codepoint": 58172,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "music-notes": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "music-notes",
+        "pascal_name": "MusicNotes",
+        "categories": [
+          "MEDIA"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "songs",
+          "audio",
+          "playlist",
+          "albums"
+        ],
+        "codepoint": 58176,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "note-pencil": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "note-pencil",
+        "pascal_name": "NotePencil",
+        "categories": [
+          "OFFICE",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "notes",
+          "note-taking",
+          "memorandum",
+          "post-it",
+          "reminders"
+        ],
+        "codepoint": 58188,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "paper-plane-tilt": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "paper-plane-tilt",
+        "pascal_name": "PaperPlaneTilt",
+        "categories": [
+          "COMMUNICATION",
+          "MAP",
+          "OBJECTS",
+          ""
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "mail",
+          "email",
+          "send",
+          "sent",
+          "messages",
+          "messaging",
+          "toys",
+          "games"
+        ],
+        "codepoint": 58264,
+        "published_in": 1.0,
+        "updated_in": 1.4
+      }
+    },
+    "paperclip": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "paperclip",
+        "pascal_name": "Paperclip",
+        "categories": [
+          "COMMUNICATION",
+          "EDITOR",
+          "OFFICE",
+          "OBJECTS",
+          ""
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "attachments",
+          "mail",
+          "email",
+          "office"
+        ],
+        "codepoint": 58266,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "pause": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "pause",
+        "pascal_name": "Pause",
+        "categories": [
+          "MEDIA",
+          "SYSTEM"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "music",
+          "audio",
+          "resume",
+          "start",
+          "stop"
+        ],
+        "codepoint": 58270,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "paw-print": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "paw-print",
+        "pascal_name": "PawPrint",
+        "categories": [
+          "NATURE",
+          "COMMERCE",
+          "HEALTH",
+          ""
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "pets",
+          "pet store",
+          "pet shop",
+          "animals",
+          "cat",
+          "dog",
+          "veterinarian"
+        ],
+        "codepoint": 58952,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "pencil-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "pencil-simple",
+        "pascal_name": "PencilSimple",
+        "categories": [
+          "DESIGN",
+          "EDITOR",
+          "OFFICE"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "write",
+          "writing",
+          "editing",
+          "sign",
+          "signature"
+        ],
+        "codepoint": 58292,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "percent": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "percent",
+        "pascal_name": "Percent",
+        "categories": [
+          "DEVELOPMENT",
+          "FINANCE"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "%",
+          "percentage",
+          "percentile",
+          "ratio",
+          "delta",
+          "mathematics",
+          "arithmetic",
+          "calculator"
+        ],
+        "codepoint": 58294,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "phone": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "phone",
+        "pascal_name": "Phone",
+        "categories": [
+          "COMMUNICATION",
+          "SYSTEM"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "calls",
+          "telephone",
+          "landline",
+          "talk"
+        ],
+        "codepoint": 58296,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "phone-call": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "phone-call",
+        "pascal_name": "PhoneCall",
+        "categories": [
+          "COMMUNICATION",
+          "SYSTEM"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "calls",
+          "calling",
+          "ringing",
+          "telephone",
+          "landline",
+          "talk"
+        ],
+        "codepoint": 58298,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "pill": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "pill",
+        "pascal_name": "Pill",
+        "categories": [
+          "HEALTH"
+        ],
+        "figma_category": "HEALTH",
+        "tags": [
+          "capsule",
+          "medicine",
+          "rx",
+          "pharmacy",
+          "pharmacist",
+          "pharmaceuticals",
+          "prescription",
+          "drugs"
+        ],
+        "codepoint": 59136,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "plant": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "plant",
+        "pascal_name": "Plant",
+        "categories": [
+          "COMMERCE",
+          "NATURE"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "sprout",
+          "vegan",
+          "farm",
+          "farming",
+          "garden",
+          "gardening"
+        ],
+        "codepoint": 60334,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "play": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "play",
+        "pascal_name": "Play",
+        "categories": [
+          "MEDIA",
+          "SYSTEM"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "music",
+          "audio",
+          "resume",
+          "start"
+        ],
+        "codepoint": 58320,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "plug": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "plug",
+        "pascal_name": "Plug",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "outlet",
+          "socket",
+          "plugin",
+          "integration"
+        ],
+        "codepoint": 59718,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "plus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "plus",
+        "pascal_name": "Plus",
+        "categories": [
+          "DEVELOPMENT",
+          "FINANCE",
+          "SYSTEM",
+          ""
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "addition",
+          "sum",
+          "mathematics",
+          "arithmetic",
+          "calculator",
+          "+"
+        ],
+        "codepoint": 58324,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "prohibit": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "prohibit",
+        "pascal_name": "Prohibit",
+        "categories": [
+          "MAP",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "forbidden",
+          "prohibited",
+          "cancelled",
+          "prevent",
+          "stop",
+          "do not enter"
+        ],
+        "codepoint": 58334,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "question": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "question",
+        "pascal_name": "Question",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "information",
+          "help",
+          "support",
+          "questions"
+        ],
+        "codepoint": 58344,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "receipt": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "receipt",
+        "pascal_name": "Receipt",
+        "categories": [
+          "COMMERCE",
+          "FINANCE"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "purchase",
+          "money",
+          "clipping",
+          "expense"
+        ],
+        "codepoint": 58348,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "rss-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "rss-simple",
+        "pascal_name": "RssSimple",
+        "categories": [
+          "COMMUNICATION"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "radio",
+          "broadcast",
+          "web feed",
+          "news",
+          "aggregator"
+        ],
+        "codepoint": 58370,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "scan": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "scan",
+        "pascal_name": "Scan",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "upc",
+          "barcode",
+          "products",
+          "shopping",
+          "scanner"
+        ],
+        "codepoint": 60342,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "seal-check": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "seal-check",
+        "pascal_name": "SealCheck",
+        "categories": [
+          "DESIGN"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "badge",
+          "verified",
+          "verification",
+          "shapes",
+          "polygons",
+          "circle-wavy"
+        ],
+        "codepoint": 58886,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "share": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "share",
+        "pascal_name": "Share",
+        "categories": [
+          "COMMUNICATION",
+          "SYSTEM"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send to",
+          "export",
+          "arrows"
+        ],
+        "codepoint": 58374,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "share-network": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "share-network",
+        "pascal_name": "ShareNetwork",
+        "categories": [
+          "COMMUNICATION",
+          "SYSTEM"
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "send to",
+          "export"
+        ],
+        "codepoint": 58376,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "shield": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "shield",
+        "pascal_name": "Shield",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "badge",
+          "security",
+          "secured",
+          "defense",
+          "defended",
+          "authentication",
+          "authenticated",
+          "guarded",
+          "locked",
+          "encrypted",
+          "encryption"
+        ],
+        "codepoint": 58378,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "shield-check": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "shield-check",
+        "pascal_name": "ShieldCheck",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "badge",
+          "security",
+          "defense",
+          "authentication",
+          "authenticated",
+          "guarded",
+          "locked",
+          "encrypted",
+          "encryption"
+        ],
+        "codepoint": 58380,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "shield-star": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "shield-star",
+        "pascal_name": "ShieldStar",
+        "categories": [
+          "OBJECTS",
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "badge",
+          "security",
+          "defense",
+          "authentication",
+          "authenticated",
+          "guarded",
+          "locked",
+          "encrypted",
+          "encryption"
+        ],
+        "codepoint": 60468,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "shield-warning": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "shield-warning",
+        "pascal_name": "ShieldWarning",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "badge",
+          "security",
+          "unsecured",
+          "defense",
+          "undefended",
+          "authentication",
+          "unauthenticated",
+          "unguarded",
+          "unlocked",
+          "unencrypted",
+          "encryption",
+          "errors"
+        ],
+        "codepoint": 58386,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "shopping-cart": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "shopping-cart",
+        "pascal_name": "ShoppingCart",
+        "categories": [
+          "COMMERCE",
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "ecommerce",
+          "market",
+          "basket",
+          "buying",
+          "groceries",
+          "checkout",
+          "places",
+          "locations"
+        ],
+        "codepoint": 58398,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "sidebar-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "sidebar-simple",
+        "pascal_name": "SidebarSimple",
+        "categories": [
+          "DESIGN",
+          "EDITOR"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "left rail",
+          "wireframe",
+          "ui",
+          "interface"
+        ],
+        "codepoint": 60452,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "sliders-horizontal": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "sliders-horizontal",
+        "pascal_name": "SlidersHorizontal",
+        "categories": [
+          "MEDIA",
+          "SYSTEM"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "music",
+          "audio",
+          "faders",
+          "filters",
+          "equalizer",
+          "volume",
+          "settings",
+          "preferences"
+        ],
+        "codepoint": 58420,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "sparkle": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "sparkle",
+        "pascal_name": "Sparkle",
+        "categories": [
+          "COMMUNICATION",
+          "NATURE"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "star",
+          "rate",
+          "ratings",
+          "favorites",
+          "favorited"
+        ],
+        "codepoint": 59042,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "speaker-high": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "speaker-high",
+        "pascal_name": "SpeakerHigh",
+        "categories": [
+          "MEDIA",
+          "SYSTEM"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "music",
+          "audio",
+          "volume",
+          "sound"
+        ],
+        "codepoint": 58442,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "speaker-slash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "speaker-slash",
+        "pascal_name": "SpeakerSlash",
+        "categories": [
+          "MEDIA",
+          "SYSTEM"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "music",
+          "audio",
+          "muted",
+          "volume",
+          "sound",
+          "disabled"
+        ],
+        "codepoint": 58458,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "squares-four": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "squares-four",
+        "pascal_name": "SquaresFour",
+        "categories": [
+          "DESIGN",
+          "SYSTEM"
+        ],
+        "figma_category": "DESIGN",
+        "tags": [
+          "4",
+          "shapes",
+          "polygons",
+          "apps",
+          "applications",
+          "grid",
+          "table",
+          "microsoft",
+          "logos"
+        ],
+        "codepoint": 58468,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "star": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "star",
+        "pascal_name": "Star",
+        "categories": [
+          "COMMUNICATION",
+          "MAP",
+          "NATURE",
+          ""
+        ],
+        "figma_category": "COMMUNICATION",
+        "tags": [
+          "rate",
+          "ratings",
+          "favorites",
+          "favorited"
+        ],
+        "codepoint": 58474,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "stethoscope": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "stethoscope",
+        "pascal_name": "Stethoscope",
+        "categories": [
+          "HEALTH",
+          "OBJECTS"
+        ],
+        "figma_category": "HEALTH",
+        "tags": [
+          "hospital",
+          "medical",
+          "medicine",
+          "injury",
+          "safety",
+          "emergency",
+          "doctor",
+          "heart"
+        ],
+        "codepoint": 59370,
+        "published_in": 2.0,
+        "updated_in": 2.0
+      }
+    },
+    "sun": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "sun",
+        "pascal_name": "Sun",
+        "categories": [
+          "NATURE",
+          "SYSTEM",
+          "WEATHER",
+          ""
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "day",
+          "daytime",
+          "daylight",
+          "clear",
+          "sunny",
+          "sunshine",
+          "light mode",
+          "brightness",
+          "lighten",
+          "brighten"
+        ],
+        "codepoint": 58482,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "syringe": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "syringe",
+        "pascal_name": "Syringe",
+        "categories": [
+          "HEALTH"
+        ],
+        "figma_category": "HEALTH",
+        "tags": [
+          "needle",
+          "hypodermic",
+          "vaccine",
+          "medicine",
+          "doctor",
+          "shot",
+          "hospital"
+        ],
+        "codepoint": 59752,
+        "published_in": 1.4,
+        "updated_in": 1.4
+      }
+    },
+    "target": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "target",
+        "pascal_name": "Target",
+        "categories": [
+          "MAP",
+          "OBJECTS"
+        ],
+        "figma_category": "GAMES",
+        "tags": [
+          "bullseye",
+          "radar",
+          "archery",
+          "accuracy",
+          "precision"
+        ],
+        "codepoint": 58492,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "text-aa": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "text-aa",
+        "pascal_name": "TextAa",
+        "categories": [
+          "DESIGN",
+          "EDITOR"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "typography",
+          "typeface",
+          "print",
+          "font"
+        ],
+        "codepoint": 59118,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "timer": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "timer",
+        "pascal_name": "Timer",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "TIME",
+        "tags": [
+          "clock",
+          "alarm",
+          "schedule",
+          "events",
+          "stopwatch",
+          "sports"
+        ],
+        "codepoint": 58514,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "toggle-left": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "toggle-left",
+        "pascal_name": "ToggleLeft",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "switch",
+          "controls",
+          "settings",
+          "preferences"
+        ],
+        "codepoint": 58996,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "toggle-right": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "toggle-right",
+        "pascal_name": "ToggleRight",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "switch",
+          "controls",
+          "settings",
+          "preferences"
+        ],
+        "codepoint": 58998,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "trash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "trash",
+        "pascal_name": "Trash",
+        "categories": [
+          "OFFICE",
+          "SYSTEM"
+        ],
+        "figma_category": "OFFICE",
+        "tags": [
+          "garbage",
+          "remove",
+          "delete",
+          "destroy",
+          "recycle",
+          "recycling"
+        ],
+        "codepoint": 58534,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "tree": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "tree",
+        "pascal_name": "Tree",
+        "categories": [
+          "NATURE"
+        ],
+        "figma_category": "WEATHER",
+        "tags": [
+          "plants",
+          "branches",
+          "leaves",
+          "green",
+          "environmental"
+        ],
+        "codepoint": 59098,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "trend-down": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "trend-down",
+        "pascal_name": "TrendDown",
+        "categories": [
+          "FINANCE",
+          "OFFICE"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "graphs",
+          "graphing",
+          "charts",
+          "statistics",
+          "analyze",
+          "analysis",
+          "decrease",
+          "arrows"
+        ],
+        "codepoint": 58540,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "trend-up": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "trend-up",
+        "pascal_name": "TrendUp",
+        "categories": [
+          "FINANCE",
+          "OFFICE"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "graphs",
+          "graphing",
+          "charts",
+          "statistics",
+          "analyze",
+          "analysis",
+          "increase",
+          "arrows"
+        ],
+        "codepoint": 58542,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "trophy": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "trophy",
+        "pascal_name": "Trophy",
+        "categories": [
+          "GAMES",
+          "OBJECTS"
+        ],
+        "figma_category": "GAMES",
+        "tags": [
+          "ribbons",
+          "medals",
+          "winning",
+          "victory",
+          "awards",
+          "prize"
+        ],
+        "codepoint": 59006,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "upload-simple": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "upload-simple",
+        "pascal_name": "UploadSimple",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "saved",
+          "saving",
+          "archived",
+          "archiving",
+          "archival",
+          "uploaded",
+          "uploading",
+          "hard drive",
+          "disk"
+        ],
+        "codepoint": 58560,
+        "published_in": 1.0,
+        "updated_in": 2.1
+      }
+    },
+    "user": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user",
+        "pascal_name": "User",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profile",
+          "account",
+          "contact",
+          "login"
+        ],
+        "codepoint": 58562,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "user-check": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-check",
+        "pascal_name": "UserCheck",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profile",
+          "account",
+          "contact",
+          "login",
+          "verified"
+        ],
+        "codepoint": 60154,
+        "published_in": 2.1,
+        "updated_in": 2.1
+      }
+    },
+    "user-circle": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-circle",
+        "pascal_name": "UserCircle",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profile",
+          "account",
+          "contact",
+          "login"
+        ],
+        "codepoint": 58564,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "user-focus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-focus",
+        "pascal_name": "UserFocus",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "identification",
+          "biometrics",
+          "facial recognition",
+          "profile",
+          "person",
+          "account",
+          "autofocus"
+        ],
+        "codepoint": 59132,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "user-gear": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-gear",
+        "pascal_name": "UserGear",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profile",
+          "account",
+          "contact",
+          "settings",
+          "preferences"
+        ],
+        "codepoint": 58572,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "user-list": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-list",
+        "pascal_name": "UserList",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profiles",
+          "accounts",
+          "members",
+          "address book"
+        ],
+        "codepoint": 59196,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "user-minus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-minus",
+        "pascal_name": "UserMinus",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profile",
+          "account",
+          "contact",
+          "delete",
+          "remove",
+          "-"
+        ],
+        "codepoint": 58574,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "user-plus": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "user-plus",
+        "pascal_name": "UserPlus",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "person",
+          "users",
+          "profile",
+          "account",
+          "contact",
+          "add",
+          "create",
+          "+"
+        ],
+        "codepoint": 58576,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "users": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "users",
+        "pascal_name": "Users",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "user",
+          "group",
+          "team",
+          "people",
+          "profiles",
+          "accounts",
+          "contacts"
+        ],
+        "codepoint": 58582,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "users-three": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "users-three",
+        "pascal_name": "UsersThree",
+        "categories": [
+          "PEOPLE"
+        ],
+        "figma_category": "PEOPLE",
+        "tags": [
+          "user",
+          "group",
+          "team",
+          "community",
+          "people",
+          "profiles",
+          "accounts",
+          "contacts"
+        ],
+        "codepoint": 59022,
+        "published_in": 1.3,
+        "updated_in": 1.3
+      }
+    },
+    "video-camera": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "video-camera",
+        "pascal_name": "VideoCamera",
+        "categories": [
+          "MEDIA",
+          "SYSTEM",
+          "OBJECTS"
+        ],
+        "figma_category": "MEDIA",
+        "tags": [
+          "videography",
+          "films",
+          "movies",
+          "recording"
+        ],
+        "codepoint": 58586,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "wallet": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "wallet",
+        "pascal_name": "Wallet",
+        "categories": [
+          "COMMERCE",
+          "FINANCE",
+          "OBJECTS",
+          ""
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "money",
+          "payment",
+          "paying",
+          "purchase"
+        ],
+        "codepoint": 59018,
+        "published_in": 1.2,
+        "updated_in": 1.2
+      }
+    },
+    "warning": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "warning",
+        "pascal_name": "Warning",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "alert",
+          "danger",
+          "dangerous",
+          "caution",
+          "errors"
+        ],
+        "codepoint": 58592,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "warning-circle": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "warning-circle",
+        "pascal_name": "WarningCircle",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SECURITY",
+        "tags": [
+          "alert",
+          "danger",
+          "dangerous",
+          "caution",
+          "errors",
+          "round"
+        ],
+        "codepoint": 58594,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "wifi-high": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "wifi-high",
+        "pascal_name": "WifiHigh",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "wireless",
+          "internet",
+          "network",
+          "connection",
+          "connectivity"
+        ],
+        "codepoint": 58602,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "wifi-slash": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "wifi-slash",
+        "pascal_name": "WifiSlash",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "SYSTEM",
+        "tags": [
+          "wireless",
+          "internet",
+          "network",
+          "connection",
+          "connectivity",
+          "disabled",
+          "disconnected"
+        ],
+        "codepoint": 58610,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "wrench": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "wrench",
+        "pascal_name": "Wrench",
+        "categories": [
+          "SYSTEM",
+          "OBJECTS",
+          "COMMERCE",
+          ""
+        ],
+        "figma_category": "COMMERCE",
+        "tags": [
+          "settings",
+          "setup",
+          "preferences",
+          "tools",
+          "machinery",
+          "mechanical",
+          "repairs"
+        ],
+        "codepoint": 58836,
+        "published_in": 1.1,
+        "updated_in": 1.1
+      }
+    },
+    "x": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "x",
+        "pascal_name": "X",
+        "categories": [
+          "DEVELOPMENT",
+          "FINANCE",
+          "SYSTEM",
+          ""
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "\u00d7",
+          "closed",
+          "cancelled",
+          "dismissed",
+          "times",
+          "multiply",
+          "mulitplication",
+          "product",
+          "mathematics",
+          "arithmetic",
+          "calculator"
+        ],
+        "codepoint": 58614,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    },
+    "x-circle": {
+      "weights": [
+        "regular",
+        "fill"
+      ],
+      "tokens": [
+        "color.icon.default"
+      ],
+      "phosphor": {
+        "name": "x-circle",
+        "pascal_name": "XCircle",
+        "categories": [
+          "SYSTEM"
+        ],
+        "figma_category": "FINANCE",
+        "tags": [
+          "closed",
+          "cancelled",
+          "dismissed",
+          "round"
+        ],
+        "codepoint": 58616,
+        "published_in": 1.0,
+        "updated_in": 1.0
+      }
+    }
+  }
+}

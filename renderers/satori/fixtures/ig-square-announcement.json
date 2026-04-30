@@ -1,0 +1,13 @@
+{
+  "id": "ig-square-announcement",
+  "frame": "instagram-square",
+  "surface": "white",
+  "footerLine": "myvaultai.com",
+  "content": {
+    "pattern": "announcement",
+    "eyebrow": "New from MyVault",
+    "headline": "The AI Privacy Guide is now free.",
+    "supporting": "Nineteen pages on what the new AI rules mean for your family — written in plain English.",
+    "cta": "myvaultai.com/ai-privacy-guide"
+  }
+}
