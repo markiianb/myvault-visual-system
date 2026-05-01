@@ -1,0 +1,18 @@
+{
+  "id": "onboarding-stats",
+  "type": "stat-infographic-3up",
+  "card": {
+    "width": 1240,
+    "padding": [48, 56, 48, 56],
+    "surface": "white"
+  },
+  "stats": [
+    {"icon": "check-circle", "value": "92% faster setup",      "caption": "From empty to organized in under 30 minutes."},
+    {"icon": "files",        "value": "3× more documents",     "caption": "Average files safely stored per active user."},
+    {"icon": "timer",        "value": "64% higher completion", "caption": "Users finish their full checklist when guided."}
+  ],
+  "footer": {
+    "icon": "shield-check",
+    "title": "MyVault · Onboarding stats"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "where-time-goes",
+  "type": "horizontal-bar",
+  "card": {
+    "width": 960,
+    "padding": [40, 40, 40, 40],
+    "surface": "mist",
+    "headerGap": 20,
+    "footerGap": 20
+  },
+  "header": {
+    "title": "Where the time goes",
+    "description": "Hours per week spent on file management tasks before MyVault.",
+    "innerGap": 10
+  },
+  "footer": {
+    "show": true,
+    "source": "Source: MyVault user survey, n = 1,200, 2026"
+  },
+  "plot": {
+    "scale": {"max": 25},
+    "data": {
+      "values": [
+        {"category": "Searching",  "value": 18},
+        {"category": "Renaming",   "value": 14},
+        {"category": "Filing",     "value": 11},
+        {"category": "Restoring",  "value": 6},
+        {"category": "Sharing",    "value": 4}
+      ]
+    }
+  }
+}

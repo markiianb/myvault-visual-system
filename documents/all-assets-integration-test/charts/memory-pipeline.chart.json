@@ -1,0 +1,33 @@
+{
+  "id": "memory-pipeline",
+  "type": "flow-diagram",
+  "card": {
+    "width": 1532,
+    "bodyHeight": 760
+  },
+  "footer": {
+    "icon": "shield-check",
+    "title": "How MyVault writes a memory"
+  },
+  "nodes": [
+    {"id": "task",       "type": "pill",        "x": 60,   "y": 200, "icon": "file-text", "label": "Task description"},
+    {"id": "prompt",     "type": "pill",        "x": 60,   "y": 340, "icon": "file-text", "label": "Prompt"},
+    {"id": "tool-call",  "type": "pill",        "x": 470,  "y": 80,                       "label": "call to store_memory tool"},
+    {"id": "iterating",  "type": "pill",        "x": 510,  "y": 670, "icon": "file-text", "label": "Iterating on the task"},
+    {"id": "agent",      "type": "accent-teal", "x": 380,  "y": 320, "icon": "user",      "label": "Agent 1"},
+    {"id": "code-out",   "type": "code",        "x": 700,  "y": 330, "text": "memory: {\n  subject: ...\n  fact: ...\n  citations: ...\n  reason: ...\n}"},
+    {"id": "memory-api", "type": "accent-go",   "x": 870,  "y": 540, "icon": "file-text", "label": "Memory API"},
+    {"id": "code-in",    "type": "code",        "x": 1140, "y": 330, "text": "memory: {\n  subject: ...\n  fact: ...\n  citations: ...\n  reason: ...\n}"},
+    {"id": "memory-db",  "type": "accent-go",   "x": 1300, "y": 100, "icon": "file-text", "label": "Memory DB"}
+  ],
+  "edges": [
+    {"from": "task",       "to": "prompt",     "kind": "data-flow", "path": [[180, 242], [180, 340]]},
+    {"from": "prompt",     "to": "agent",      "kind": "data-flow", "path": [[280, 361], [340, 361], [340, 385], [380, 385]]},
+    {"from": "agent",      "to": "code-out",   "kind": "data-flow", "path": [[580, 385], [700, 385]]},
+    {"from": "code-out",   "to": "memory-api", "kind": "data-flow", "path": [[810, 470], [810, 605], [870, 605]]},
+    {"from": "memory-api", "to": "code-in",    "kind": "data-flow", "path": [[1070, 605], [1250, 605], [1250, 470]]},
+    {"from": "code-in",    "to": "memory-db",  "kind": "data-flow", "path": [[1250, 330], [1250, 165], [1300, 165]]},
+    {"from": "agent",      "to": "tool-call",  "kind": "logical",   "path": [[480, 320], [480, 110]]},
+    {"from": "agent",      "to": "iterating",  "kind": "logical",   "path": [[480, 450], [580, 450], [580, 670]]}
+  ]
+}

@@ -28,6 +28,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as vega from "vega";
 import * as vl from "vega-lite";
+import { phosphorIcon } from "./lib/icons.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TOKENS = JSON.parse(fs.readFileSync(path.join(__dirname, "tokens.json"), "utf8"));
@@ -454,6 +455,359 @@ ${footer.svg}
 </svg>`;
 }
 
+// ----- composer: stat-infographic (2-up / 3-up / 4-up) -------------------------------------
+// Per chunks/stat-infographic.md R-STAT-001..005.
+async function composeStatInfographic(fixture) {
+  const card = fixture.card ?? {};
+  const colCount = fixture.stats?.length ?? 3;
+  const outerWidth = card.width ?? (colCount === 2 ? 960 : colCount === 4 ? 1480 : 1240);
+  const surface = card.surface ?? "white";
+  const surfaceFill = surface === "off-white" ? TOKENS.color.offWhite : TOKENS.color.white;
+
+  // Body
+  const bodyPad = card.padding ?? [48, 56, 48, 56];
+  const [pT, pR, pB, pL] = bodyPad;
+  const bodyInnerW = outerWidth - pL - pR;
+  const colGap = 40;
+  const colW = (bodyInnerW - colGap * (colCount - 1)) / colCount;
+
+  const ICON_SIZE = 48;
+  const ICON_TO_STAT_GAP = 20;
+  const STAT_TO_CAPTION_GAP = 20;
+  const STAT_LH = 28 * 1.20; // 33.6
+  const CAPTION_LH = 16 * 1.40; // 22.4
+  // Estimate caption height by line count (rough: chars / chars-per-line)
+  function estimateCaptionLines(text, widthPx) {
+    const charsPerLine = Math.floor(widthPx / 7); // ~7px per char at Lato 16 (matches Figma)
+    const lines = Math.max(1, Math.ceil((text?.length ?? 0) / charsPerLine));
+    return Math.min(lines, 4);
+  }
+
+  const captionLines = fixture.stats.map((s) => estimateCaptionLines(s.caption ?? "", colW));
+  const colH = ICON_SIZE + ICON_TO_STAT_GAP + STAT_LH + STAT_TO_CAPTION_GAP + Math.max(...captionLines) * CAPTION_LH;
+  const bodyH = pT + colH + pB;
+
+  // Footer
+  const footerPad = [14, 20, 14, 20];
+  const [fpT, fpR, fpB, fpL] = footerPad;
+  const FOOTER_ICON_SIZE = 24;
+  const FOOTER_TITLE_LH = 18 * 1.20; // 21.6
+  const footerInnerH = Math.max(FOOTER_ICON_SIZE, FOOTER_TITLE_LH);
+  const footerH = fpT + footerInnerH + fpB;
+
+  // Divider
+  const DIVIDER_H = 2;
+
+  // Total
+  const totalH = bodyH + DIVIDER_H + footerH;
+
+  // ----- compose body
+  const colsSvg = fixture.stats.map((stat, i) => {
+    const colX = pL + i * (colW + colGap);
+    const iconY = pT;
+    const statY = iconY + ICON_SIZE + ICON_TO_STAT_GAP;
+    const captionY = statY + STAT_LH + STAT_TO_CAPTION_GAP;
+    const icon = phosphorIcon({
+      name: stat.icon ?? "check-circle",
+      weight: "regular",
+      x: colX,
+      y: iconY,
+      size: ICON_SIZE,
+      color: TOKENS.color.signalGo,
+    });
+    const value = `<text x="${colX}" y="${statY + 28}" font-family="PT Serif" font-size="28" font-weight="400" fill="${TOKENS.color.black}">${escapeXml(stat.value)}</text>`;
+    const captionLines = wrapCaption(stat.caption ?? "", colW);
+    const caption = captionLines.map((line, idx) =>
+      `<text x="${colX}" y="${captionY + 16 + idx * CAPTION_LH}" font-family="Lato" font-size="16" font-weight="400" fill="${TOKENS.color.gray02}">${escapeXml(line)}</text>`
+    ).join("");
+    return icon + value + caption;
+  }).join("");
+
+  // ----- compose divider
+  const dividerY = bodyH;
+  const divider = `<rect x="0" y="${dividerY}" width="${outerWidth}" height="${DIVIDER_H}" fill="${TOKENS.color.signalGo}"/>`;
+
+  // ----- compose footer
+  const footerY = bodyH + DIVIDER_H;
+  const footerIconX = fpL;
+  const footerIconY = footerY + fpT + (footerInnerH - FOOTER_ICON_SIZE) / 2;
+  const footerIcon = phosphorIcon({
+    name: fixture.footer?.icon ?? "shield-check",
+    weight: "fill",
+    x: footerIconX,
+    y: footerIconY,
+    size: FOOTER_ICON_SIZE,
+    color: TOKENS.color.signalGo,
+  });
+  const footerTextX = footerIconX + FOOTER_ICON_SIZE + 12;
+  const footerTextY = footerY + fpT + footerInnerH / 2 + 6;
+  const footerTitle = `<text x="${footerTextX}" y="${footerTextY}" font-family="PT Serif" font-size="18" font-weight="400" fill="${TOKENS.color.signalGo}">${escapeXml(fixture.footer?.title ?? "")}</text>`;
+
+  // ----- compose outer frame
+  // Border is 2px OUTSIDE — we render the inner card and add a 2px stroke OUTSIDE by inflating viewBox by 2 on all sides.
+  const stroke = 2;
+  const fullW = outerWidth + 2 * stroke;
+  const fullH = totalH + 2 * stroke;
+  const innerRect = `<rect x="${stroke}" y="${stroke}" width="${outerWidth}" height="${totalH}" fill="${surfaceFill}" stroke="${TOKENS.color.signalGo}" stroke-width="${stroke}"/>`;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${fullW}" height="${fullH}" viewBox="0 0 ${fullW} ${fullH}">
+${innerRect}
+<g transform="translate(${stroke}, ${stroke})">
+${colsSvg}
+${divider}
+${footerIcon}
+${footerTitle}
+</g>
+</svg>`;
+}
+
+// ----- composer: flow-diagram (agentic / system / pipeline diagrams) -----------------------
+// Per chunks/diagram.md R-DIAG-001..006.
+//
+// Fixture shape:
+//   {
+//     "id": "memory-pipeline",
+//     "type": "flow-diagram",
+//     "card": { "width": 1332, "bodyHeight": 640 },
+//     "footer": { "icon": "shield-check", "title": "Memory pipeline" },
+//     "nodes": [
+//       {"id": "task",  "type": "pill",        "x": 60,  "y": 80,  "icon": "file-text", "label": "Task description"},
+//       {"id": "agent", "type": "accent-teal", "x": 60,  "y": 220, "icon": "user",      "label": "Agent 1"},
+//       {"id": "api",   "type": "accent-go",   "x": 700, "y": 220, "icon": "file-text", "label": "Memory API"},
+//       {"id": "code1", "type": "code",        "x": 380, "y": 380, "text": "memory: {\n  subject: ...\n}"}
+//     ],
+//     "edges": [
+//       {"from": "task",  "to": "agent", "kind": "data-flow", "path": [[60, 122], [60, 220]]},
+//       {"from": "agent", "to": "api",   "kind": "data-flow", "path": [[260, 285], [700, 285]]},
+//       {"from": "task",  "to": "api",   "kind": "logical",   "path": [[225, 102], [780, 102], [780, 220]]}
+//     ]
+//   }
+async function composeFlowDiagram(fixture) {
+  const card = fixture.card ?? {};
+  const W = card.width ?? 1332;
+  const bodyH = card.bodyHeight ?? 640;
+  const showFooter = fixture.footer != null;
+
+  // Footer band (TOP)
+  const footerH = showFooter ? 60 : 0;
+  const footerPad = [16, 12, 16, 12];
+  const [fpT, fpR, fpB, fpL] = footerPad;
+  const footerY = 0;
+  const FOOTER_ICON_SIZE = 28;
+
+  // Body envelope
+  const bodyY = footerH;
+
+  // Total
+  const totalH = footerH + bodyH;
+
+  // Footer SVG
+  let footerSvg = "";
+  if (showFooter) {
+    const footerRect = `<rect x="0" y="${footerY}" width="${W}" height="${footerH}" fill="${TOKENS.color.offWhite}" stroke="${TOKENS.color.gray01}" stroke-width="1" stroke-dasharray="0" />`;
+    // Override stroke per R-DIAG-001 — top + right + left only (no bottom). Achieve via two strokes: outline rect with no fill stroke + 3 separate lines.
+    const footerFill = `<rect x="0" y="${footerY}" width="${W}" height="${footerH}" fill="${TOKENS.color.offWhite}"/>`;
+    const footerTop = `<line x1="0" y1="${footerY + 0.5}" x2="${W}" y2="${footerY + 0.5}" stroke="${TOKENS.color.gray01}" stroke-width="1"/>`;
+    const footerLeft = `<line x1="0.5" y1="${footerY}" x2="0.5" y2="${footerY + footerH}" stroke="${TOKENS.color.gray01}" stroke-width="1"/>`;
+    const footerRight = `<line x1="${W - 0.5}" y1="${footerY}" x2="${W - 0.5}" y2="${footerY + footerH}" stroke="${TOKENS.color.gray01}" stroke-width="1"/>`;
+    let inner = "";
+    let cursorX = fpL;
+    if (fixture.footer.icon) {
+      const iconY = footerY + fpT + (footerH - fpT - fpB - FOOTER_ICON_SIZE) / 2;
+      inner += phosphorIcon({
+        name: fixture.footer.icon,
+        weight: "regular",
+        x: cursorX,
+        y: iconY,
+        size: FOOTER_ICON_SIZE,
+        color: TOKENS.color.black,
+      });
+      cursorX += FOOTER_ICON_SIZE + 14;
+    }
+    if (fixture.footer.title) {
+      const textY = footerY + footerH / 2 + 7;
+      inner += `<text x="${cursorX}" y="${textY}" font-family="PT Serif" font-size="20" font-weight="400" fill="${TOKENS.color.black}">${escapeXml(fixture.footer.title)}</text>`;
+    }
+    footerSvg = footerFill + footerTop + footerLeft + footerRight + inner;
+  }
+
+  // Body envelope
+  const bodyRect = `<rect x="0.5" y="${bodyY + 0.5}" width="${W - 1}" height="${bodyH - 1}" fill="${TOKENS.color.offWhite}" stroke="${TOKENS.color.gray01}" stroke-width="1"/>`;
+
+  // Render nodes
+  const nodesSvg = (fixture.nodes ?? []).map((node) => renderDiagramNode(node, bodyY)).join("");
+
+  // Render connectors (edges)
+  const edgesSvg = (fixture.edges ?? []).map((edge) => renderDiagramEdge(edge, bodyY)).join("");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${totalH}" viewBox="0 0 ${W} ${totalH}">
+${footerSvg}
+${bodyRect}
+${edgesSvg}
+${nodesSvg}
+</svg>`;
+}
+
+function renderDiagramNode(node, bodyY) {
+  const x = node.x;
+  const y = bodyY + node.y;
+  switch (node.type) {
+    case "pill":
+      return renderPillNode({ ...node, x, y });
+    case "accent-teal":
+      return renderAccentNode({ ...node, x, y, fill: TOKENS.color.teal, fg: TOKENS.color.white });
+    case "accent-go":
+      return renderAccentNode({ ...node, x, y, fill: TOKENS.color.signalGo, fg: TOKENS.color.teal });
+    case "code":
+      return renderCodeNode({ ...node, x, y });
+    default:
+      throw new Error(`Unknown node type: ${node.type}`);
+  }
+}
+
+function pillNodeWidth(node) {
+  const PAD_LR = 20;
+  const ICON_W = node.icon ? 18 : 0;
+  const GAP = node.icon ? 8 : 0;
+  // Estimate label width at Lato 14: ~7.2px per char average
+  const labelW = (node.label?.length ?? 0) * 7.2;
+  return PAD_LR + ICON_W + GAP + labelW + PAD_LR;
+}
+
+function pillNodeHeight() {
+  return 42; // 12 + 18(icon)/14(label) + 12, height fits both
+}
+
+function renderPillNode(node) {
+  const w = pillNodeWidth(node);
+  const h = pillNodeHeight();
+  const r = 99;
+  const rect = `<rect x="${node.x}" y="${node.y}" width="${w}" height="${h}" rx="${r}" ry="${r}" fill="${TOKENS.color.white}" stroke="${TOKENS.color.gray01}" stroke-width="1"/>`;
+  let cursorX = node.x + 20;
+  let inner = "";
+  if (node.icon) {
+    inner += phosphorIcon({
+      name: node.icon,
+      weight: "regular",
+      x: cursorX,
+      y: node.y + (h - 18) / 2,
+      size: 18,
+      color: TOKENS.color.black,
+    });
+    cursorX += 18 + 8;
+  }
+  if (node.label) {
+    inner += `<text x="${cursorX}" y="${node.y + h / 2 + 5}" font-family="Lato" font-size="14" font-weight="400" fill="${TOKENS.color.black}">${escapeXml(node.label)}</text>`;
+  }
+  return rect + inner;
+}
+
+function renderAccentNode(node) {
+  const w = 200;
+  const h = 130;
+  const rect = `<rect x="${node.x}" y="${node.y}" width="${w}" height="${h}" fill="${node.fill}"/>`;
+  const cx = node.x + w / 2;
+  const cy = node.y + h / 2;
+  let inner = "";
+  // Vertically stack icon + label centered
+  const ICON_SIZE = 28;
+  const GAP = 8;
+  const TEXT_H = 16;
+  const totalContentH = ICON_SIZE + GAP + TEXT_H;
+  const iconTop = cy - totalContentH / 2;
+  const textBaseline = iconTop + ICON_SIZE + GAP + 14;
+  if (node.icon) {
+    inner += phosphorIcon({
+      name: node.icon,
+      weight: "regular",
+      x: cx - ICON_SIZE / 2,
+      y: iconTop,
+      size: ICON_SIZE,
+      color: node.fg,
+    });
+  }
+  if (node.label) {
+    inner += `<text x="${cx}" y="${textBaseline}" text-anchor="middle" font-family="Lato" font-size="16" font-weight="400" fill="${node.fg}">${escapeXml(node.label)}</text>`;
+  }
+  return rect + inner;
+}
+
+function renderCodeNode(node) {
+  const w = node.width ?? 108;
+  const PAD_TB = 16;
+  const PAD_LR = 18;
+  const lines = (node.text ?? "").split("\n");
+  const lineH = 13 * 1.6; // 20.8
+  const h = PAD_TB * 2 + lines.length * lineH;
+  const rect = `<rect x="${node.x}" y="${node.y}" width="${w}" height="${h}" fill="${TOKENS.color.white}" stroke="${TOKENS.color.gray01}" stroke-width="1"/>`;
+  const linesSvg = lines.map((line, i) => {
+    const ly = node.y + PAD_TB + (i + 1) * lineH - 5;
+    return `<text x="${node.x + PAD_LR}" y="${ly}" font-family="Lato" font-size="13" font-weight="400" fill="${TOKENS.color.black}">${escapeXml(line)}</text>`;
+  }).join("");
+  return rect + linesSvg;
+}
+
+function renderDiagramEdge(edge, bodyY) {
+  if (!edge.path || edge.path.length < 2) return "";
+  const projected = edge.path.map(([x, y]) => [x, bodyY + y]);
+  const points = projected.map(([x, y]) => `${x},${y}`).join(" ");
+  const isLogical = edge.kind === "logical";
+  const stroke = isLogical ? TOKENS.color.gray02 : TOKENS.color.signalGo;
+  const dashAttr = isLogical ? ` stroke-dasharray="4 4"` : "";
+  const line = `<polyline points="${points}" fill="none" stroke="${stroke}" stroke-width="2"${dashAttr}/>`;
+
+  // Endpoint markers per R-DIAG-004:
+  //   data-flow: small filled circle (signal-go) at source + destination
+  //   logical:   small triangular arrowhead (gray-02) at destination only
+  const [sx, sy] = projected[0];
+  const [tx, ty] = projected[projected.length - 1];
+  let markers = "";
+  if (!isLogical) {
+    markers += `<circle cx="${sx}" cy="${sy}" r="4" fill="${TOKENS.color.signalGo}"/>`;
+    markers += `<circle cx="${tx}" cy="${ty}" r="4" fill="${TOKENS.color.signalGo}"/>`;
+  } else {
+    // Compute arrow direction from the last segment
+    const [px, py] = projected[projected.length - 2];
+    const dx = tx - px;
+    const dy = ty - py;
+    const len = Math.hypot(dx, dy) || 1;
+    const ux = dx / len;
+    const uy = dy / len;
+    // Arrow points: tip at (tx, ty), back-corner-1 + back-corner-2 forming a small triangle
+    const sz = 7;
+    const wx = -uy * (sz / 2);
+    const wy = ux * (sz / 2);
+    const bx = tx - ux * sz;
+    const by = ty - uy * sz;
+    const c1x = bx + wx;
+    const c1y = by + wy;
+    const c2x = bx - wx;
+    const c2y = by - wy;
+    markers += `<polygon points="${tx},${ty} ${c1x},${c1y} ${c2x},${c2y}" fill="${TOKENS.color.gray02}"/>`;
+  }
+  return line + markers;
+}
+
+// Greedy word wrap for caption lines
+function wrapCaption(text, widthPx) {
+  if (!text) return [];
+  const charsPerLine = Math.floor(widthPx / 7); // tuned to Lato 16 actual width
+  const words = text.split(/\s+/);
+  const lines = [];
+  let current = "";
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length > charsPerLine && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = candidate;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+}
+
 // ----- main --------------------------------------------------------------------------------
 const COMPOSERS = {
   "horizontal-bar": composeHorizontalBar,
@@ -461,6 +815,12 @@ const COMPOSERS = {
   "vertical-bar-axes": composeVerticalBarAxes,
   "radial-dramatic": composeRadial,
   "radial-light": composeRadial,
+  "stat-infographic-2up": composeStatInfographic,
+  "stat-infographic-3up": composeStatInfographic,
+  "stat-infographic-4up": composeStatInfographic,
+  "stat-infographic":     composeStatInfographic, // alias for 3-up default
+  "flow-diagram":         composeFlowDiagram,
+  "diagram":              composeFlowDiagram,     // alias
 };
 
 async function main() {

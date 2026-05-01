@@ -1,0 +1,14 @@
+{
+  "id": "post-1-advisor-ai-dilemma",
+  "frame": "stat-panel-teal-square",
+  "_note": "Test post 1: stat-panel — advisor/wealth-manager audience, the AI-policy gap.",
+  "content": {
+    "headline": "The advisor’s AI dilemma.",
+    "footerLine": "myvaultai.com — Private by design",
+    "stats": [
+      { "value": "73%", "label": "had a client ask about AI privacy this year.", "source": "Cerulli, 2025." },
+      { "value": "41%", "label": "of firms have no written AI policy.",          "source": "Deloitte, 2025." },
+      { "value": "33%", "label": "of new data leaks involve a sanctioned AI tool.", "source": "IBM, 2025." }
+    ]
+  }
+}

@@ -1,51 +1,53 @@
 /**
  * frames-registry — central map of frame name -> { dimensions, builder }.
  *
- * Both render.ts and render-all.ts consume this. Add a new frame by importing
- * the component here and registering it once; the CLI surface picks it up
- * automatically.
+ * Each frame is a hand-composed creative piece, not a templated dispatcher.
+ * Add a new frame: write `frames/<name>.tsx` exporting a builder + content type,
+ * then register it here. Fixtures with `"frame": "<name>"` flow through it.
  */
 
-import type { ReactElement } from "react";
-import { InstagramSquare } from "../frames/instagram-square";
-import { InstagramPortrait } from "../frames/instagram-portrait";
-import { InstagramStory } from "../frames/instagram-story";
-import { LinkedInFeed } from "../frames/linkedin-feed";
-import type { LockupAssets } from "../components/Lockup";
-import type { FrameContent } from "../types";
+import { StatPanelTealSquare, type StatPanelTealSquareContent } from "../frames/stat-panel-teal-square";
+import { GiantNumberSquare, type GiantNumberSquareContent } from "../frames/giant-number-square";
+import { EditorialKnockoutPortrait, type EditorialKnockoutPortraitContent } from "../frames/editorial-knockout-portrait";
+import { AsymmetricQuoteSquare, type AsymmetricQuoteSquareContent } from "../frames/asymmetric-quote-square";
+import { OgHeadlineFeed, type OgHeadlineFeedContent } from "../frames/og-headline-feed";
+import type { FrameSpec } from "../types";
 
-export type FrameAssets = { lockups: LockupAssets };
-
-export type FrameSpec = {
-  width: number;
-  height: number;
-  build: (content: FrameContent, assets: FrameAssets) => ReactElement;
-};
-
-export const FRAMES: Record<string, FrameSpec> = {
-  "instagram-square": {
+export const FRAMES: Record<string, FrameSpec<any>> = {
+  "stat-panel-teal-square": {
     width: 1080,
     height: 1080,
-    build: (content, assets) => InstagramSquare({ content, assets }),
+    build: (content: StatPanelTealSquareContent, assets) =>
+      StatPanelTealSquare({ content, assets }),
   },
-  "instagram-portrait": {
+  "giant-number-square": {
+    width: 1080,
+    height: 1080,
+    build: (content: GiantNumberSquareContent, assets) =>
+      GiantNumberSquare({ content, assets }),
+  },
+  "editorial-knockout-portrait": {
     width: 1080,
     height: 1350,
-    build: (content, assets) => InstagramPortrait({ content, assets }),
+    build: (content: EditorialKnockoutPortraitContent, assets) =>
+      EditorialKnockoutPortrait({ content, assets }),
   },
-  "instagram-story": {
+  "asymmetric-quote-square": {
     width: 1080,
-    height: 1920,
-    build: (content, assets) => InstagramStory({ content, assets }),
+    height: 1080,
+    build: (content: AsymmetricQuoteSquareContent, assets) =>
+      AsymmetricQuoteSquare({ content, assets }),
   },
-  "linkedin-feed": {
+  "og-headline-feed": {
     width: 1200,
     height: 628,
-    build: (content, assets) => LinkedInFeed({ content, assets }),
+    build: (content: OgHeadlineFeedContent, assets) =>
+      OgHeadlineFeed({ content, assets }),
   },
 };
 
-export type Fixture = FrameContent & {
+export type Fixture = {
   id?: string;
   frame: keyof typeof FRAMES | string;
+  content: unknown;
 };

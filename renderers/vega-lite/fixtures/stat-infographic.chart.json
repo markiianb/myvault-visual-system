@@ -1,0 +1,19 @@
+{
+  "id": "stat-infographic",
+  "type": "stat-infographic-3up",
+  "description_for_agent": "MyVault Stat Infographic — fixture (Figma reference 70:8598). 1240×294 outer, 2px signal-go OUTSIDE border, 3 columns of icon + PT Serif 28pt stat + Lato 16pt caption, signal-go divider, footer band with Phosphor Fill icon + PT Serif 18pt title in signal-go.",
+  "card": {
+    "width": 1240,
+    "padding": [48, 56, 48, 56],
+    "surface": "white"
+  },
+  "stats": [
+    {"icon": "check-circle", "value": "92% faster setup",      "caption": "From empty to organized in under 30 minutes."},
+    {"icon": "files",        "value": "3× more documents",     "caption": "Average files safely stored per active user."},
+    {"icon": "timer",        "value": "64% higher completion", "caption": "Users finish their full checklist when guided."}
+  ],
+  "footer": {
+    "icon": "shield-check",
+    "title": "MyVault · Onboarding stats"
+  }
+}

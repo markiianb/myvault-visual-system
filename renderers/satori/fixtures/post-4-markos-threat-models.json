@@ -1,0 +1,10 @@
+{
+  "id": "post-4-markos-threat-models",
+  "frame": "asymmetric-quote-square",
+  "_note": "Test post 4: asymmetric-quote — founder quote correcting zero-knowledge marketing speak.",
+  "content": {
+    "quote": "If a vendor says “zero-knowledge,” ask them what their threat model is. If they can’t answer in one sentence, they don’t have one.",
+    "attribution": "Markos Symeonides, Founder",
+    "footerLine": "myvaultai.com — Private by design"
+  }
+}

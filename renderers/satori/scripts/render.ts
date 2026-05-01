@@ -34,7 +34,7 @@ export async function renderFixture(fixturePath: string, outputArg?: string) {
 
   const fonts = await loadFonts();
   const lockups = await loadLockups();
-  const element = spec.build(fixture, { lockups });
+  const element = spec.build(fixture.content, { lockups });
 
   const svg = await satori(element, {
     width: spec.width,

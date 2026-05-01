@@ -1,0 +1,11 @@
+{
+  "id": "post-3-firm-ai-audit",
+  "frame": "editorial-knockout-portrait",
+  "_note": "Test post 3: editorial-knockout — professional-services firms, AI tool audit.",
+  "content": {
+    "kicker": "Essay",
+    "headline": "Most firms didn’t audit their AI tools. Here’s the checklist.",
+    "body": "Copilot, ChatGPT Enterprise, Notion AI — most professional-services firms adopted at least one in the past eighteen months. Few audited what client documents now leave the perimeter. This is the audit we run with new MyVault customers, redacted for general use.",
+    "cta": "Read the audit → myvaultai.com/firm-ai-audit"
+  }
+}

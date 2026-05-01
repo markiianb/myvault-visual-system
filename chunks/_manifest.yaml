@@ -4,9 +4,9 @@
 # Each chunk pins a renderer + spec format and inherits from the foundations layer.
 # Update when a new asset-type chunk lands or an existing one ships a major version.
 
-manifest_version: "1.6"
+manifest_version: "1.7"
 domain: chunks
-last_updated: 2026-05-01 (R-COLOR-009 chart-card exception ratified to foundations; Marp promoted to active; ebook output formats narrowed to validated set)
+last_updated: 2026-05-01 (stat-infographic v1.0 + diagram v1.0 shipped — adopted from chart.md's out-of-scope list; combined integration test PDF validated end-to-end)
 owner: mark
 summary: >
   Asset-type chunks define rules for specific deliverable types (ebook, presentation,
@@ -174,8 +174,89 @@ chunks:
       - chart-annotation scoped Vault Teal exception (ratifies presentation.md v1.1's anticipation)
       - axis-chart treatment (negative bars + zero line + dashed gridlines)
     out_of_scope:
-      - { what: "Flow Diagram (Figma 70:8560)", where_to: "future chunks/diagram.md (Typst+Fletcher)" }
-      - { what: "Stat Infographic (Figma 70:8598)", where_to: "stat-infographic editorial primitive in renderers/typst/myvault-editorial.typ" }
+      - { what: "Flow Diagram (Figma 70:8560)", where_to: "chunks/diagram.md (shipped 2026-05-01) — same SVG composer pipeline" }
+      - { what: "Stat Infographic (Figma 70:8598)", where_to: "chunks/stat-infographic.md (shipped 2026-05-01) — same SVG composer pipeline" }
+
+  - chunk_id: stat-infographic
+    file: stat-infographic.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-05-01
+    asset_type: stat-infographic
+    summary: >
+      Multi-column icon + big-number + caption layouts framed by a 2px signal-go OUTSIDE
+      border with a signal-go full-width divider above a footer band carrying a small
+      Phosphor icon and a PT Serif 18pt title in signal-go. 5 HARD rules (R-STAT-001..005)
+      covering the signal-go border + divider as load-bearing brand signature, the column
+      triplet (icon + stat + caption in that order), the footer band format, the closed
+      signal-go reservation (no competing accents), and Phosphor weight-per-position
+      (Regular for column icons / Fill for footer icon). BASE typography per role
+      (PT Serif 28pt stat / Lato 16pt caption / PT Serif 18pt footer title), surface
+      palette (white default; off-white alternate; dark surfaces NOT valid), column count
+      (3-up default; 2-up + 4-up valid). MENU of 3 column-count variants. Renderer:
+      shared SVG composer (renderers/vega-lite/compose.mjs) extended with
+      composeStatInfographic. Standalone SVG/PNG/PDF deliverable + ebook embed via
+      stat-infographic() Typst primitive. Adopted from chart.md v1.0's out-of-scope list.
+    hard_rule_count: 5
+    hard_rule_ids: [R-STAT-001, R-STAT-002, R-STAT-003, R-STAT-004, R-STAT-005]
+    renderer: svg-composer
+    spec_format: json
+    template_path_phase_2: renderers/vega-lite/compose.mjs
+    output_formats: [svg, png, pdf]
+    visual_canon:
+      pageId: "70:8479"
+      pageName: "Diagrams"
+      reference_examples:
+        - { nodeId: "70:8598", what: "Stat Infographic 3-up canonical (1240×294; 2px signal-go OUTSIDE border; check-circle / files / timer Phosphor icons; signal-go divider; shield-check footer + 'MyVault · Onboarding stats')" }
+    inherits_from_foundations: [color, typography, iconography]
+    review_axes: [stat-infographic-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
+    foundation_overrides: []
+    is_authority_for:
+      - signal-go OUTSIDE border + divider as the stat-infographic brand signature
+      - column triplet ordering (icon + stat + caption)
+      - Phosphor weight-per-position (Regular column / Fill footer)
+
+  - chunk_id: diagram
+    file: diagram.md
+    status: active
+    version: "1.0"
+    last_updated: 2026-05-01
+    asset_type: diagram
+    summary: >
+      Flow / system / pipeline diagrams — node-graph deliverables with pill, accent-teal,
+      accent-go, and code nodes connected by right-angle vector connectors. 6 HARD rules
+      (R-DIAG-001..006) covering footer-at-TOP inversion (the diagram's structural signature
+      that distinguishes it from chart-cards), body envelope (off-white fill + 1px gray-01
+      stroke), the closed node-type catalog, connector kinds (data-flow signal-go solid with
+      green endpoint dots / logical gray-02 dashed [4,4] with destination arrowhead) and
+      right-angle routing only, signal-go reservation (data-flow connectors + accent-go
+      node fills only), and the accent-go text inversion (teal on signal-go, NOT white —
+      Mark's deliberate edit per project_diagram_canonical_specs memory). BASE typography
+      per node type. MENU of 5 node-type compositions + 2 connector kinds. Renderer: shared
+      SVG composer (renderers/vega-lite/compose.mjs) extended with composeFlowDiagram +
+      per-node-type renderers. Auto-routing deferred to v2; v1.0 requires explicit path
+      arrays in the fixture. Adopted from chart.md v1.0's out-of-scope list.
+    hard_rule_count: 6
+    hard_rule_ids: [R-DIAG-001, R-DIAG-002, R-DIAG-003, R-DIAG-004, R-DIAG-005, R-DIAG-006]
+    renderer: svg-composer
+    spec_format: json
+    template_path_phase_2: renderers/vega-lite/compose.mjs
+    output_formats: [svg, png, pdf]
+    visual_canon:
+      pageId: "70:8479"
+      pageName: "Diagrams"
+      reference_examples:
+        - { nodeId: "70:8560", what: "Flow Diagram canonical — agentic memory pipeline (1332×700; footer at TOP with shield-check + 'Diagram title goes here'; body off-white envelope; pill / accent-teal Agent / accent-go Memory API + DB / code nodes; data-flow connectors with green endpoint dots; logical connectors with gray arrowheads)" }
+    inherits_from_foundations: [color, typography, iconography]
+    review_axes: [diagram-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
+    foundation_overrides:
+      - { rule_id: R-COLOR-008, chunk: color, nature: scoped-exception, scope: "accent-go node label text — 16pt Lato Regular text rendered in color.core.teal on signal-go fill background", note: "The teal-on-signal-go pairing keeps Vault Teal as the brand-emphasis anchor on the green node — Mark's deliberate edit to the original draft.", enforced_by: R-DIAG-006 }
+    is_authority_for:
+      - footer-at-TOP inversion as the diagram structural signature
+      - closed node-type catalog (pill / accent-teal / accent-go / code)
+      - connector kinds (data-flow signal-go solid with endpoint dots / logical gray-02 dashed with arrowhead)
+      - accent-go node text inversion (teal on signal-go, NOT white)
+      - signal-go reservation within diagrams (data-flow connectors + accent-go fills only)
 
 # === ROADMAP — chunks not yet built ===
 roadmap:
@@ -190,16 +271,6 @@ roadmap:
     summary: "Single social images + carousels. Stream A (editorial) and Stream B (newsroom) registers per existing canon. Renderer (Satori) is shipped under renderers/satori/ with 9 validated fixtures and the components-encode-rules pattern enforced via TypeScript prop types — but the HARD/BASE/MENU chunk contract has not been authored yet. INVERSE CONTRACT DRIFT: this is the only place in the system where renderer code exists without a chunk-level contract. Fix by writing the chunk."
     blocker: chunk authoring (renderer not blocking)
     estimated_hard_rules: 8-10
-
-  - chunk_id: diagram
-    status: planned
-    asset_type: diagram
-    renderer_proposed: typst
-    spec_format_proposed: typ
-    output_formats: [svg, png, pdf]
-    summary: "Flow diagrams + node-graph diagrams. Adopts Flow Diagram (Figma 70:8560) from chart.md's out-of-scope list. Typst+Fletcher renders pill nodes, accent nodes, code nodes, right-angle connectors natively."
-    blocker: none
-    estimated_hard_rules: 5-8
 
   - chunk_id: email
     status: planned
