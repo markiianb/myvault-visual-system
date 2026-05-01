@@ -1,10 +1,17 @@
 ---
 type: research-findings
-status: draft
+status: superseded
+superseded_by: findings-html-first-stack.md
 owner: claude (in-session quick test, parallel to the broader research-prompt-html-first-stack.md)
 created: 2026-04-30
 purpose: "Quick head-to-head test of HTML/CSS-via-headless-Chrome vs Typst for the ebook PDF case, using 3 representative pages from the AI Privacy Guide. Findings will inform the architecture decision; the broader parallel-session research will validate across all six asset types."
 ---
+
+> **Superseded.** This is a 3-page quicktest. The broader 6-asset-type stack test in
+> [`findings-html-first-stack.md`](./findings-html-first-stack.md) reaches a different
+> conclusion for the ebook case (keep Typst). Read that document for the canonical
+> recommendation; this one is preserved for the data points it contributes (visual
+> fidelity, code volume, render speed).
 
 # Quick findings — HTML/CSS via headless Chrome vs Typst (ebook PDF case)
 
