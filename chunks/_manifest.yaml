@@ -352,15 +352,23 @@ load_for_task:
     foundations: [color, typography, logo-usage, iconography]
     chunks: [ebook]
     chunks_if_brief_mentions_data_viz: [ebook, chart]
+    chunks_if_brief_mentions_stat_summary: [ebook, stat-infographic]
+    chunks_if_brief_mentions_pipeline_or_architecture: [ebook, diagram]
+    chunks_if_brief_mentions_all: [ebook, chart, stat-infographic, diagram]
     tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
   pdf_document:
     foundations: [color, typography, logo-usage, iconography]
     chunks: [ebook]  # ebook chunk covers PDF docs
     chunks_if_brief_mentions_data_viz: [ebook, chart]
+    chunks_if_brief_mentions_stat_summary: [ebook, stat-infographic]
+    chunks_if_brief_mentions_pipeline_or_architecture: [ebook, diagram]
     tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
   presentation:
     foundations: [color, typography, logo-usage, iconography]
     chunks: [presentation]
+    chunks_if_brief_mentions_data_viz: [presentation, chart]
+    chunks_if_brief_mentions_stat_summary: [presentation, stat-infographic]
+    chunks_if_brief_mentions_pipeline_or_architecture: [presentation, diagram]
     tokens_filter: [color.*, typography.*, gradient.*, space.*]
   social_image:
     foundations: [color, typography, logo-usage, iconography]
@@ -370,6 +378,14 @@ load_for_task:
     foundations: [color, typography]
     chunks: [chart]
     tokens_filter: [color.*, typography.*, gradient.*, space.*, radius.*]
+  stat_infographic:
+    foundations: [color, typography, iconography]
+    chunks: [stat-infographic]
+    tokens_filter: [color.*, typography.*, space.*]
+  diagram:
+    foundations: [color, typography, iconography]
+    chunks: [diagram]
+    tokens_filter: [color.*, typography.*, space.*]
   email:
     foundations: [color, typography, logo-usage, iconography]
     chunks: [email]  # planned
