@@ -4,10 +4,10 @@ domain: foundations
 subcategory: color
 type: chunk
 status: active
-version: "1.0"
-last_updated: 2026-04-29
+version: "1.1"
+last_updated: 2026-05-01 (R-COLOR-009 chart-card scoped exception ratified; R-COLOR-010 drops Gray from active variants)
 owner: mark
-summary: "Color rules for MyVault. 14-token palette across Core/Secondary/Signal tiers + 5 gradients. HARD rules (R-COLOR-001..010) with machine-checkable predicates, BASE rules (80/10/10 ratio, 80/20 hero split, white default, Greydient default), exhaustive pairings matrix, WCAG 2.2 AA contrast table, and an explicit decision tree for agents."
+summary: "Color rules for MyVault. 14-token palette across Core/Secondary/Signal tiers + 5 gradients. HARD rules (R-COLOR-001..010) with machine-checkable predicates — R-COLOR-009 carries one scoped exception for chart-card annotations at 18 pt. BASE rules (80/10/10 ratio, 80/20 hero split, white default, Greydient default), exhaustive pairings matrix, WCAG 2.2 AA contrast table, and an explicit decision tree for agents."
 token_count_estimate: 1100
 token_dependencies:
   - color.core.*
@@ -20,7 +20,7 @@ asset_dependencies:
   - assets/logo/lockup-white.svg
   - assets/logo/lockup-light.svg
   - assets/logo/lockup-teal.svg
-  - assets/logo/lockup-gray.svg
+  # lockup-gray.svg is on disk but deprecated (feedback_no_gray_logo_variant)
 visual_canon:
   fileKey: Pm31BDHj34WjJ7NjBK4Ady
   fileName: "MyVault — Brand Design System"
@@ -40,6 +40,7 @@ related_memories:
   - feedback_white_is_default_surface
   - feedback_hero_color_80_20_black_teal
   - feedback_presentation_design_canon
+  - feedback_no_gray_logo_variant
 ---
 
 # Color
@@ -100,14 +101,18 @@ All bound to Figma variables/paint styles. Never hardcoded. Source of truth: `to
 - **Rationale:** insufficient luminance contrast against any standard surface. Fails WCAG AA.
 - **Check:** `text.fill.token` in `[color.signal.go, color.signal.earth]` && `text.role` in `[body, caption]` → reject.
 
-### R-COLOR-009 — Never use Vault Teal in body or title-size text
+### R-COLOR-009 — Never use Vault Teal in body or title-size text (with one scoped exception)
 - **Rationale:** Vault Teal earns its impact at hero size only. Title-size or body teal dilutes the asset.
 - **Check:** `text.fill.token == color.core.teal && text.fontSize < 96` → reject. (96px ≈ `display/l`, the smallest size where teal carries hero weight.)
+- **Scoped exception — chart-card annotations:** Vault Teal is allowed at **18 pt** for chart-context labeling (axis labels, year labels, legend labels, source captions) **inside a chart-card boundary**. The chart-card is the visual frame defined by `chunks/chart.md` R-CHART-001 — annotations sit on that surface and read as data labels, not as body or title text. Body text on a chart card and any text outside chart-card boundaries still bind R-COLOR-009.
+- **Exception check:** `text.fill.token == color.core.teal && text.fontSize == 18 && text.role in [chart-axis-label, chart-year-label, chart-legend-label, chart-source-caption] && text.parent.is_chart_card == true` → allow.
+- **History:** the exception was anticipated by `chunks/presentation.md` v1.1 (2026-04-30) and ratified by `chunks/chart.md` v1.0 (2026-04-30) as scoped chunk-level overrides. Promoted to a foundation-level scoped exception 2026-05-01 (Mark's call) so it lives in one place. Chunks no longer carry duplicate `foundation_overrides` entries for this rule.
 
 ### R-COLOR-010 — Never paint a logo a custom color outside the canonical variants
 - **Rationale:** the Lockup component set is the source of truth. Recoloring breaks the brand asset.
-- **Canonical variants:** `Primary, Teal, Light, White, Gray` only. See `assets/logo/assets-manifest.json`.
-- **Check:** any imported logo SVG whose fill doesn't match one of `assets/logo/{icon,wordmark,lockup}-{primary,teal,light,white,gray}.svg` → reject.
+- **Canonical variants (active):** `Primary, Teal, Light, White` — four variants only.
+- **Deprecated:** `Gray` (Lockup-Gray, Icon-Gray, Wordmark-Gray) — kept on disk as `status: deprecated` for asset-manifest history; never use. See `assets/logo/assets-manifest.json` and `feedback_no_gray_logo_variant`.
+- **Check:** any imported logo SVG whose fill doesn't match one of `assets/logo/{icon,wordmark,lockup}-{primary,teal,light,white}.svg` → reject.
 
 ## BASE rules
 
@@ -301,4 +306,5 @@ The Figma page is the visual canvas; this file is the durable agent-readable rec
 
 | Date | Change | By |
 |---|---|---|
+| 2026-05-01 | **Ratified the chart-card scoped exception into R-COLOR-009** so the foundation is the single source of truth — Vault Teal is allowed at 18 pt for chart annotations (axis / year / legend labels, source captions) inside chart-card boundaries. Replaces the duplicate `foundation_overrides` entries that were previously declared in `chunks/presentation.md` v1.1 and `chunks/chart.md` v1.0 against this rule. R-COLOR-010 also updated to drop `Gray` from the active canonical-variants list per `feedback_no_gray_logo_variant` (kept on disk as deprecated). | Mark + Claude |
 | 2026-04-29 | Initial. 10 HARD rules, 5 BASE rules, 14-row pairings matrix, WCAG AA contrast table, decision tree, reviewer-agent integration. Captures Mark's 80/10/10 ratio, 80/20 black-teal hero split, white-as-default, Greydient-as-default-gradient. | Mark + Claude |

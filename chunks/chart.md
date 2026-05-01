@@ -4,8 +4,8 @@ domain: chunks
 subcategory: asset-type
 type: chunk
 status: active
-version: "1.0"
-last_updated: 2026-04-30
+version: "1.1"
+last_updated: 2026-05-01 (R-COLOR-009 chart-card exception ratified into foundations/color.md v1.1; chunk foundation_overrides now empty)
 owner: mark
 summary: "Asset-type chunk for data-visualization chart deliverables. 7 HARD rules (R-CHART-001..007) covering chart-card geometry, no-eyebrow-above-title, canonical footer shape when chrome is used, three-state palette reservation (signal.stop / sky / go for status comparisons only — sequential data uses teal), value labels mandatory on every comparative segment (color-blind safety), Vault Teal at 18 pt allowed for chart annotations within chart-card boundary (ratifies the scoped R-COLOR-009 exception that presentation.md anticipated), and the negative-bar / zero-line / dashed-gridline distinction. BASE rules cover typography per role (PT Serif 40 pt title; Lato 14 pt labels; Lato 12 pt source caption — the rare-instance footer caption case), surface palette (gradient default, flat off-white, solid teal, gradient-light), color recipes per surface (title / description / caption / footer dot / footer top stroke all flip per surface), bar radii (0 default, radius/xs allowed for softening), card padding / stroke / no-radius defaults, and the radial 3-cell composition (200×200 rings, 0.88 inner radius, comparative palette). MENU catalog of 5 canonical types — horizontal-bar / vertical-bar-default / vertical-bar-with-axes / radial-comparison-dramatic / radial-comparison-light. Renderer pinned to Vega-Lite + JSON spec; chart-card chrome wraps the data plot via Vega-Lite layer composition. Reviewer integration: chart-reviewer for HARD enforcement + color/typography/accessibility cross-checks. Flow Diagram and Stat Infographic are explicitly out of scope (Flow → future chunks/diagram.md via Typst+Fletcher; Stat Infographic → editorial primitive in myvault-editorial.typ)."
 token_count_estimate: 1500
@@ -95,13 +95,11 @@ related_memories:
   - feedback_white_is_default_surface
 
 # === FOUNDATION OVERRIDES ===
-foundation_overrides:
-  - rule_id: R-COLOR-009
-    chunk: color
-    nature: scoped-exception
-    scope: "chart annotations within chart-card boundary (axis labels, year labels, legend labels, source captions on chart surfaces)"
-    note: "R-COLOR-009 forbids Vault Teal below the display tier. The presentation chunk (v1.1) anticipated this exception for chart annotations on slides like Traction Hero and Financials Curve. R-CHART-006 ratifies it at the chart-asset level: Vault Teal is allowed at 18 pt for chart-context labeling within the chart-card boundary. Body text and non-chart captions outside the chart-card still bind R-COLOR-009. Current Figma Diagrams canon (2026-04-30) does not actually exercise this — every label in the 7 reference frames is gray-02 / off-white / white per surface. The exception preserves the option for future chart annotations without forcing a foundation revision."
-    enforced_by: R-CHART-006
+# R-COLOR-009's chart-card scoped exception was ratified into foundations/color.md v1.1
+# on 2026-05-01. The foundation rule itself now carries the exception clause; this chunk
+# no longer declares it as an override. R-CHART-006 still encodes the chart-side semantics
+# (which roles are eligible: axis labels, year labels, legend labels, source captions).
+foundation_overrides: []
 ---
 
 # Chart
@@ -186,8 +184,8 @@ This chunk uses three tiers — same convention as `ebook.md` and `presentation.
 
 ### R-CHART-006 — Vault Teal at 18 pt allowed for chart annotations within chart-card boundary
 - **Spec:** Vault Teal (`color.core.teal`) is allowed at **18 pt** for chart annotations — axis labels, year labels, legend labels, source captions — **within the chart-card boundary**. Outside the chart-card, R-COLOR-009 binds in full (no Vault Teal below the display tier).
-- **Rationale:** Chart-context labeling is a brand-color labeling system within the designed data object — semantically distinct from body-text captions. The presentation chunk (v1.1) declared this scoped exception in `foundation_overrides`; this rule ratifies it at the chart-asset level so other consuming chunks (ebook, social) inherit the same scope. The exception is *narrow* — body text and non-chart captions outside the card still bind R-COLOR-009.
-- **Foundation-override note:** This is the second explicit foundation override in the chunks layer (R-PRES-003's 18-pt floor was the first). It is a *scoped exception* (less strict in a defined scope), not a *raise* or *universal lower*. Declared in `foundation_overrides` of the chunk frontmatter.
+- **Rationale:** Chart-context labeling is a brand-color labeling system within the designed data object — semantically distinct from body-text captions. The presentation chunk (v1.1) anticipated this exception; the chart chunk encoded it; on 2026-05-01 it was ratified into `foundations/color.md` R-COLOR-009 v1.1 so the foundation rule is the single source of truth. R-CHART-006 still encodes the chart-side semantics (which roles are eligible) so the chart reviewer doesn't have to read the foundation rule's exception clause to know what counts as a "chart annotation."
+- **Foundation-override note:** Until 2026-05-01, this rule's scoped exception was tracked as a chunk-level `foundation_overrides` entry on both `chunks/presentation.md` (anticipated) and `chunks/chart.md` (ratified). Two chunks declaring the same exception against the same foundation rule was a smell. It now lives in the foundation; chunk `foundation_overrides` is empty.
 - **Current Figma canon does not exercise this exception.** Every label in the 7 reference frames is `gray-02` / off-white / white per surface. The exception preserves forward compatibility — future chart annotations may use teal at 18 pt without forcing a foundation revision.
 - **Check:** Vault Teal at 18 pt outside a chart-card boundary → reject (R-COLOR-009 binds). Vault Teal below 18 pt anywhere (including inside a chart-card) → reject.
 
@@ -207,7 +205,7 @@ This chunk uses three tiers — same convention as `ebook.md` and `presentation.
 
 ### Default typography per role
 
-These are typical defaults across every MyVault chart. Deviation is allowed; document it in the deliverable spec. Foundation rules (R-TYPE-001 Regular only, R-TYPE-002 PT Serif + Lato only, R-COLOR-009 no teal below display tier — see chart-card scoped exception in `foundation_overrides`) catch any violation the BASE table doesn't enumerate.
+These are typical defaults across every MyVault chart. Deviation is allowed; document it in the deliverable spec. Foundation rules (R-TYPE-001 Regular only, R-TYPE-002 PT Serif + Lato only, R-COLOR-009 no teal below display tier — including its ratified chart-card 18-pt scoped exception per foundations/color.md v1.1) catch any violation the BASE table doesn't enumerate.
 
 | Role | Default | Notes |
 |---|---|---|
@@ -534,13 +532,11 @@ renderers/vega-lite/
 
 ## Foundation overrides
 
-**One.**
+**None.**
 
-**Scoped exception to R-COLOR-009 (`no Vault Teal below display tier`) for chart annotations within chart-card boundary.** R-CHART-006 ratifies the exception that `presentation.md` declared in v1.1. Vault Teal is allowed at 18 pt for chart-context labeling — axis labels, year labels, legend labels, source captions — inside the chart-card boundary. Outside the card, R-COLOR-009 binds in full.
+The chart-card scoped exception to R-COLOR-009 (Vault Teal at 18 pt for chart annotations within chart-card boundary) was ratified into `foundations/color.md` v1.1 on 2026-05-01. The foundation rule itself now carries the exception clause; chunks no longer declare it as an override. R-CHART-006 still encodes the chart-side semantics (which roles count: axis labels, year labels, legend labels, source captions) so the chart reviewer doesn't have to read the foundation rule's exception clause.
 
-The exception is *narrow* and *forward-compatible* — current Figma Diagrams canon does not exercise it; every label in the 7 reference frames is `gray-02` / off-white / white per surface. The exception preserves the option for future chart annotations to use teal at 18 pt without forcing a foundation revision.
-
-**No other overrides.** The 14-pt typography floor (R-TYPE-005) binds for chart body labels; only the named source caption sits at 12 pt (the rare-instance footer use). Every other R-COLOR / R-TYPE / R-LOGO / R-ICON rule applies automatically.
+The 14-pt typography floor (R-TYPE-005) binds for chart body labels; only the named source caption sits at 12 pt (the rare-instance footer use). Every other R-COLOR / R-TYPE / R-LOGO / R-ICON rule applies automatically.
 
 ## Cross-references
 
@@ -549,7 +545,7 @@ The exception is *narrow* and *forward-compatible* — current Figma Diagrams ca
 - **`logo-usage`** — charts do not carry a logo by default; if added (social tile, standalone deliverable), R-LOGO binds
 - **`iconography`** — Phosphor icons only; not used in the 5 canonical types but available for callouts inside an axis chart legend
 - **`ebook`** (sibling) — when a chart sits inside an ebook page, both chunks bind (this chunk for the chart-card; ebook for the page geometry, surface, footer)
-- **`presentation`** (sibling) — when a chart sits inside a presentation slide, both chunks bind (this chunk for the chart-card; presentation for the slide geometry, header labels, slide footer). Presentation v1.1's `foundation_overrides` entry for chart-context Vault Teal at 18 pt is **ratified** by R-CHART-006 in this chunk.
+- **`presentation`** (sibling) — when a chart sits inside a presentation slide, both chunks bind (this chunk for the chart-card; presentation for the slide geometry, header labels, slide footer). The chart-context Vault Teal at 18 pt that presentation v1.1 declared as an override is now part of foundation R-COLOR-009 v1.1 — both chunks inherit it from the foundation.
 - **`feedback_design_pages_are_guidelines`** — informs the MENU framing (5 canonical types are guidelines, not strict canon)
 - **`feedback_chunk_size_placement_pins`** — informs why HARD rules are 7, not 12 (size / placement specifics live in BASE)
 - **`feedback_white_is_default_surface`** — explains why gradient (not white) is the chart-card default while white remains the system default
@@ -574,6 +570,7 @@ Before this chunk, chart canon lived in one memory entry:
 
 | Date | Change | By |
 |---|---|---|
+| 2026-05-01 | **v1.1 — R-COLOR-009 chart-card exception ratified to foundations/color.md v1.1.** The scoped exception that this chunk ratified at the chart-asset level (R-CHART-006) and that `presentation.md` declared anticipatorily is now part of foundation R-COLOR-009 itself. Removed the `foundation_overrides` entry from frontmatter (now `[]`); R-CHART-006 still encodes the chart-side semantics. Updated BASE typography prose, R-CHART-006 rule body, the "Foundation overrides" section (now "None"), and the cross-reference to presentation. No HARD or BASE rule changes; no MENU catalog changes. The chunk reads against the same foundation contract as before — the override declaration just moved up the stack. | Mark + Claude |
 | 2026-04-30 | **Workflow integration shipped (still v1.0).** Added `chart()` primitive to `renderers/typst/myvault-editorial.typ` for embedding chart SVGs into ebook PDFs (sizes to 1-col / wide / 2-col measure; defers caption to the chart-card's own header). Added `documents/chart-integration-test/` — a 4-page test PDF that embeds a horizontal-bar chart + a radial-light chart inline in an ebook flow, proving the two chunks compose end-to-end. Two-step build (`build.sh`): compose charts → compile PDF. Documented as **Pattern A** in this chunk's new "Workflow integration — embedding charts in deliverables" section, mirrored in `ebook.md`'s new "Embedding charts" section. Path convention: project-rooted absolute paths starting with `/` (Typst resolves `image()` against the calling module, not the spec; `build.sh` sets `--root`). `_manifest.yaml` `load_for_task` updated with `chunks_if_brief_mentions_data_viz: [ebook, chart]` for both `ebook` and `pdf_document` task profiles. | Mark + Claude |
 | 2026-04-30 | **v1.0 ship confirmation.** End-to-end build cycle complete: `renderers/vega-lite/` infrastructure shipped (`build-tokens-vega.sh`, `tokens.json`, `theme.json`, `compose.mjs`, `render.sh`, `package.json`, `fonts/`, `README.md`); 5 fixtures landed (`fixtures/horizontal-bar.chart.json`, `fixtures/vertical-bar.chart.json`, `fixtures/vertical-bar-axes.chart.json`, `fixtures/radial-dramatic.chart.json`, `fixtures/radial-light.chart.json`); each fixture renders reproducibly (`node compose.mjs <fixture>` → SVG; `rsvg-convert -w 1920` → PNG). Visual parity validated against Figma reference frames at `70:8480` / `70:8617` / `70:8705` / `70:8651` / `70:8678`. Composer architecture: per-type SVG composition (chrome + plot drawn as native SVG with token-bound colors) wraps Vega-Lite where applicable. R-CHART-003 amended mid-cycle: footer pattern is dot+caption together-LEFT (gap 10), not SPACE_BETWEEN — Figma data property says SPACE_BETWEEN but visual canon shows together-LEFT; visual wins. Manifest bumped 1.4 → 1.5; chart promoted from roadmap to active; chart-reviewer status: contract-defined; presentation.md v1.1's anticipated R-COLOR-009 scoped exception now ratified by R-CHART-006; ebook.md cross-ref expanded with concrete embed pattern. New roadmap entry: `chunks/diagram.md` (Typst+Fletcher) for the Flow Diagram shape that this chunk excludes. | Mark + Claude |
 | 2026-04-30 | **v1.0 — Initial.** 7 HARD rules (R-CHART-001..007) covering chart-card geometry, no-eyebrow-above-title, footer canonical shape when chrome is used, comparative-palette reservation for 3-state status only, value-labels-on-every-comparative-segment (color-blind safety), Vault Teal at 18 pt allowed for chart annotations within chart-card boundary (ratifies the scoped R-COLOR-009 exception declared in `presentation.md` v1.1), and the negative-bar / zero-line / dashed-gridline distinction for axis charts. BASE rules cover typography per role, surface palette (gradient default; flat off-white and solid teal as register tools), color recipes per surface (title / description / caption / footer top stroke / footer dot all flip per surface), bar geometry (radius 0 default; radius/xs allowed), radial geometry (3 cells × 200×200 rings × 0.88 inner radius × clockwise arc from 12 o'clock encoding percentage), and axis-chart specifics (7 ticks; absolute-positioned plot; dashed gridlines; solid zero line). MENU catalog of 5 canonical types: horizontal-bar (with two register variants on the same shape), vertical-bar-default, vertical-bar-with-axes, radial-comparison-dramatic, radial-comparison-light. Renderer pinned to Vega-Lite + JSON spec; Phase 2 deliverables in `renderers/vega-lite/`. One foundation override (scoped R-COLOR-009 exception per R-CHART-006). Flow Diagram and Stat Infographic explicitly out of scope (Flow → future `chunks/diagram.md` via Typst+Fletcher; Stat Infographic → `myvault-editorial.typ` editorial primitive). Cycle 0 audit at `chunks/_research/chart-figma-audit.md` corrects three deltas in the 9-day-old `project_diagram_canonical_specs` memory. | Mark + Claude |

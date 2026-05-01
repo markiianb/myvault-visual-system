@@ -8,7 +8,7 @@ In-progress visual production system. Chunks define what good looks like per ass
 2. **`chunks/ebook.md`** + **`chunks/_manifest.yaml`** — the contracts. HARD rules + MENU patterns + renderer pin per asset type. Also see `chunks/presentation.md` and `chunks/chart.md`.
 3. **`documents/ebook-test/workflow.md`** — the principle. Editorial-first: brand provides rules + primitives, document provides intent, system composes. Read this before authoring.
 4. **`renderers/typst/myvault-editorial.typ`** — the active editorial code. Companion renderers in `renderers/marp/` (decks), `renderers/vega-lite/` (charts), `renderers/satori/` (social).
-5. **`_research/findings-html-first-stack.md`** — why this stack. Architecture rationale for HTML/CSS across 5 asset types, Typst for editorial. Saves relitigating the renderer choice.
+5. **`_plan/visual-system-architecture-v2.md`** §4 — the renderer registry. One renderer per asset type, pinned: Typst (editorial), Marp (presentations), Vega-Lite (charts), Satori (social). Saves relitigating the renderer choice.
 
 ## Also useful
 

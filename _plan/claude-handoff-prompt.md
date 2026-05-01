@@ -3,7 +3,7 @@ type: handoff-prompt
 status: active
 owner: mark
 created: 2026-04-29
-updated: 2026-05-01 (refreshed to Phase 2 reality)
+updated: 2026-05-01 (HTML-first rejected; renderer matrix locked; team-wide audience confirmed)
 tags: [visual-system, handoff, claude, implementation]
 summary: "Paste-ready prompt to start a fresh Claude Code session for MyVault Visual System work. Sets the role (chief agent architect, directive execution + honest concern-flagging), points at the canonical files, and reflects the current shipped state."
 ---
@@ -58,10 +58,15 @@ Shipped:
   Typst editorial pipeline
 
 Roadmapped:
-- chunks/social.md (Satori scaffolding already exists, no chunk yet)
-- chunks/email.md (no scaffolding)
-- chunks/web-component.md (deferred to ui-system phase)
-- ui-system/ as a parallel sibling (deferred entirely)
+- chunks/social.md — renderer ships, contract pending. Satori
+  scaffolding active under renderers/satori/ with 9 validated
+  fixtures; the HARD/BASE/MENU chunk has not been authored yet.
+  Inverse contract drift — fix by writing the chunk.
+- chunks/diagram.md — Typst+Fletcher; adopts Flow Diagram
+  (Figma 70:8560) from chart.md's out-of-scope list. No blocker.
+- chunks/email.md — no scaffolding, no chunk. React Email pinned.
+- chunks/web-component.md — deferred to ui-system phase.
+- ui-system/ as a parallel sibling — deferred entirely.
 
 ## Confirmed decisions (don't re-litigate)
 
@@ -72,24 +77,37 @@ Roadmapped:
 - Figma is canonical source for token values, paint styles, text
   styles, layouts, and example layouts. When chunk and Figma
   disagree, Figma wins until the chunk is updated to match.
-- Renderer pinning per asset type is in place, though
-  _research/findings-html-first-stack.md proposes consolidating
-  presentation/social/chart/email/web onto a single HTML/CSS+
-  Playwright stack — that is OPEN and undecided.
+- **Renderer matrix is locked, per asset type** (Mark, 2026-05-01):
+  Typst → ebook/PDF, Marp → presentation, Vega-Lite → chart,
+  Satori → social, React Email → email, Tailwind v4 → web.
+  No single-stack consolidation. HTML-first proposals are
+  explicitly off the table.
+- **Audience: whole-team** (Mark, 2026-05-01). The system is being
+  built so the broader MyVault team — not just maintainers — can
+  use it once it ships. Onboarding ergonomics matter.
+- **R-COLOR-009 chart-annotation exception is ratified into
+  `foundations/color.md`** (2026-05-01). Chunks no longer carry
+  duplicate `foundation_overrides` for this exception.
+- **Satellite axis** (Voice of Markos / Newsletter): deferred. Will
+  be addressed when social.md / email.md ship — those chunks will
+  introduce a `register: parent | newsletter | voice-of-markos`
+  axis for asset-specific overrides. No separate satellite chunks
+  in the visual-system layer.
 
-## Open architectural questions (decide deliberately)
+## Open architectural questions
 
-- HTML-first migration: adopt the hybrid (HTML/CSS for 5 of 6
-  asset types, Typst for editorial only), reject it, or defer?
-  No ADR yet. Affects whether to extend Marp/Satori or migrate.
-- R-COLOR-009 chart-annotation exception: chunk-level only
-  (current state), or ratify into foundations/color.md?
-- Audience: is this maintainer-only, or designed for external
-  collaborators (designers, content writers)? Drives whether to
-  prioritize onboarding docs.
-- Satellite axis: how does the visual-system support the Voice of
-  Markos / Newsletter brand-system satellites? Affects social/
-  email chunk design before they ship.
+None blocking. Punt list for later:
+
+- **PDF/UA + PDF/A validation** — `output_formats` for ebook now
+  claims `pdf` only. Add back `pdf-a` / `pdf-ua` when each is
+  validated against an actual deliverable.
+- **Plugin packaging** — visual-system as a portable Claude Code
+  plugin (like brand-system). Defer until an external consumer
+  asks. The directory is already its own git repo so extraction
+  cost is low.
+- **Effect tokens** (`shadow.*`) — deferred. The brand canon
+  already prohibits shadows; no need for a sentinel token until a
+  renderer wants one.
 
 ## Directive
 

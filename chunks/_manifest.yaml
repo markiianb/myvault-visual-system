@@ -4,9 +4,9 @@
 # Each chunk pins a renderer + spec format and inherits from the foundations layer.
 # Update when a new asset-type chunk lands or an existing one ships a major version.
 
-manifest_version: "1.5"
+manifest_version: "1.6"
 domain: chunks
-last_updated: 2026-04-30
+last_updated: 2026-05-01 (R-COLOR-009 chart-card exception ratified to foundations; Marp promoted to active; ebook output formats narrowed to validated set)
 owner: mark
 summary: >
   Asset-type chunks define rules for specific deliverable types (ebook, presentation,
@@ -34,15 +34,16 @@ chunks:
       every-cover-has-a-lockup, mandatory pages, reading order, footnote signal-go semantics.
       BASE typography table per role (Section Opener title and Stat Page hero number are flexible
       defaults, not locks). MENU of 3 cover treatments (covers are an experimental surface — not a
-      closed catalog) + 21 interior page types (added stat-page-3-teal-mirror in v1.1; added 5
-      editorial-first primitives in v1.3 — section-opener-hero, hero-stats, model-grid, takeaways,
-      pull-page — validated in the privacy-guide build).
+      closed catalog) + 23 interior pages including back-cover (added stat-page-3-teal-mirror in
+      v1.1; added 5 editorial-first primitives in v1.3 — section-opener-hero, hero-stats,
+      model-grid, takeaways, pull-page — validated in the privacy-guide build).
     hard_rule_count: 7
     hard_rule_ids: [R-EBOOK-001, R-EBOOK-002, R-EBOOK-003, R-EBOOK-004, R-EBOOK-005, R-EBOOK-006, R-EBOOK-007]
     renderer: typst
     spec_format: typ
     template_path_phase_2: brand-studio/templates/ebook/myvault-ebook.typ
-    output_formats: [pdf, pdf-a, pdf-ua]
+    output_formats: [pdf]
+    output_formats_unverified: [pdf-a, pdf-ua]  # Typst supports both via flags; not yet validated against an actual deliverable
     visual_canon:
       pageId: "70:8798"
       pageName: "eBooks & Documents"
@@ -53,7 +54,7 @@ chunks:
     review_axes: [ebook-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
     foundation_overrides: []  # No HARD rules from foundations are overridden
     is_authority_for:
-      - ebook interior page-type catalog (17 types in MENU)
+      - ebook interior page-type catalog (23 entries under MENU.interior_pages, including back-cover)
       - page-category → surface mapping (with documented dramatic-register override)
       - canonical interior-page footer pattern (Icon-left + page-number-right; variant flips per pairings)
       - inner-grid options for ebook pages (1-column 640 / 2-column 300/40/300)
@@ -66,8 +67,8 @@ chunks:
   - chunk_id: presentation
     file: presentation.md
     status: active
-    version: "1.2"
-    last_updated: 2026-04-30
+    version: "1.3"
+    last_updated: 2026-05-01 (R-COLOR-009 chart-card exception ratified to foundations; renderer promoted to active)
     asset_type: presentation
     summary: >
       Slide deck rules. 3 HARD rules covering canvas geometry (1920×1080, padding 20/40/20/40,
@@ -75,17 +76,17 @@ chunks:
       allowed); canonical footer shape when chrome is used; and 18-pt text floor (R-TYPE-005
       foundation override). BASE rules cover full typography ladder
       (144 / 72 / 64 / 56 / 48 / 40 / 32 / 28 / 18), surface palette + register guidance
-      (white default, off-white rare alternate), Vault Teal discipline with chart-annotation
-      scoped exception, body color on dark surfaces is solid white, 70/20/7/3 + max-2-colours,
-      1/2/3-column grid, card padding, header-label + footer Icon-variant pairing per surface,
-      typical deck shape (Cover and Closing as default patterns, not contracts). Pattern Reference
-      points at Figma Section 1 (13 prototypes) — study material for register, not templates.
-      Two-layer reviewer: Layer 1 rule compliance (automated, blocking) + Layer 2 reader
-      experience (judgment-based, advisory).
+      (white default, off-white rare alternate), Vault Teal discipline with chart-card annotation
+      exception inherited from foundations/color.md v1.1, body color on dark surfaces is solid
+      white, 70/20/7/3 + max-2-colours, 1/2/3-column grid, card padding, header-label + footer
+      Icon-variant pairing per surface, typical deck shape (Cover and Closing as default patterns,
+      not contracts). Pattern Reference points at Figma Section 1 (13 prototypes) — study material
+      for register, not templates. Two-layer reviewer: Layer 1 rule compliance (automated,
+      blocking) + Layer 2 reader experience (judgment-based, advisory).
     hard_rule_count: 3
     hard_rule_ids: [R-PRES-001, R-PRES-002, R-PRES-003]
     renderer: marp
-    renderer_status: provisional
+    renderer_status: active
     spec_format: md
     template_path_phase_2: brand-studio/templates/presentation/myvault-presentation/
     output_formats: [pdf, pptx, html]
@@ -102,7 +103,8 @@ chunks:
     review_axes: [presentation-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
     foundation_overrides:
       - { rule_id: R-TYPE-005, chunk: typography, nature: raise-floor, from: "14pt practical text floor", to: "18pt presentation text floor", enforced_by: R-PRES-003 }
-      - { rule_id: R-COLOR-009, chunk: color, nature: scoped-exception, scope: "chart annotations within chart cards (axis labels, year labels, legend labels, source captions on chart surfaces)", note: "Vault Teal allowed at 18 pt for chart-context labeling inside chart card boundaries. Body and non-chart captions still bind R-COLOR-009. Will be ratified at foundation level when chunks/chart.md ships.", enforced_by: "BASE Vault Teal discipline section" }
+      # The R-COLOR-009 chart-card exception was ratified into foundations/color.md v1.1 on
+      # 2026-05-01 and is now inherited from the foundation rather than declared here.
     is_authority_for:
       - presentation slide canvas + auto-layout structure
       - presentation-asset 18-pt text floor (R-TYPE-005 override)
@@ -126,8 +128,8 @@ chunks:
   - chunk_id: chart
     file: chart.md
     status: active
-    version: "1.0"
-    last_updated: 2026-04-30
+    version: "1.1"
+    last_updated: 2026-05-01 (R-COLOR-009 chart-card exception ratified to foundations; chunk foundation_overrides now empty)
     asset_type: chart
     summary: >
       Data-visualization chart deliverables. 7 HARD rules (R-CHART-001..007) covering
@@ -162,8 +164,9 @@ chunks:
         - { nodeId: "70:8678", what: "Radial Comparison — Light on gradient.greydient" }
     inherits_from_foundations: [color, typography, logo-usage, iconography]
     review_axes: [chart-reviewer, color-reviewer, typography-reviewer, brand-element-reviewer, accessibility-reviewer]
-    foundation_overrides:
-      - { rule_id: R-COLOR-009, chunk: color, nature: scoped-exception, scope: "chart annotations within chart-card boundary (axis labels, year labels, legend labels, source captions)", note: "Vault Teal allowed at 18pt for chart-context labeling inside chart-card. Ratifies the exception that presentation.md v1.1 anticipated.", enforced_by: R-CHART-006 }
+    foundation_overrides: []
+    # R-CHART-006 still encodes the chart-side semantics (axis / year / legend / caption labels);
+    # the exception itself now lives in foundations/color.md v1.1 R-COLOR-009.
     is_authority_for:
       - chart-card geometry + chrome shape across the visual system
       - comparative palette reservation (signal.stop / sky / go for 3-state status only)
@@ -180,11 +183,12 @@ roadmap:
   - chunk_id: social
     status: planned
     asset_type: social-image
-    renderer_proposed: satori
-    spec_format_proposed: tsx
+    renderer: satori
+    renderer_status: shipped  # renderer scaffolding active; chunk contract pending
+    spec_format: tsx
     output_formats: [png, jpg]
-    summary: "Single social images + carousels. Stream A (editorial) and Stream B (newsroom) registers per existing canon."
-    blocker: open question — Stream A/B split rules
+    summary: "Single social images + carousels. Stream A (editorial) and Stream B (newsroom) registers per existing canon. Renderer (Satori) is shipped under renderers/satori/ with 9 validated fixtures and the components-encode-rules pattern enforced via TypeScript prop types — but the HARD/BASE/MENU chunk contract has not been authored yet. INVERSE CONTRACT DRIFT: this is the only place in the system where renderer code exists without a chunk-level contract. Fix by writing the chunk."
+    blocker: chunk authoring (renderer not blocking)
     estimated_hard_rules: 8-10
 
   - chunk_id: diagram
@@ -322,6 +326,24 @@ related_memories:
 
 # === CHANGELOG ===
 changelog:
+  - date: 2026-05-01
+    change: >
+      Manifest v1.6 — **R-COLOR-009 chart-card scoped exception ratified into foundations/color.md
+      v1.1.** Both `chunks/presentation.md` (anticipated) and `chunks/chart.md` (ratified) had carried
+      the exception as chunk-level `foundation_overrides` entries; that duplication was a smell.
+      Promoted the exception clause into the foundation rule itself so chunks inherit it from the
+      foundation. Knock-on effects: `chunks/presentation.md` bumped to v1.3 (foundation_overrides
+      down from 2 to 1; renderer status promoted from `provisional` to `active` since HTML-first
+      consolidation is no longer on the table per Mark's 2026-05-01 call); `chunks/chart.md` bumped
+      to v1.1 (foundation_overrides now `[]`); R-CHART-006 still encodes the chart-side semantics
+      (which roles count as chart annotations). Also: ebook chunk `output_formats` narrowed to
+      `[pdf]` (`pdf-a` and `pdf-ua` moved to `output_formats_unverified` until validated against
+      a deliverable). Page-type catalog count corrected from "16/17 types in MENU" to "23 entries
+      under MENU.interior_pages including back-cover" (the chunk's actual count). Roadmap entry
+      `social` updated to surface inverse contract drift — Satori renderer is shipped with 9
+      fixtures but the chunk contract has not been authored. HTML-first migration findings docs +
+      experiments + prompts deleted from `_research/` per Mark's directive.
+    by: Mark + Claude
   - date: 2026-04-30
     change: >
       Manifest v1.5 — **chart chunk shipped (v1.0).** Moved from roadmap to active. 7 HARD rules

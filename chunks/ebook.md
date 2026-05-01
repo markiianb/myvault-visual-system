@@ -4,10 +4,10 @@ domain: chunks
 subcategory: asset-type
 type: chunk
 status: active
-version: "1.4"
-last_updated: 2026-05-01 (R-EBOOK-001/002 geometry synced to Figma canon)
+version: "1.5"
+last_updated: 2026-05-01 (output_formats narrowed to validated set; dangling R-EBOOK-006 ref fixed; MENU page-type count corrected)
 owner: mark
-summary: "Asset-type chunk for ebook + PDF document deliverables. 7 HARD rules (R-EBOOK-001..007) covering page geometry, page-category surface/numbering, signal-go reservation, every-cover-has-a-lockup, mandatory page structure, reading-order, and footnote numbering semantics. BASE rules for default typography per role (Section Opener title and Stat Page hero number are flexible defaults, not locks). MENU catalog of 3 cover treatments + 21 interior patterns (including 5 new editorial-first primitives validated in the privacy-guide build: section-opener-hero, hero-stats, model-grid, takeaways, pull-page). Renderer pinned to Typst (editorial primitives module: myvault-editorial.typ). No foundation overrides — all R-COLOR/R-TYPE/R-LOGO/R-ICON rules apply automatically."
+summary: "Asset-type chunk for ebook + PDF document deliverables. 7 HARD rules (R-EBOOK-001..007) covering page geometry, page-category surface/numbering, signal-go reservation, every-cover-has-a-lockup, mandatory page structure, reading-order, and footnote numbering semantics. BASE rules for default typography per role (Section Opener title and Stat Page hero number are flexible defaults, not locks). MENU catalog of 3 cover treatments + 23 interior pages (including 5 editorial-first primitives validated in the privacy-guide build: section-opener-hero, hero-stats, model-grid, takeaways, pull-page; back-cover sits inside MENU.interior_pages). Renderer pinned to Typst (editorial primitives module: myvault-editorial.typ). No foundation overrides — all R-COLOR/R-TYPE/R-LOGO/R-ICON rules apply automatically."
 token_count_estimate: 1700
 
 # === RENDERER PINNING ===
@@ -15,7 +15,8 @@ renderer: typst
 spec_format: typ
 template_path: renderers/typst/myvault-editorial.typ  # Active. Composable primitives, not page-stamp templates.
 legacy_template_path: renderers/typst/myvault-ebook.typ  # Page-stamp template, preserved for reference/migration only
-output_formats: [pdf, pdf-a, pdf-ua]
+output_formats: [pdf]
+output_formats_unverified: [pdf-a, pdf-ua]  # Typst supports both via flags; not yet validated against an actual deliverable
 
 # === FOUNDATIONS THIS CHUNK INHERITS FROM ===
 inherits_from_foundations:
@@ -414,7 +415,7 @@ interior_pages:
     category: content
     surface: white
     footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
-    composition: "Big stat number PT Serif 220pt teal centered (R-EBOOK-006 locks) + supporting headline PT Serif 32pt black centered + supporting paragraph Lato 18pt gray-02 centered (~540 measure) + Lato 12pt gray-02 source caption"
+    composition: "Big stat number PT Serif 220pt teal centered (BASE default per typography table; the display-tier teal floor is enforced by R-COLOR-009) + supporting headline PT Serif 32pt black centered + supporting paragraph Lato 18pt gray-02 centered (~540 measure) + Lato 12pt gray-02 source caption"
     use_when: "single hero number carries the page"
     figma_section: "Stat Page"
 
@@ -703,6 +704,7 @@ Both are **superseded by this chunk**. They remain in `MEMORY.md` as historical 
 
 | Date | Change | By |
 |---|---|---|
+| 2026-05-01 | **v1.5 — Correctness sweep.** Three small fixes after the multi-agent review missed them: (1) dangling R-EBOOK-006 reference at MENU.stat-page-1 ("(R-EBOOK-006 locks)") corrected — R-EBOOK-006 was renumbered in v1.1 to mean *reading-order locked*, so the citation didn't apply; the hero-number size is BASE per the typography table, with the display-tier teal floor enforced by R-COLOR-009. (2) Interior-page-type count drift reconciled — frontmatter summary said "21 interior patterns" while the manifest said 16/17; actual MENU.interior_pages contains 23 entries (back-cover included). Now standardized at "3 cover treatments + 23 interior pages". (3) `output_formats` narrowed from `[pdf, pdf-a, pdf-ua]` to `[pdf]` since PDF/A and PDF/UA have not been validated against an actual deliverable; both moved to a new `output_formats_unverified` field for forward reference. No HARD or BASE rule changes; no MENU catalog changes. | Mark + Claude |
 | 2026-05-01 | v1.4 — Page geometry + footer pin synced to canonical Figma `eBooks & Documents` page per the audit at `documents/ebook-test/figma-reference.md`. **R-EBOOK-001 outer padding** corrected from 40/80/40/80 → **40/40/40/40**; **content area** corrected from 640×1080 → **720×1120**; **inner grid** updated — 1-column to 720 wide, 2-column-stat to 340/40/340 (was 300/40/300), new 2-column-lists at 350/20/350. **R-EBOOK-002 footer layout** repositioned — x range corrected from [80, 720] → **[40, 760]**, y pinned at **1136** (was y≈1142). All 14 MENU `footer:` references updated to the new y. The active editorial renderer (`renderers/typst/myvault-editorial.typ`) and the privacy-guide deliverable already build on these values; this update brings the chunk's HARD rule contract in line with the rendered canon. **Note:** MENU pattern descriptions still contain absolute coordinates (e.g., "x=80", "640 wide") inherited from the v1.0 geometry — these are not HARD-rule violations because MENU is choose-from patterns, but a follow-up sweep would refresh them. | Mark + Claude |
 | 2026-04-30 | v1.3 — Primitives-not-templates rebuild validated against the AI Privacy Guide deliverable (19 pages). **Renderer pinned to `renderers/typst/myvault-editorial.typ`** (active) — composable primitives that flow rather than page-stamp templates that emit one page per call; legacy `myvault-ebook.typ` preserved for migration only. **5 new MENU primitives added**, all validated visually in the privacy-guide build: `section-opener-hero` (dramatic full-bleed title page on teal/black surface), `hero-stats` (multi-stat boxed panel), `model-grid` (2x2 alternating-fill cards for parallel concepts), `takeaways` (boxed end-of-section numbered summary), `pull-page` (decorative quote-mark composition). **`data-grid` formalized** as a MENU entry (was used inline before; now a reusable reference-table primitive). **Decision tree updated** to default to flowing primitives + reserve standalone-page primitives for moments that earn the breath. **Body density tuned** to 18pt @ 55% leading (was 17pt @ 50%) per Mark's "less condensed" call. Privacy guide is the canon application — see `documents/ebook-test/privacy-guide-spec.typ` and `privacy-pages-v4/` for the validated visual reference. | Mark + Claude |
 | 2026-04-30 | v1.2 — Editorial-first rethink in line with `feedback_no_mandatory_pages_editorial_first`. **R-EBOOK-005 (mandatory page structure) demoted** — each document decides what front/back matter it needs; no required Cover+TitlePage+Copyright+TOC+SectionOpener+BackCover bundle. **R-EBOOK-002 footer softened** — footer is the default for body content, but conditional per page; pages can opt out when the editorial moment earns it. Imprint info moves to back-cover footer or end-matter block; no longer requires a standalone Copyright page. Section openers default to inline body transitions (big PT Serif heading + first paragraph on same page), not standalone pages. Builds on the workflow doc rewrite at `documents/ebook-test/workflow.md`. The privacy guide rebuild is the first deliverable applying this rethink. | Mark + Claude |

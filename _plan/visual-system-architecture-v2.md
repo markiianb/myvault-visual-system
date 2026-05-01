@@ -243,11 +243,11 @@ Each returns structured findings (pass / needs-work + evidence rect). Orchestrat
 
 > **Partially superseded** by the scope corrections at the top of this doc. The
 > `myvault-tools/brand-studio/` implementation framing is out of scope; the renderer
-> matrix itself (Marp / Satori / Typst / Vega-Lite / React Email / Tailwind v4) remains
-> useful as future pinning. Renderers now live inside `visual-system/renderers/` rather
-> than `myvault-tools/brand-studio/`. Also note: `_research/findings-html-first-stack.md`
-> proposes consolidating presentation / social / chart / email / web onto a single
-> HTML/CSS+Playwright stack — open architectural question, not yet decided.
+> matrix itself (Marp / Satori / Typst / Vega-Lite / React Email / Tailwind v4) is the
+> locked architecture. Renderers now live inside `visual-system/renderers/` rather
+> than `myvault-tools/brand-studio/`. Per Mark's 2026-05-01 call, renderer-consolidation
+> proposals (e.g., a single HTML/CSS stack across asset types) are explicitly off the
+> table — per-asset-type pinning is the contract.
 
 
 | Asset type | **Winner** | Why | Spec format | Disqualified alternatives |

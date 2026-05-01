@@ -3,7 +3,7 @@ type: reference
 status: active
 owner: mark
 created: 2026-04-29
-updated: 2026-04-30 (chart chunk + Vega-Lite + Satori fixtures shipped)
+updated: 2026-05-01 (HTML-first rejected + experiments deleted; R-COLOR-009 ratified to foundations; Marp promoted to active; correctness sweep)
 tags: [visual-system, status, roadmap, progress]
 summary: "Single rollup status doc for the MyVault visual-system. Tracks what's shipped, what's in progress, and what's next across tokens, assets, foundation chunks, Figma canon, renderers, and ui-system. Updated when anything material ships. The first thing a future agent or contributor should read to orient."
 ---
@@ -12,7 +12,7 @@ summary: "Single rollup status doc for the MyVault visual-system. Tracks what's 
 
 Where we are, what's done, and what's next. Updated whenever something material ships. **Read this first** when picking up the visual-system in a new session — it's faster than walking the directory tree.
 
-> **Phase:** Foundation phase 1.7 + **Phase 2 (renderers) shipped** — foundations layer locked (4 chunks) + 3 asset-type chunks (ebook v1.4, presentation v1.2, chart v1.0) + 4 renderers (Typst editorial primitives for ebook, Marp for presentation, Vega-Lite for chart, Satori for social fixtures). The ebook canon was validated end-to-end through a real-content 19-page deliverable (`documents/ebook-test/privacy-guide.pdf`). The presentation pipeline rendered a 10-slide test deck (`presentations/test-state-of-privacy/deck.pdf`); chart pipeline rendered 5 fixtures (`documents/chart-integration-test/output.pdf`); Satori rendered 9 social fixtures. The agentic pipeline (author writes spec → renderer applies chunk rules → output) is operational across all four asset types, though only the ebook has shipped real external content. **Status: foundations + 3 asset-type chunks complete; 3 more chunks roadmapped (social, email, web-component).**
+> **Phase:** Foundation phase 1.7 + **Phase 2 (renderers) shipped** — foundations layer locked (4 chunks; color now at v1.1) + 3 asset-type chunks (ebook v1.5, presentation v1.3, chart v1.1) + 4 renderers (Typst editorial primitives for ebook, Marp for presentation, Vega-Lite for chart, Satori for social fixtures). The ebook canon was validated end-to-end through a real-content 19-page deliverable (`documents/ebook-test/privacy-guide.pdf`). The presentation pipeline rendered a 10-slide test deck (`presentations/test-state-of-privacy/deck.pdf`); chart pipeline rendered 5 fixtures (`documents/chart-integration-test/output.pdf`); Satori rendered 9 social fixtures. The agentic pipeline (author writes spec → renderer applies chunk rules → output) is operational across all four asset types, though only the ebook has shipped real external content. **Status: foundations + 3 asset-type chunks complete; 4 more chunks roadmapped (social, diagram, email, web-component). Renderer matrix locked per asset type — Mark, 2026-05-01.**
 
 ---
 
@@ -65,11 +65,11 @@ Where we are, what's done, and what's next. Updated whenever something material 
 
 | Chunk | Lines | HARD rules | Renderer | Visual canon | Date |
 |---|---|---|---|---|---|
-| `chunks/ebook.md` v1.4 | ~870 | 7 (`R-EBOOK-001..007`) | Typst (editorial primitives) | Figma page `70:8798` (+ refs `72:9166`, `89:6938`) | 2026-05-01 |
-| `chunks/presentation.md` v1.2 | ~580 | 3 (`R-PRES-001..003`) | Marp (provisional) | Figma page `74:9684` (Section 1 `97:8611` + test Section 2 `151:9048`) | 2026-04-30 |
-| `chunks/chart.md` v1.0 | ~880 | 7 (`R-CHART-001..007`) | Vega-Lite + JSON spec | Figma page `70:8479` (Diagrams) | 2026-04-30 |
+| `chunks/ebook.md` v1.5 | ~870 | 7 (`R-EBOOK-001..007`) | Typst (editorial primitives) | Figma page `70:8798` (+ refs `72:9166`, `89:6938`) | 2026-05-01 |
+| `chunks/presentation.md` v1.3 | ~580 | 3 (`R-PRES-001..003`) | Marp (active) | Figma page `74:9684` (Section 1 `97:8611` + test Section 2 `151:9048`) | 2026-05-01 |
+| `chunks/chart.md` v1.1 | ~880 | 7 (`R-CHART-001..007`) | Vega-Lite + JSON spec | Figma page `70:8479` (Diagrams) | 2026-05-01 |
 
-**Total HARD rules across all chunks: 56** (R-COLOR 10, R-TYPE 9, R-LOGO 10, R-ICON 10, R-EBOOK 7, R-PRES 3, R-CHART 7). The presentation chunk holds **two foundation overrides**: R-PRES-003 raises R-TYPE-005's 14-pt floor to 18 pt for the asset type (raise-floor), and a scoped R-COLOR-009 exception allows Vault Teal at 18 pt for chart annotations inside chart-card boundaries — ratified at the chart-asset level by R-CHART-006. Foundation-level ratification (updating `foundations/color.md` to record the carve-out) is open work.
+**Total HARD rules across all chunks: 56** (R-COLOR 10, R-TYPE 9, R-LOGO 10, R-ICON 10, R-EBOOK 7, R-PRES 3, R-CHART 7). The presentation chunk holds **one foundation override**: R-PRES-003 raises R-TYPE-005's 14-pt floor to 18 pt for the asset type (raise-floor). The R-COLOR-009 chart-card scoped exception was ratified into `foundations/color.md` v1.1 on 2026-05-01 — it now lives at the foundation level and is inherited automatically by every asset-type chunk; chart and presentation no longer declare it as a chunk-level override.
 
 ### Ebook end-to-end test (Phase 2 proof-of-concept)
 
@@ -153,7 +153,7 @@ All indexed in `MEMORY.md` and load automatically in future sessions.
 
 **Thread C — Presentation Figma guide page** in flight. Mirrors the foundation-page layout pattern (white bg, 1440 frame, 80 padding, 40 gap, LINE dividers); sections: header / canvas / header-labels + footer / typography ladder / hero color / column system / slide-type catalog (link to Section 1) / Don'ts / accessibility.
 
-**Thread B — Figma audit (`figma-reference.md`)** — **complete.** Cycle 0 extracted all 13 Section-1 prototypes via `figma_execute`. 8 deltas surfaced; all 8 resolved. 5 mechanical chunk updates applied to `chunks/presentation.md` v1.0 → v1.1; 3 canon decisions made (header text accepted as labels-not-bar, chart-card teal accepted as scoped exception, Slide 09 Thesis-pattern at 40pt accepted as stylistic choice). Total chunks layer foundation overrides: 1 → 2.
+**Thread B — Figma audit (`figma-reference.md`)** — **complete.** Cycle 0 extracted all 13 Section-1 prototypes via `figma_execute`. 8 deltas surfaced; all 8 resolved. 5 mechanical chunk updates applied to `chunks/presentation.md` v1.0 → v1.1; 3 canon decisions made (header text accepted as labels-not-bar, chart-card teal accepted as scoped exception, Slide 09 Thesis-pattern at 40pt accepted as stylistic choice). Chunk-layer foundation overrides went 1 → 2 in v1.1, then 2 → **1** on 2026-05-01 when the R-COLOR-009 chart-card exception was ratified up to `foundations/color.md` v1.1 (only R-PRES-003's R-TYPE-005 raise-floor remains as a chunk-level override).
 
 **Phase 2 ebook end-to-end** is **complete** (see Ebook end-to-end test below). Foundation phase 1.7 (4 foundation chunks + ebook + presentation chunks shipped). Presentation Phase 2 (Marp theme + per-pattern layouts) is queued behind the Figma guide page (Thread C).
 
@@ -234,16 +234,23 @@ Everything from the foundation phase 1 buildout is **on `main`, uncommitted**. W
 
 Suggested commit message: `feat(visual-system): foundation phase 1 — color, typography, logo (tokens, assets, chunks)`.
 
-### Open decisions Mark has not yet made
+### Open decisions
 
-- **Effect tokens:** stay deferred or add `shadow/none` sentinel now?
-- **Plugin packaging:** does `visual-system/` ship as a Claude Code plugin (like `brand-system/` does)?
-- **Asset-type ordering:** which asset-type chunk to build first (presentation / social / ebook / document)?
+None blocking. Punt list:
+
+- **PDF/UA + PDF/A** — `chunks/ebook.md` `output_formats` is now `[pdf]` only. Add back `pdf-a` / `pdf-ua` when each is validated against an actual deliverable. Both are listed under `output_formats_unverified` for forward reference.
+- **Effect tokens (`shadow.*`)** — deferred. The brand canon already prohibits shadows; no need for a sentinel token until a renderer wants one.
+- **Plugin packaging** — defer until an external consumer asks. The directory is already its own git repo so extraction cost is low.
 
 ### Resolved decisions (this phase)
 
 - **Iconography source** — resolved to Phosphor (curated 210-icon subset, 2 weights, no local SVGs per Approach C)
 - **Spacing & grid scope** — grid is content-specific, not foundational. Lives in asset-type chunks. Foundations layer is complete at 4 chunks (no spacing-and-grid coming).
+- **HTML-first migration / single-stack consolidation** — **rejected** (Mark, 2026-05-01). Per-asset-type renderer pinning is the architecture. All HTML-first findings docs + experiments + prompts deleted from `_research/`.
+- **Audience: whole-team** (Mark, 2026-05-01). System is being built for broader MyVault team use, not just maintainers. Onboarding ergonomics matter.
+- **R-COLOR-009 chart-card scoped exception** — **ratified into `foundations/color.md` v1.1** (2026-05-01). Chunk-level `foundation_overrides` duplicates removed from presentation v1.3 and chart v1.1.
+- **Marp renderer status** — promoted from `provisional` to `active` (2026-05-01). With HTML-first off the table, there is no competing alternative.
+- **Satellite axis (Voice of Markos / Newsletter)** — defer to social/email chunk authoring. Those chunks will introduce a `register: parent | newsletter | voice-of-markos` axis for asset-specific overrides.
 
 ### Cleanup queued
 
@@ -278,6 +285,7 @@ Don't let this file rot. It's the single source of truth for "where are we" — 
 
 | Date | Change | By |
 |---|---|---|
+| 2026-05-01 | **Architecture cleanup — HTML-first rejected, R-COLOR-009 ratified, correctness sweep, Marp promoted.** (1) **HTML-first migration rejected** (Mark's directive). All findings docs (`_research/findings-html-first-stack.md`, `findings-html-vs-typst-quicktest.md`), experiment directories (`_research/html-first-test/`, `_research/html-css-test/`), and HTML-first prompts deleted. `_research/` removed entirely. Plan docs and handoff prompt updated to reflect "renderer matrix locked per asset type." (2) **Audience: whole-team confirmed** (Mark's call). Resolves the audience open question. (3) **R-COLOR-009 chart-card scoped exception ratified** into `foundations/color.md` v1.1. Two chunks declaring the same exception against the same foundation rule was a smell; promoted to a foundation-level scoped exception clause. `chunks/presentation.md` v1.2 → **v1.3** (foundation_overrides down 2 → 1; renderer status promoted from `provisional` → `active`). `chunks/chart.md` v1.0 → **v1.1** (foundation_overrides → []). (4) **Correctness sweep on `chunks/ebook.md` → v1.5**: dangling R-EBOOK-006 ref at MENU.stat-page-1 fixed; interior-page-type counts reconciled (frontmatter + manifest now agree on "3 cover treatments + 23 interior pages"); `output_formats` narrowed to validated `[pdf]`, with `pdf-a` / `pdf-ua` moved to `output_formats_unverified`. (5) **R-COLOR-010 cleanup** in `foundations/color.md`: drops `Gray` from active canonical-variants list (kept on disk as deprecated per `feedback_no_gray_logo_variant`). (6) **Manifest v1.5 → v1.6** captures all of the above; `roadmap.social` entry now surfaces the inverse contract drift (Satori shipped without chunk). Foundation chunk count: 4 (color now at v1.1). Asset-type chunk count: 3 (ebook v1.5, presentation v1.3, chart v1.1). Total HARD rule count unchanged at 56. Total chunk-layer foundation_overrides: **1** (only R-PRES-003's R-TYPE-005 raise-floor remains). | Mark + Claude |
 | 2026-04-29 | Initial. Captures foundation phase 1 completion: tokens (54 atoms) · logo assets (15 SVGs, 12 active) · 3 foundation chunks (29 HARD rules) · 3 Figma canon pages · 4 plan documents · 5 new memory entries. | Mark + Claude |
 | 2026-04-29 | Icons phase shipped. Adds: 210-icon manifest with full Phosphor metadata, `foundations/iconography.md` (10 HARD rules, 38 total across 4 chunks), Iconography Figma guide page (id 125:12294), Approach C documented (no local SVGs, Phosphor as versioned dependency). Iconography removed from Roadmap. | Mark + Claude |
 | 2026-04-29 | Phase 1.6 — first asset-type chunk shipped. Adds: `chunks/` layer (sibling to `foundations/`), `chunks/ebook.md` (10 HARD rules R-EBOOK-001..010, Typst pinned, MENU of 3 covers + 16 interior page types), `chunks/_manifest.yaml` (asset-type registry with renderer matrix, reviewer roster, load-for-task lookup). MENU tier introduced — unique to asset-type chunks. Spacing & grid reclassified (content-specific, lives in asset-type chunks not foundations). Two ebook memories superseded by the chunk; pull-quote teal pattern removed. Total HARD rules across all chunks: 49 (R-COLOR 10, R-TYPE 9, R-LOGO 10, R-ICON 10, R-EBOOK 10). | Mark + Claude |
