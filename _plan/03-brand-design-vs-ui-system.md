@@ -157,6 +157,12 @@ Keep `visual-system/` as the umbrella, but split into `visual-system/assets/` an
 
 ## 4. The refactored directory tree
 
+> **Superseded** by the scope-lock correction at the top of this doc (2026-04-29). The
+> three-tier `tokens/ + foundations/ + visual-system/ + ui-system/` layout proposed below
+> is obsolete; the corrected layout is one tier with `tokens/` and `foundations/` living
+> inside `visual-system/`. Kept for reference.
+
+
 This refactors the Architecture v2 layout. **Notably, several chunks move from visual-system to either foundations or ui-system.**
 
 ```
@@ -260,6 +266,10 @@ This refactors the Architecture v2 layout. **Notably, several chunks move from v
 
 ## 5. How agents resolve chunks across systems
 
+> **Superseded** by the scope-lock correction at the top of this doc. ui-system is fully
+> deferred — there is no cross-system chunk resolution to design. Kept for reference.
+
+
 A retrieval rule can declare chunks from any of the three layers. Example for a presentation:
 
 ```yaml
@@ -329,6 +339,10 @@ The `visual-kit` and `ui-kit` skills both know how to resolve `foundations/<chun
 ---
 
 ## 7. Phasing under the split
+
+> **Superseded** by the scope-lock correction at the top of this doc. Phase 1 covers
+> visual-system only; ui-system is deferred entirely. Kept for reference.
+
 
 **Phase 1 — Foundations + visual-system, ui-system scaffolded but empty (5-7 days)**
 

@@ -196,6 +196,10 @@ The five new fields make the chunk **executable**: an agent can read the chunk a
 
 ### Layer C — Specs (per-asset, structured)
 
+> **Superseded** by the scope corrections at the top of this doc. Specs in
+> `myvault-tools/brand-studio/` are NOT part of Phase 1. Kept for reference.
+
+
 A spec is the **structured input** an agent produces and a renderer consumes. The spec format is determined by the renderer.
 
 | Asset type | Renderer | Spec format | What an agent writes |
@@ -236,6 +240,15 @@ Each returns structured findings (pass / needs-work + evidence rect). Orchestrat
 ---
 
 ## 4. Renderer registry — pinned per asset type
+
+> **Partially superseded** by the scope corrections at the top of this doc. The
+> `myvault-tools/brand-studio/` implementation framing is out of scope; the renderer
+> matrix itself (Marp / Satori / Typst / Vega-Lite / React Email / Tailwind v4) remains
+> useful as future pinning. Renderers now live inside `visual-system/renderers/` rather
+> than `myvault-tools/brand-studio/`. Also note: `_research/findings-html-first-stack.md`
+> proposes consolidating presentation / social / chart / email / web onto a single
+> HTML/CSS+Playwright stack — open architectural question, not yet decided.
+
 
 | Asset type | **Winner** | Why | Spec format | Disqualified alternatives |
 |---|---|---|---|---|
@@ -375,6 +388,11 @@ The previous bridge plan said 5-7 days. With the renderer pinning locked in, Pha
 
 ### Phase 1.4 — Marp template + first command (1-2 days)
 
+> **Superseded** by the scope corrections at the top of this doc. Renderer install was
+> moved out of Phase 1 in this doc, but has since shipped under Phase 2.1
+> (see `STATUS.md`). Kept for reference.
+
+
 - Build `myvault-tools/brand-studio/templates/presentations/myvault-deck.css` (Marp theme using generated tokens)
 - Build `myvault-tools/brand-studio/cli/render-marp.ts` (invokes Marp CLI, outputs HTML + PDF + PPTX)
 - Build `presentation-designer` agent at `10-Brand/visual-system/agents/design/presentation-designer.md`
@@ -384,6 +402,11 @@ The previous bridge plan said 5-7 days. With the renderer pinning locked in, Pha
 - **Deliverable:** working `/myvault:design-presentation` regenerating the investor deck (or a subset) from current canon.
 
 ### Phase 1.5 — Vision review for presentations (1 day)
+
+> **Superseded** by the scope corrections at the top of this doc. Reviewer-agent
+> implementation is deferred — chunks contract reviewers; agent code does not yet exist.
+> Kept for reference.
+
 
 - Build the 5 reviewer agents (scoped to presentation-relevant chunks first)
 - Build `/myvault:design-review` command (parallel swarm)
