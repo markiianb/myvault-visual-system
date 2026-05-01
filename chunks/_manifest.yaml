@@ -295,9 +295,10 @@ roadmap:
 renderer_pinning:
   ebook: { renderer: typst, spec_format: typ, phase: 2.0 }
   presentation: { renderer: marp, spec_format: md, phase: 2.1 }
-  chart: { renderer: vega-lite, spec_format: json, phase: 2.0, status: shipped, note: "renderers/vega-lite/ active 2026-04-30; SVG composer wraps Vega-Lite plot output in brand chart-card chrome" }
+  chart: { renderer: svg-composer, spec_format: json, phase: 2.0, status: shipped, note: "renderers/vega-lite/compose.mjs — JSON fixture + per-type SVG composer. Active 2026-04-30." }
+  stat-infographic: { renderer: svg-composer, spec_format: json, phase: 2.0, status: shipped, note: "Same composer as chart (composeStatInfographic). Active 2026-05-01." }
+  diagram: { renderer: svg-composer, spec_format: json, phase: 2.0, status: shipped, note: "Same composer as chart (composeFlowDiagram + per-node-type renderers). Active 2026-05-01." }
   social: { renderer: satori, spec_format: tsx, phase: 2.2 }
-  diagram: { renderer: typst, spec_format: typ, phase: 2.4 }
   email: { renderer: react-email, spec_format: tsx, phase: 3.1 }
   web_component: { renderer: tailwind-v4-react, spec_format: tsx, phase: 3.2 }
 
@@ -324,6 +325,18 @@ reviewers:
     consumes: [chart]
     purpose: "Chart HARD enforcement (R-CHART-001..007), comparative palette compliance, value-labels-on-comparative-segment color-blind check, axis-chart negative-bar / zero-line / dashed-gridline distinction"
     runs_when: deliverable_type == chart
+    status: contract-defined  # chunk shipped; agent implementation pending
+
+  - id: stat-infographic-reviewer
+    consumes: [stat-infographic]
+    purpose: "Stat infographic HARD enforcement (R-STAT-001..005). Border + divider presence + signal-go color; column triplet ordering (icon + stat + caption); footer band format (Phosphor Fill icon + PT Serif 18pt signal-go title); closed signal-go reservation; Phosphor weight-per-position."
+    runs_when: deliverable_type == stat-infographic
+    status: contract-defined  # chunk shipped; agent implementation pending
+
+  - id: diagram-reviewer
+    consumes: [diagram]
+    purpose: "Flow diagram HARD enforcement (R-DIAG-001..006). Footer-at-TOP inversion; body envelope (off-white + 1px gray-01); closed node-type catalog (pill / accent-teal / accent-go / code); connector kinds (data-flow signal-go solid with green endpoint dots / logical gray-02 dashed with destination arrowhead); right-angle routing only; signal-go reservation; accent-go text inversion (teal on signal-go, NOT white)."
+    runs_when: deliverable_type == diagram
     status: contract-defined  # chunk shipped; agent implementation pending
 
   - id: email-reviewer
