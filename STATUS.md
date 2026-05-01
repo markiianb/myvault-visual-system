@@ -12,7 +12,7 @@ summary: "Single rollup status doc for the MyVault visual-system. Tracks what's 
 
 Where we are, what's done, and what's next. Updated whenever something material ships. **Read this first** when picking up the visual-system in a new session — it's faster than walking the directory tree.
 
-> **Phase:** Foundation phase 1.7 + **Phase 2 (renderers) shipped** — foundations layer locked (4 chunks) + 3 asset-type chunks (ebook v1.3, presentation v1.2, chart v1.0) + 4 renderers (Typst editorial primitives for ebook, Marp for presentation, Vega-Lite for chart, Satori for social fixtures). The ebook canon was validated end-to-end through a real-content 19-page deliverable (`documents/ebook-test/privacy-guide.pdf`). The presentation pipeline rendered a 10-slide test deck (`presentations/test-state-of-privacy/deck.pdf`); chart pipeline rendered 5 fixtures (`documents/chart-integration-test/output.pdf`); Satori rendered 9 social fixtures. The agentic pipeline (author writes spec → renderer applies chunk rules → output) is operational across all four asset types, though only the ebook has shipped real external content. **Status: foundations + 3 asset-type chunks complete; 3 more chunks roadmapped (social, email, web-component).**
+> **Phase:** Foundation phase 1.7 + **Phase 2 (renderers) shipped** — foundations layer locked (4 chunks) + 3 asset-type chunks (ebook v1.4, presentation v1.2, chart v1.0) + 4 renderers (Typst editorial primitives for ebook, Marp for presentation, Vega-Lite for chart, Satori for social fixtures). The ebook canon was validated end-to-end through a real-content 19-page deliverable (`documents/ebook-test/privacy-guide.pdf`). The presentation pipeline rendered a 10-slide test deck (`presentations/test-state-of-privacy/deck.pdf`); chart pipeline rendered 5 fixtures (`documents/chart-integration-test/output.pdf`); Satori rendered 9 social fixtures. The agentic pipeline (author writes spec → renderer applies chunk rules → output) is operational across all four asset types, though only the ebook has shipped real external content. **Status: foundations + 3 asset-type chunks complete; 3 more chunks roadmapped (social, email, web-component).**
 
 ---
 
@@ -65,7 +65,7 @@ Where we are, what's done, and what's next. Updated whenever something material 
 
 | Chunk | Lines | HARD rules | Renderer | Visual canon | Date |
 |---|---|---|---|---|---|
-| `chunks/ebook.md` v1.3 | ~870 | 7 (`R-EBOOK-001..007`) | Typst (editorial primitives) | Figma page `70:8798` (+ refs `72:9166`, `89:6938`) | 2026-04-30 |
+| `chunks/ebook.md` v1.4 | ~870 | 7 (`R-EBOOK-001..007`) | Typst (editorial primitives) | Figma page `70:8798` (+ refs `72:9166`, `89:6938`) | 2026-05-01 |
 | `chunks/presentation.md` v1.2 | ~580 | 3 (`R-PRES-001..003`) | Marp (provisional) | Figma page `74:9684` (Section 1 `97:8611` + test Section 2 `151:9048`) | 2026-04-30 |
 | `chunks/chart.md` v1.0 | ~880 | 7 (`R-CHART-001..007`) | Vega-Lite + JSON spec | Figma page `70:8479` (Diagrams) | 2026-04-30 |
 

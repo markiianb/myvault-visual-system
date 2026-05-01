@@ -4,8 +4,8 @@ domain: chunks
 subcategory: asset-type
 type: chunk
 status: active
-version: "1.3"
-last_updated: 2026-04-30 (primitives-not-templates — privacy guide validated)
+version: "1.4"
+last_updated: 2026-05-01 (R-EBOOK-001/002 geometry synced to Figma canon)
 owner: mark
 summary: "Asset-type chunk for ebook + PDF document deliverables. 7 HARD rules (R-EBOOK-001..007) covering page geometry, page-category surface/numbering, signal-go reservation, every-cover-has-a-lockup, mandatory page structure, reading-order, and footnote numbering semantics. BASE rules for default typography per role (Section Opener title and Stat Page hero number are flexible defaults, not locks). MENU catalog of 3 cover treatments + 21 interior patterns (including 5 new editorial-first primitives validated in the privacy-guide build: section-opener-hero, hero-stats, model-grid, takeaways, pull-page). Renderer pinned to Typst (editorial primitives module: myvault-editorial.typ). No foundation overrides — all R-COLOR/R-TYPE/R-LOGO/R-ICON rules apply automatically."
 token_count_estimate: 1700
@@ -120,13 +120,14 @@ This chunk uses three tiers — same as foundations, plus a new MENU tier specif
 ## HARD rules
 
 ### R-EBOOK-001 — Page geometry locked
-- **Spec:** Page size **800 × 1200**; padding **40/80/40/80**; content area is **640 px wide × 1080 px tall**.
+- **Spec:** Page size **800 × 1200**; padding **40/40/40/40**; content area is **720 px wide × 1120 px tall**.
 - **Inner grid (BASE — choose per page):**
-  - **1-column** (default): single 640 px reading column. Used for body spreads, lists, callouts, endnotes, single-stat pages, conclusions.
-  - **2-column**: two 300 px columns × **40 px gap** inside the 640 measure. Used for dual-stat pages, comparative spreads, paired-content layouts (e.g., the 2-col dual-stat on Vault Teal at Figma `89:6938`).
-- **Rationale:** Optimal reading width is 640 px for body text; dramatic / comparative content benefits from 2-column rhythm. Both grids share the same outer padding so the page-edge geometry is consistent.
-- **Allowed deviation:** Stat-page or quote-page may narrow centered content to **540–580 px** for breathing room. Cover and back-cover may break for full-bleed imagery.
-- **Check:** any page with size ≠ 800×1200 OR padding ≠ 40/80/40/80 → reject. Any inner grid that isn't 1-column (640 wide) or 2-column (300 wide × 40 gap × 300 wide) without a documented spec-level reason → reject.
+  - **1-column** (default): single 720 px reading column. Used for body spreads, lists, callouts, endnotes, single-stat pages, conclusions.
+  - **2-column** (Stat / Conclusion): two **340 px** columns × **40 px gap** inside the 720 measure. Used for dual-stat pages, comparative spreads, paired-content layouts (e.g., the 2-col dual-stat on Vault Teal at Figma `89:6938`).
+  - **2-column** (Lists): two **350 px** columns × **20 px gap** inside the 720 measure. Tighter gap suits paired-list rhythm.
+- **Rationale:** Page geometry is fixed by the canonical Figma `eBooks & Documents` page (audit: `documents/ebook-test/figma-reference.md`). Body content runs in a 720 px measure; dramatic / comparative content benefits from 2-column rhythm. Both grids share the same outer padding so the page-edge geometry is consistent.
+- **Allowed deviation:** Stat-page or quote-page may narrow centered content to **580–640 px** for breathing room. Cover and back-cover may break for full-bleed imagery.
+- **Check:** any page with size ≠ 800×1200 OR padding ≠ 40/40/40/40 → reject. Any inner grid that isn't 1-column (720 wide), 2-column-340 (340 wide × 40 gap × 340 wide), or 2-column-350 (350 wide × 20 gap × 350 wide) without a documented spec-level reason → reject.
 
 ### R-EBOOK-002 — Page category determines surface, and every interior page carries the canonical footer
 - **Surface by category:**
@@ -139,7 +140,7 @@ This chunk uses three tiers — same as foundations, plus a new MENU tier specif
 - **Footer pattern (every interior page except Cover and Back Cover):**
   - **Left:** Icon variant per surface pairings (Icon-primary on white/off-white; Icon-white on dark surfaces). Sized small (≈24 px square; floor enforced by R-LOGO-006).
   - **Right:** Page number, Lato Regular 12pt, `color.core.gray-02` on light surfaces (white on dark).
-  - **Layout:** horizontal SPACE_BETWEEN inside the page's padded content area (x ∈ [80, 720] on a 800-wide page); vertical position at the bottom-padding line (y ≈ 1142 on a 1200-tall page).
+  - **Layout:** horizontal SPACE_BETWEEN inside the page's padded content area (x ∈ [40, 760] on an 800-wide page); vertical position pinned at **y = 1136** on a 1200-tall page (footer strip 720 wide × 24 tall, sitting on the bottom-padding line).
   - **Header (optional, BASE):** running-header text top-left in `typography.caption` gray-02 (e.g., section title or book title) — see BASE table.
 - **Cover and Back Cover:** no footer. Cover establishes the brand via R-EBOOK-004 (lockup) and the cover composition. Back Cover is the closing surface.
 - **Footer is conditional, not universal (v1.2):** The Icon-left + page-number-right footer is the default for body pages and content reading pages. Any page may opt out when the editorial moment earns it (full-bleed pull quotes, dramatic stat pages, dedication pages, transitions). The rule is: when a footer is present on a page, it follows the canonical Icon-left + page-number-right pattern. The rule is NOT: every page must have this footer.
@@ -277,7 +278,7 @@ interior_pages:
     label: "Title Page"
     category: navigational
     surface: off-white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Title PT Serif 56pt centered + subtitle Lato 18pt centered + signal-go 60×2 rule below subtitle (R-EBOOK-003 allowed)"
     use_when: "always — first interior page after cover"
     figma_section: "(memory canon — verify present)"
@@ -286,7 +287,7 @@ interior_pages:
     label: "Copyright"
     category: navigational
     surface: off-white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Title block + copyright lines Lato 12-14pt centered gray-02; legal text"
     use_when: "always — second interior page"
     figma_section: "Copyright"
@@ -295,7 +296,7 @@ interior_pages:
     label: "Table of Contents"
     category: navigational
     surface: off-white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Header 'Contents' PT Serif 40pt LEFT at x=80 + signal-go 60×2 rule below (R-EBOOK-003 allowed); rows = number Lato 14pt LEFT, title Lato 20pt LEFT, page number Lato 14pt RIGHT, gap 16"
     use_when: "always — navigational anchor"
     figma_section: "Table of Contents"
@@ -304,7 +305,7 @@ interior_pages:
     label: "Section Opener"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Centered chapter marker Lato 14pt gray-02 + dramatic title PT Serif 72pt 115% centered (BASE default; sized to suit the title) + intro paragraph Lato 18pt 140% centered"
     use_when: "open every major section"
     figma_section: "Section Opener"
@@ -322,7 +323,7 @@ interior_pages:
     label: "Pull Quote — Variant A"
     category: content
     surface: off-white (calmer register)
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Quote text PT Serif 40pt 125% LEFT BLACK + adjacent quote mark PT Serif 120pt LEFT black (no longer teal — see BASE update)"
     use_when: "moments of editorial impact; punch-line ideas"
     figma_section: "Pull Quote (variant 1)"
@@ -331,7 +332,7 @@ interior_pages:
     label: "Pull Quote — Variant B"
     category: content
     surface: off-white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Same typography as Variant A; alternate compositional arrangement (quote mark positioned differently — see Figma)"
     use_when: "second register of pull-quote — when Variant A's composition doesn't suit the quote"
     figma_section: "Pull Quote (variant 2)"
@@ -412,7 +413,7 @@ interior_pages:
     label: "Stat Page — Variant 1 (single hero stat)"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Big stat number PT Serif 220pt teal centered (R-EBOOK-006 locks) + supporting headline PT Serif 32pt black centered + supporting paragraph Lato 18pt gray-02 centered (~540 measure) + Lato 12pt gray-02 source caption"
     use_when: "single hero number carries the page"
     figma_section: "Stat Page"
@@ -422,7 +423,7 @@ interior_pages:
     category: content
     surface: white
     grid: 2-column (per R-EBOOK-001)
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Two stat columns side-by-side; each follows the BASE Stat Page hero-number defaults (PT Serif ≥96pt teal centered) with supporting headline (PT Serif 32pt) + supporting paragraph (Lato 18pt) below each"
     use_when: "two related stats compared on a quiet surface (before/after, MyVault vs industry)"
     figma_section: "Stat Page - 2"
@@ -443,7 +444,7 @@ interior_pages:
     label: "Lists Page"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Header PT Serif 40pt LEFT at x=80; three list blocks stacked, each preceded by 12pt gray-02 small label (Bulleted / Numbered / Checklist); bullet = 6×6 signal-go ellipse; number = '1.' Lato 16pt signal-go; checklist = 16×16 signal-go square radius/xs"
     use_when: "actionable checklists, multi-item lists"
     figma_section: "Lists Page"
@@ -452,7 +453,7 @@ interior_pages:
     label: "Figure + Caption"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Figure box at (80, 200) size 640×440, off-white fill, 1px gray-01 stroke, radius/lg; 'Fig. 2.1' label below at x=80 in signal-go Lato 12pt; caption Lato 14pt black 640px measure"
     use_when: "diagram, chart, or imagery with explanatory caption"
     figma_section: "Figure + Caption"
@@ -461,7 +462,7 @@ interior_pages:
     label: "Callouts"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Header at x=80; three stacked callout boxes 640×auto-height, padding 20/20/16/16, off-white fill, 1px + 4px LEFT stroke in accent color, radius/md. Kinds: note (teal accent + info icon), tip (signal-go accent + lightbulb icon), important (signal-go accent + warning icon). Icon 20×20 recolored to accent."
     use_when: "asides, tips, warnings, definitions"
     figma_section: "(memory canon — verify present)"
@@ -470,7 +471,7 @@ interior_pages:
     label: "Endnotes"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Header 'Notes' at x=80 y=160 PT Serif 40pt; numbered notes vertical column at x=80, 640 wide, item-spacing 16; each row = signal-go number Lato 14pt right-aligned width 24 + body/s note Lato 14pt black 150% LH layoutGrow 1"
     use_when: "endnotes / endmatter"
     figma_section: "(memory canon — verify present)"
@@ -479,7 +480,7 @@ interior_pages:
     label: "About the Author"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Centered portrait circle 220×220 at y=180 gray-01 fill; below = Name PT Serif 32pt black center, Role Lato 16pt gray-02 center, Bio Lato 16pt black center 580 measure, Links Lato 16pt signal-go center"
     use_when: "endmatter author bio"
     figma_section: "(memory canon — verify present)"
@@ -488,7 +489,7 @@ interior_pages:
     label: "Conclusion — Variant A"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Closing summary; PT Serif 40pt header LEFT at x=80; body paragraphs"
     use_when: "narrative conclusion"
     figma_section: "Conclusion (variant 1)"
@@ -497,7 +498,7 @@ interior_pages:
     label: "Conclusion — Variant B"
     category: content
     surface: white
-    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
+    footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y=1136)
     composition: "Action-oriented conclusion; PT Serif 40pt header LEFT at x=80; bulleted next-steps in body"
     use_when: "action-driven closing — tells reader what to do next"
     figma_section: "Conclusion (variant 2)"
@@ -702,6 +703,7 @@ Both are **superseded by this chunk**. They remain in `MEMORY.md` as historical 
 
 | Date | Change | By |
 |---|---|---|
+| 2026-05-01 | v1.4 — Page geometry + footer pin synced to canonical Figma `eBooks & Documents` page per the audit at `documents/ebook-test/figma-reference.md`. **R-EBOOK-001 outer padding** corrected from 40/80/40/80 → **40/40/40/40**; **content area** corrected from 640×1080 → **720×1120**; **inner grid** updated — 1-column to 720 wide, 2-column-stat to 340/40/340 (was 300/40/300), new 2-column-lists at 350/20/350. **R-EBOOK-002 footer layout** repositioned — x range corrected from [80, 720] → **[40, 760]**, y pinned at **1136** (was y≈1142). All 14 MENU `footer:` references updated to the new y. The active editorial renderer (`renderers/typst/myvault-editorial.typ`) and the privacy-guide deliverable already build on these values; this update brings the chunk's HARD rule contract in line with the rendered canon. **Note:** MENU pattern descriptions still contain absolute coordinates (e.g., "x=80", "640 wide") inherited from the v1.0 geometry — these are not HARD-rule violations because MENU is choose-from patterns, but a follow-up sweep would refresh them. | Mark + Claude |
 | 2026-04-30 | v1.3 — Primitives-not-templates rebuild validated against the AI Privacy Guide deliverable (19 pages). **Renderer pinned to `renderers/typst/myvault-editorial.typ`** (active) — composable primitives that flow rather than page-stamp templates that emit one page per call; legacy `myvault-ebook.typ` preserved for migration only. **5 new MENU primitives added**, all validated visually in the privacy-guide build: `section-opener-hero` (dramatic full-bleed title page on teal/black surface), `hero-stats` (multi-stat boxed panel), `model-grid` (2x2 alternating-fill cards for parallel concepts), `takeaways` (boxed end-of-section numbered summary), `pull-page` (decorative quote-mark composition). **`data-grid` formalized** as a MENU entry (was used inline before; now a reusable reference-table primitive). **Decision tree updated** to default to flowing primitives + reserve standalone-page primitives for moments that earn the breath. **Body density tuned** to 18pt @ 55% leading (was 17pt @ 50%) per Mark's "less condensed" call. Privacy guide is the canon application — see `documents/ebook-test/privacy-guide-spec.typ` and `privacy-pages-v4/` for the validated visual reference. | Mark + Claude |
 | 2026-04-30 | v1.2 — Editorial-first rethink in line with `feedback_no_mandatory_pages_editorial_first`. **R-EBOOK-005 (mandatory page structure) demoted** — each document decides what front/back matter it needs; no required Cover+TitlePage+Copyright+TOC+SectionOpener+BackCover bundle. **R-EBOOK-002 footer softened** — footer is the default for body content, but conditional per page; pages can opt out when the editorial moment earns it. Imprint info moves to back-cover footer or end-matter block; no longer requires a standalone Copyright page. Section openers default to inline body transitions (big PT Serif heading + first paragraph on same page), not standalone pages. Builds on the workflow doc rewrite at `documents/ebook-test/workflow.md`. The privacy guide rebuild is the first deliverable applying this rethink. | Mark + Claude |
 | 2026-04-30 | v1.1 — Pinning relaxed in line with `feedback_chunk_size_placement_pins`. R-EBOOK-004 reshaped from "Treatment-1-only lockup at 171×48 top-left" to **every cover has a lockup; placement and size governed by R-LOGO foundation rules**. R-EBOOK-005 (Section Opener title 72pt) and R-EBOOK-006 (Stat Page hero number 220pt) demoted from HARD to BASE — values are typical defaults; foundation rules (R-COLOR-009 teal-only-at-display, R-TYPE-* family/weight) carry the real floors. R-EBOOK-009 (cover composition split) deleted — covers reframed as an **experimental surface**; the three cover treatments remain in MENU as examples, not a closed catalog. R-EBOOK-007/008/010 renumbered to R-EBOOK-005/006/007. **R-EBOOK-002 reshaped** around the canonical **Icon-left / page-number-right footer** (per Figma `72:9166`), with surface-flip override for dramatic content (per Figma `89:6938`). **R-EBOOK-001 expanded** to formalize a 1-column (640) and 2-column (300/40/300) inner grid. **New MENU entry:** `stat-page-3-teal-mirror` — dual-stat 2-column composition on Vault Teal. Total HARD rule count: **10 → 7**. | Mark + Claude |
