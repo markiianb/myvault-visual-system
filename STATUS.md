@@ -3,7 +3,7 @@ type: reference
 status: active
 owner: mark
 created: 2026-04-29
-updated: 2026-04-29 (icons phase shipped)
+updated: 2026-04-30 (chart chunk + Vega-Lite + Satori fixtures shipped)
 tags: [visual-system, status, roadmap, progress]
 summary: "Single rollup status doc for the MyVault visual-system. Tracks what's shipped, what's in progress, and what's next across tokens, assets, foundation chunks, Figma canon, renderers, and ui-system. Updated when anything material ships. The first thing a future agent or contributor should read to orient."
 ---
@@ -12,7 +12,7 @@ summary: "Single rollup status doc for the MyVault visual-system. Tracks what's 
 
 Where we are, what's done, and what's next. Updated whenever something material ships. **Read this first** when picking up the visual-system in a new session — it's faster than walking the directory tree.
 
-> **Phase:** Foundation phase 1.7 + **Phase 2.1 (presentation renderer) shipped** — foundations layer locked (4 chunks) + 2 asset-type chunks (ebook v1.1, presentation v1.2) + 2 renderers (Typst for ebook, Marp for presentation). Both renderers validated end-to-end through real-content render: ebook test (`documents/ebook-test/output.pdf`) and presentation test (`presentations/test-state-of-privacy/deck.pdf`). The agentic pipeline (author writes spec → renderer applies chunk rules → PDF) is operational for both asset types. **Status: foundations + asset-type chunks for ebook and presentation are complete; both have working renderers; 4 more asset-type chunks roadmapped (social, chart, email, web-component).**
+> **Phase:** Foundation phase 1.7 + **Phase 2 (renderers) shipped** — foundations layer locked (4 chunks) + 3 asset-type chunks (ebook v1.3, presentation v1.2, chart v1.0) + 4 renderers (Typst editorial primitives for ebook, Marp for presentation, Vega-Lite for chart, Satori for social fixtures). The ebook canon was validated end-to-end through a real-content 19-page deliverable (`documents/ebook-test/privacy-guide.pdf`). The presentation pipeline rendered a 10-slide test deck (`presentations/test-state-of-privacy/deck.pdf`); chart pipeline rendered 5 fixtures (`documents/chart-integration-test/output.pdf`); Satori rendered 9 social fixtures. The agentic pipeline (author writes spec → renderer applies chunk rules → output) is operational across all four asset types, though only the ebook has shipped real external content. **Status: foundations + 3 asset-type chunks complete; 3 more chunks roadmapped (social, email, web-component).**
 
 ---
 
@@ -61,35 +61,38 @@ Where we are, what's done, and what's next. Updated whenever something material 
 
 **Each chunk has:** rich frontmatter (`token_dependencies`, `asset_dependencies`, `visual_canon`, `review_axes`, `related_memories`), HARD rules with machine-checkable predicates, BASE rules, decision tree, reviewer-agent integration, anti-patterns, visual-canon pointer.
 
-### Asset-type chunks — agentic canon (2 files shipped, 4 roadmapped)
+### Asset-type chunks — agentic canon (3 files shipped, 3 roadmapped)
 
 | Chunk | Lines | HARD rules | Renderer | Visual canon | Date |
 |---|---|---|---|---|---|
-| `chunks/ebook.md` v1.1 | ~570 | 7 (`R-EBOOK-001..007`) | Typst | Figma page `70:8798` (+ refs `72:9166`, `89:6938`) | 2026-04-30 |
+| `chunks/ebook.md` v1.3 | ~870 | 7 (`R-EBOOK-001..007`) | Typst (editorial primitives) | Figma page `70:8798` (+ refs `72:9166`, `89:6938`) | 2026-04-30 |
 | `chunks/presentation.md` v1.2 | ~580 | 3 (`R-PRES-001..003`) | Marp (provisional) | Figma page `74:9684` (Section 1 `97:8611` + test Section 2 `151:9048`) | 2026-04-30 |
+| `chunks/chart.md` v1.0 | ~880 | 7 (`R-CHART-001..007`) | Vega-Lite + JSON spec | Figma page `70:8479` (Diagrams) | 2026-04-30 |
 
-**Total HARD rules across all chunks: 49** (R-COLOR 10, R-TYPE 9, R-LOGO 10, R-ICON 10, R-EBOOK 7, R-PRES 3). The presentation chunk holds **two foundation overrides** — the first across the chunks layer: R-PRES-003 raises R-TYPE-005's 14-pt floor to 18 pt for the asset type (raise-floor), and a scoped R-COLOR-009 exception allows Vault Teal at 18 pt for chart annotations inside chart-card boundaries (scoped-exception, to be ratified at foundation level when `chunks/chart.md` ships).
+**Total HARD rules across all chunks: 56** (R-COLOR 10, R-TYPE 9, R-LOGO 10, R-ICON 10, R-EBOOK 7, R-PRES 3, R-CHART 7). The presentation chunk holds **two foundation overrides**: R-PRES-003 raises R-TYPE-005's 14-pt floor to 18 pt for the asset type (raise-floor), and a scoped R-COLOR-009 exception allows Vault Teal at 18 pt for chart annotations inside chart-card boundaries — ratified at the chart-asset level by R-CHART-006. Foundation-level ratification (updating `foundations/color.md` to record the carve-out) is open work.
 
 ### Ebook end-to-end test (Phase 2 proof-of-concept)
 
-The chunks/ebook.md v1.1 contract has been validated end-to-end via a real Typst render. **The pipeline works.**
+The chunks/ebook.md v1.3 contract has been validated end-to-end through a real-content 19-page editorial deliverable. **The pipeline works.**
 
 | Path | What |
 |---|---|
-| `renderers/typst/myvault-ebook.typ` | Typst function library implementing the chunk contract — 11 page-type functions |
+| `renderers/typst/myvault-editorial.typ` | Active editorial primitives module — composable primitives that flow rather than page-stamp templates |
+| `renderers/typst/myvault-ebook.typ` | Legacy page-stamp template, preserved for migration reference only |
 | `renderers/typst/tokens.typ` | Auto-generated token bridge (`build-tokens.sh` produces it from `tokens/brand.tokens.json`) |
 | `renderers/typst/build-tokens.sh` | jq-based token bridge script |
 | `renderers/typst/fonts/` | Bundled Lato Regular + PT Serif Regular |
-| `documents/ebook-test/spec.typ` | Real-content spec — "The Architecture of Trust", an 18-page editorial ebook |
-| `documents/ebook-test/output.pdf` | The rendered ebook |
-| `documents/ebook-test/README.md` | Operator guide + iteration history + chunk-level findings |
+| `documents/ebook-test/privacy-guide-spec.typ` | Canonical spec — "How to use AI without giving up your data", 19-page editorial deliverable |
+| `documents/ebook-test/privacy-guide.pdf` | The rendered output |
+| `documents/ebook-test/privacy-pages-v4/` | Per-page PNG renders for visual reference |
+| `documents/ebook-test/README.md` | Operator guide |
 
-**Validated:** all 7 HARD rules (R-EBOOK-001..007), 11 distinct MENU page types, foundation-rule inheritance (R-COLOR / R-TYPE / R-LOGO / R-ICON), surface-flip on dramatic-register pages, signal-go reservation. Three iteration cycles (smoke → real-content → fixes). Total HARD rules across the visual system: **46** (R-COLOR 10, R-TYPE 9, R-LOGO 10, R-ICON 10, R-EBOOK 7) — all enforced by the template.
+**Validated:** all 7 HARD rules (R-EBOOK-001..007), full MENU page-type coverage including the 5 editorial-first primitives added in v1.3 (section-opener-hero, hero-stats, model-grid, takeaways, pull-page), foundation-rule inheritance (R-COLOR / R-TYPE / R-LOGO / R-ICON), surface-flip on dramatic-register pages, signal-go reservation.
 
 **Pipeline command:**
 ```bash
 typst compile --root visual-system --font-path renderers/typst/fonts \
-  documents/ebook-test/spec.typ documents/ebook-test/output.pdf
+  documents/ebook-test/privacy-guide-spec.typ documents/ebook-test/privacy-guide.pdf
 ```
 
 **`chunks/_manifest.yaml`** — asset-type registry. Lists all chunks with renderer pinning, foundations consumed, reviewer axes, output formats, severity tiers (HARD/BASE/MENU), and `load_for_task` lookup. Roadmaps 5 more chunks (presentation/Marp, social/Satori, chart/Vega-Lite, email/React-Email, web-component/Tailwind v4 — last is deferred to ui-system phase).
@@ -167,13 +170,13 @@ Ordered by my recommendation, but Mark drives priority.
 | **Imagery & illustration** | `references/illustration-line-art/` already has 4 reference images; Figma illustration page exists but empty | ~2 sessions | Mark: gather more line-art refs first, OR codify what we have |
 | ~~Spacing & grid~~ | ~~Reclassified~~ | — | **Removed from roadmap** — grid is content-specific (per `feedback_grid_is_content_specific`); space tokens are universal but grid rules live in asset-type chunks (presentation, social, ebook, document, chart). Each asset-type chunk defines its own grid. |
 
-### Asset-type chunks (next layer — 4 more after ebook + presentation)
+### Asset-type chunks (next layer — 3 more after ebook + presentation + chart)
 
 | Chunk | Renderer | Existing canon | Effort | Blocker |
 |---|---|---|---|---|
-| ~~`chunks/presentation.md`~~ | ~~Marp~~ | ~~shipped 2026-04-30 v1.0~~ | — | **Done** |
-| **`chunks/social.md`** | Satori | `feedback_figma_card_structure`, Stream A vs Stream B canon mentioned in plans | ~1 session | Stream A/B split rules need Mark's call |
-| **`chunks/chart.md`** | Vega-Lite | `project_diagram_canonical_specs` is rich | ~1 session | None |
+| ~~`chunks/presentation.md`~~ | ~~Marp~~ | ~~shipped 2026-04-30 v1.2~~ | — | **Done** |
+| ~~`chunks/chart.md`~~ | ~~Vega-Lite~~ | ~~shipped 2026-04-30 v1.0~~ | — | **Done** |
+| **`chunks/social.md`** | Satori | `feedback_figma_card_structure`, Stream A vs Stream B canon mentioned in plans; 9 Satori fixtures already rendered as renderer scaffolding (no chunk yet) | ~1 session | Stream A/B split rules need Mark's call |
 | **`chunks/email.md`** | React Email | Less existing canon | ~2 sessions | Minimal canon collected so far |
 | **`chunks/web-component.md`** | Tailwind v4 + React | n/a | — | Deferred to ui-system phase per locked scope |
 
