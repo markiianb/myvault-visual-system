@@ -2,7 +2,7 @@
 type: research-findings
 status: superseded
 superseded_by: findings-html-first-stack.md
-owner: claude (in-session quick test, parallel to the broader research-prompt-html-first-stack.md)
+owner: claude (in-session quick test, parallel to the broader prompts/research-prompt-html-first-stack.md)
 created: 2026-04-30
 purpose: "Quick head-to-head test of HTML/CSS-via-headless-Chrome vs Typst for the ebook PDF case, using 3 representative pages from the AI Privacy Guide. Findings will inform the architecture decision; the broader parallel-session research will validate across all six asset types."
 ---
@@ -178,7 +178,7 @@ The chunk pattern (HARD/BASE/MENU rules + retrieval) doesn't change — it's ren
 
 ## Open questions for the parallel research session
 
-The broader prompt at `_research/research-prompt-html-first-stack.md` covers Tests 2 (slide) and 3 (social). The findings there should resolve:
+The broader prompt at `_research/prompts/research-prompt-html-first-stack.md` covers Tests 2 (slide) and 3 (social). The findings there should resolve:
 
 1. Does HTML→slide via reveal.js / Slidev produce decks comparable to Marp?
 2. Does HTML→PNG via Satori / Puppeteer produce social images suitable for Instagram / LinkedIn at 1080×1080?
@@ -189,7 +189,7 @@ If the parallel session's findings on those three tests trend positive, the case
 
 ## Stretch test ran: same component to ebook + social — passed
 
-After writing the bulk of this report, I ran the cross-asset stretch test described in `research-prompt-html-first-stack.md` to validate the strongest single claim for HTML-first.
+After writing the bulk of this report, I ran the cross-asset stretch test described in `prompts/research-prompt-html-first-stack.md` to validate the strongest single claim for HTML-first.
 
 **Goal**: prove that the same HTML/CSS component renders to both an ebook PDF and a social PNG with no rewrite — the "write once, render everywhere" claim.
 
