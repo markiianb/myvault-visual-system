@@ -214,7 +214,7 @@ These are the typical defaults. Deviation is allowed; document the deviation in 
 Content color is `color.core.black` on white/off-white surfaces; `color.core.white` on the black Back Cover. Auto-derived from R-EBOOK-002 surface category.
 
 ### Header alignment
-Headers default to **x=80 left** (consistent with the 80-px outer padding). Navigational pages (Title Page, Copyright, TOC) override to **centered**. Section Opener overrides to **centered** (per R-EBOOK-005).
+Headers default to **x=40 left** (consistent with the 40-px outer padding). Navigational pages (Title Page, Copyright, TOC) override to **centered**. Section Opener overrides to **centered** as the typical hero-page composition.
 
 ### Default page-element rhythm
 - Body paragraph spacing: paragraph-break = 1× line-height (the default Lato 150% emits ~24px gap)
@@ -305,7 +305,7 @@ interior_pages:
     category: content
     surface: white
     footer: per R-EBOOK-002 (Icon-primary left + page number right; SPACE_BETWEEN within padding at y≈1142)
-    composition: "Centered chapter marker Lato 14pt gray-02 + dramatic title PT Serif 72pt 115% centered (R-EBOOK-005 locks size) + intro paragraph Lato 18pt 140% centered"
+    composition: "Centered chapter marker Lato 14pt gray-02 + dramatic title PT Serif 72pt 115% centered (BASE default; sized to suit the title) + intro paragraph Lato 18pt 140% centered"
     use_when: "open every major section"
     figma_section: "Section Opener"
 
